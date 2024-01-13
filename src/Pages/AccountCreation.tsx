@@ -12,7 +12,7 @@ const AccountCreation = () => {
       <div className="welcome-question">?</div>
       </Link>
       <div className="welcome__message welcome__message--form">
-        <div className="welcome__message-container">
+        <div className="welcome__message-container--form">
           <h1 className="welcome__message-title">
             Create your account
           </h1>

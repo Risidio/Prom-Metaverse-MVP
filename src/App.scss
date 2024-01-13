@@ -1,0 +1,23 @@
+@font-face {
+  font-family: Jost;
+  src: url(../src/fonts/Jost-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: Inter;
+  src: url(../src/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+@import '../src/styles/_utils/vars';
+@import '../src/styles/_utils/mixins';
+
+// @import 'tailwindcss/base';
+// @import 'tailwindcss/components';
+// @import 'tailwindcss/utilities';
+
+
+
+@import '../src/styles/welcome.scss';
+@import '../src/styles/page.scss';
+@import '../src/styles/button.scss';
+@import "../src/styles/form.scss";

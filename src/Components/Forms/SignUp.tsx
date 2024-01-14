@@ -21,7 +21,9 @@ export const Form = () => {
 
       <button type="submit" className="form-button">
 
-        <RedButton pathLink="#submit" className="button--form"></RedButton>
+        <RedButton pathLink="/character-creation" 
+        text="Create an account"
+        className="button--form"></RedButton>
         <Link to="/" className="welcome__message-link">
           Already have an account ?
         </Link>

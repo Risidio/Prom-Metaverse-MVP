@@ -7,7 +7,7 @@ import Connect from "../Components/Wallet/ConnectToWallet";
 const Welcome = () => {
   return (
     <div className="welcome-background">
-      <div className="welcome-logo"></div>
+      <div className="logo"></div>
       <div className="welcome__message">
         <div className="welcome__message-container">
           {/* <div className="text-red-500">test</div> */}
@@ -20,13 +20,15 @@ const Welcome = () => {
             exercitation.
           </p>
 
-          <RedButton pathLink="/account"></RedButton>
+          <RedButton pathLink="/account"
+          text="Create an account"></RedButton>
 
           <Link to="/" className="welcome__message-link">
             Visit as a guest
           </Link>
 
-          <WhiteButton></WhiteButton>
+          <WhiteButton pathLink="'/account'"
+          text="Sign in"></WhiteButton>
           <Connect></Connect>
         </div>
       </div>

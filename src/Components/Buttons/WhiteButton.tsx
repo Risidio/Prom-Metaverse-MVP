@@ -1,12 +1,22 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
-const WhiteButton = () => {
+type Props = {
+  pathLink: string,
+  className?: string,
+  text: string,
+}
+
+const WhiteButton: React.FC<Props> = ({
+  pathLink,
+  className,
+  text,
+}) => {
   return (
-    <NavLink to={'/account'}
+    <NavLink to={pathLink}
       className="button button--white">
-      <button className="button__container button__container--white
-  button-text button-text--white">
-        Sign in
+      <button className={`button__container button__container--white
+  button-text button-text--white ${className}`}>
+        {text}
       </button>
     </NavLink>
 

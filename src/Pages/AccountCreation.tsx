@@ -7,7 +7,7 @@ const AccountCreation = () => {
   return (
     <div className="welcome-background">
 
-      <div className="welcome-logo"></div>
+      <div className="logo"></div>
       <Link to={"?"}>
       <div className="welcome-question">?</div>
       </Link>
@@ -26,4 +26,4 @@ const AccountCreation = () => {
   )
 }
 
-export default AccountCreation
+export default AccountCreation;

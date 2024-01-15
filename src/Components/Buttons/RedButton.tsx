@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 type Props = {
   pathLink: string,
   className?: string,
+
 }
 
 const RedButton: React.FC<Props> = ({ pathLink, className }) => {

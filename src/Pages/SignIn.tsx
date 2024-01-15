@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
-
+import SigninForm from "../Components/Forms/Login"
 import Connect from "../Components/Wallet/ConnectToWallet"
-import SignupForm from "../Components/Forms/SignUp"
 
 
-const AccountCreation = () => {
+
+const SignIn = () => {
   return (
     <div className="welcome-background">
 
@@ -15,9 +15,9 @@ const AccountCreation = () => {
       <div className="welcome__message welcome__message--form">
         <div className="welcome__message-container--form">
           <h1 className="welcome__message-title">
-            Create your account
+            Login into account
           </h1>
-          <SignupForm />
+          <SigninForm />
 
 <Connect></Connect>
 
@@ -27,4 +27,4 @@ const AccountCreation = () => {
   )
 }
 
-export default AccountCreation
+export default SignIn

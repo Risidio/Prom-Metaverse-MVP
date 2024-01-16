@@ -10,7 +10,7 @@ const AccountCreation = () => {
 
       <div className="welcome-logo"></div>
       <Link to={"?"}>
-      <div className="welcome-question">?</div>
+        <div className="welcome-question">?</div>
       </Link>
       <div className="welcome__message welcome__message--form">
         <div className="welcome__message-container--form">
@@ -19,7 +19,7 @@ const AccountCreation = () => {
           </h1>
           <SignupForm />
 
-<Connect></Connect>
+          <Connect></Connect>
 
         </div>
       </div>

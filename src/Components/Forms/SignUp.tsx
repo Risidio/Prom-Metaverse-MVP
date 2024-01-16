@@ -1,36 +1,36 @@
 import { Link, useNavigate } from "react-router-dom";
-import RedButton from "../Buttons/RedButton";
 import TextInput from "../Inputs/TextInput";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import ButtonSubmit from "../Buttons/ButtonSubmit";
 
 
 const SignupForm = () => {
 
   const navigate = useNavigate()
 
-  
+
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
   const [confirmPassword, setConfirmPassword] = useState<string>("");
-  
 
-  const handleAccountCreation = async(e: FormEvent) =>{
+
+  const handleAccountCreation = async (e: FormEvent) => {
     e.preventDefault()
     if (password !== confirmPassword) {
       toast.error("Passwords do not match");
       return;
     }
-    const register = {email, password}
-    try{
+    const register = { email, password }
+    try {
       const response = await fetch(" https://b9ea-102-176-65-94.ngrok-free.app/auth/signup",
-      { 
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(register),
-      }
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(register),
+        }
       );
 
       if (response.ok) {
@@ -59,37 +59,41 @@ const SignupForm = () => {
     <form className="form" onSubmit={handleAccountCreation}>
 
       <TextInput name="email" type="email" label="E-mail"
-        className="form-input--1"  value={email}
-        onChange={(e: ChangeEvent <HTMLInputElement>) => {
+        className="form-input--1" value={email}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => {
           setEmail(e.target.value)
-        }}/>
+        }} />
 
       <p className="form-notification">PROM will never send you any email except for the account creation validation.</p>
 
       <TextInput name="password" type="password" label="Password"
-        className="form-input--2" value={password} onChange={(e: ChangeEvent <HTMLInputElement>) => {
+        className="form-input--2" value={password} onChange={(e: ChangeEvent<HTMLInputElement>) => {
           setPassword(e.target.value)
-        }}/>
+        }} />
 
 
       <TextInput name="password" type="password" label="Confirm password"
-        className="form-input--3" 
+        className="form-input--3"
         value={confirmPassword}
         onChange={(e: ChangeEvent<HTMLInputElement>) => {
           setConfirmPassword(e.target.value);
-        }}/>
+        }} />
 
-      <button  className="form-button">
+      <button className="form-button">
 
-        <RedButton pathLink="#submit" className="button--form"></RedButton>
-        <Link to="/" className="welcome__message-link">
+        {/* <RedButton 
+        text=""
+        ></RedButton> */}
+
+        <ButtonSubmit textButton="Create an account"></ButtonSubmit>
+
+        <Link to="/signin" className="welcome__message-link">
           Already have an account ?
         </Link>
 
       </button>
-      <button type="submit" className="button--form">CREAT ACCOUNT</button>
 
-<ToastContainer />
+      <ToastContainer />
     </form>
   );
 }

@@ -24,7 +24,7 @@ const SignupForm = () => {
     }
     const register = { email, password }
     try {
-      const response = await fetch(" https://b9ea-102-176-65-94.ngrok-free.app/auth/signup",
+      const response = await fetch("https://9b61-41-66-202-242.ngrok-free.app/auth/signup",
         {
           method: "POST",
           headers: {
@@ -42,7 +42,7 @@ const SignupForm = () => {
         localStorage.setItem("token", responseData.data.token);
 
         setTimeout(() => {
-          navigate("/");
+          navigate("/character-creation");
         }, 600);
       } else {
         const errorData = await response.json();

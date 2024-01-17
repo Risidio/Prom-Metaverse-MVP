@@ -6,6 +6,7 @@ import Connect from "../Components/Wallet/ConnectToWallet"
 
 const SignIn = () => {
   return (
+    <main>
     <div className="welcome-background">
 
       <div className="welcome-logo"></div>
@@ -24,6 +25,7 @@ const SignIn = () => {
         </div>
       </div>
     </div>
+    </main>
   )
 }
 

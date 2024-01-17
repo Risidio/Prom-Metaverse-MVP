@@ -6,6 +6,7 @@ import SignupForm from "../Components/Forms/SignUp"
 
 const AccountCreation = () => {
   return (
+    <main>
     <div className="welcome-background">
 
       <div className="welcome-logo"></div>
@@ -24,6 +25,7 @@ const AccountCreation = () => {
         </div>
       </div>
     </div>
+    </main>
   )
 }
 

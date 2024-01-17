@@ -6,6 +6,7 @@ import Connect from "../Components/Wallet/ConnectToWallet";
 
 const Welcome = () => {
   return (
+    <main>
     <div className="welcome-background">
       <div className="logo"></div>
       <div className="welcome__message">
@@ -32,6 +33,7 @@ const Welcome = () => {
         </div>
       </div>
     </div>
+    </main>
   );
 };
 

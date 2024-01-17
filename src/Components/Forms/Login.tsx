@@ -20,7 +20,7 @@ const SigninForm = () => {
 
     const login = {email, password}
     try{
-      const response = await fetch(" https://b9ea-102-176-65-94.ngrok-free.app/auth/login",
+      const response = await fetch("https://b598-102-176-65-100.ngrok-free.app/auth/login",
       { 
         method: "POST",
         headers: {
@@ -34,7 +34,7 @@ const SigninForm = () => {
         const responseData = await response.json();
         toast.success("Login Successfully");
 
-        // Store the token in local storage
+        // Storing the token in local storage
         localStorage.setItem("token", responseData.data.token);
 
         setTimeout(() => {

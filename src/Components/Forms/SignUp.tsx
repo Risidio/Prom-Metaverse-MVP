@@ -23,7 +23,7 @@ const SignupForm = () => {
     }
     const register = {email, password}
     try{
-      const response = await fetch(" https://b9ea-102-176-65-94.ngrok-free.app/auth/signup",
+      const response = await fetch("https://b598-102-176-65-100.ngrok-free.app/auth/signup",
       { 
         method: "POST",
         headers: {
@@ -41,7 +41,7 @@ const SignupForm = () => {
         localStorage.setItem("token", responseData.data.token);
 
         setTimeout(() => {
-          navigate("/signin");
+          navigate("/");
         }, 600);
       } else {
         const errorData = await response.json();
@@ -87,7 +87,7 @@ const SignupForm = () => {
         </Link>
 
       </button>
-      <button type="submit" className="button--form">CREAT ACCOUNT</button>
+      <button type="submit" className="button--form">CREATE ACCOUNT</button>
 
 <ToastContainer />
     </form>

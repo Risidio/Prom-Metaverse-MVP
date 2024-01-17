@@ -1,19 +1,20 @@
-import { NavLink } from "react-router-dom";
+
 
 type Props = {
-  pathLink: string,
   className?: string,
-
+  text: string,
+  type?: "button" | "submit";
 }
 
-const RedButton: React.FC<Props> = ({ pathLink, className }) => {
+const RedButton: React.FC<Props> = ({ 
+
+  text, type, className }) => {
   return (
-    <NavLink to={pathLink}
-      className={`button button--red  ${className}`}>
-      <button className="button__container button__container--red button-text button-text--red">
-        Create an account
+
+      <button className= {`${className} bg-[#DC1720] rounded-full text-white font-jost text-[17px] font-semibold`} type={type}>
+        {text}
       </button>
-    </NavLink>
+
 
   );
 }

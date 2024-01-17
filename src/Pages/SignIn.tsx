@@ -10,7 +10,7 @@ const SignIn = () => {
 
       <div className="welcome-logo"></div>
       <Link to={"?"}>
-      <div className="welcome-question">?</div>
+        <div className="welcome-question">?</div>
       </Link>
       <div className="welcome__message welcome__message--form">
         <div className="welcome__message-container--form">
@@ -19,7 +19,7 @@ const SignIn = () => {
           </h1>
           <SigninForm />
 
-<Connect></Connect>
+          <Connect></Connect>
 
         </div>
       </div>

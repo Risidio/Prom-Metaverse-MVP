@@ -1,8 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
-import RedButton from "../Buttons/RedButton";
+// import RedButton from "../Buttons/RedButton";
 import TextInput from "../Inputs/TextInput";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import RedButton from "../Buttons/RedButton";
 
 
 const SigninForm = () => {
@@ -38,7 +39,7 @@ const SigninForm = () => {
         localStorage.setItem("token", responseData.data.token);
 
         setTimeout(() => {
-          navigate("/");
+          navigate("/character-creation");
         }, 600);
       } else {
         const errorData = await response.json();
@@ -70,15 +71,15 @@ const SigninForm = () => {
 
 
 
-      <button  className="form-button">
+<button className="form-button">
 
-        <RedButton pathLink="#submit" className="button--form"></RedButton>
+      <RedButton type="submit" className="h-[48px] w-[203px]" text="Login"/>
         <Link to="/" className="welcome__message-link">
           Already have an account ?
         </Link>
 
-      </button>
-      <button type="submit" className="button--form">LOGIN</button>
+</button>
+  
 
 <ToastContainer />
     </form>

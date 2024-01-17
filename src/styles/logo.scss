@@ -1,0 +1,18 @@
+.logo {
+  width: 54px;
+  height: 54px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  background-image: url('./assets/logo.svg');
+  position: fixed;
+  top: 21px;
+  left: 26px;
+
+  @include onDesktopSmall {
+    width: 84px;
+    height: 84px;
+  }
+}

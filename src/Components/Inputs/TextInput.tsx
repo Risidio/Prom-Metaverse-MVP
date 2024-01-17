@@ -26,7 +26,7 @@ const TextInput: React.FC<Props> = ({
         id={id}
         value={value}
         onChange={onChange}
-        className={`form-input ${className}`} />
+        className={`form-input ${className} outline-none`} />
     </label>
   )
 }

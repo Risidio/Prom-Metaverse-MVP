@@ -15,8 +15,6 @@ const SelectInput:React.FC<Props> = ({className, id, label }) => {
                   <option value="Photographer">Photographer</option>
                   <option value="Production-Artist">Production Artist</option>
                   <option value="Production-Designer">Production Designer</option>
-               
-                  
               </select>
           </label>
         );

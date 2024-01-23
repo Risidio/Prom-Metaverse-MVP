@@ -1,15 +1,22 @@
-import RedButton from "../Components/Buttons/RedButton";
-import ProfileForm from "../Components/Forms/profileForm";
+// import RedButton from "../Components/Buttons/RedButton";
+import ProfileForm from "../Components/Forms/ProfileForm";
 
 const CharacterCreation = () => {
   return (
-    <main>
-    <RedButton 
-    // pathLink="/onboarding"
-      text="Create my character"
-      className="button--character"></RedButton>
-      <ProfileForm />
-      </main>
+
+      <section className="character">
+<div className="logo"></div>
+
+<div className="character-container">
+<h1 className="character-title">
+About you
+{/* <br>
+</br> */}
+
+</h1>
+<ProfileForm></ProfileForm>
+</div>
+      </section>
   );
 }
 

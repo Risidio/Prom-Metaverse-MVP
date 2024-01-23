@@ -1,0 +1,30 @@
+.character {
+  width: 100%;
+  // height: 100vh;
+  background: linear-gradient(113deg, #FAE0A8 -0.25%, #FFC6CA 99.41%);
+
+  &-title {
+    color: var(--Secondary-L1, #FFF8D8);
+font-family: Jost;
+font-size: 150px;
+font-style: normal;
+font-weight: 900;
+line-height: 100%; /* 200px */
+letter-spacing: -2.2px;
+text-transform: uppercase;
+
+@include onDesktopBig {
+  font-size: 200px;
+}
+  }
+
+  &-container {
+    padding: 14px 90px;
+    position: relative;
+  }
+
+  &-avatar {
+    height: 500px;
+    
+  }
+}

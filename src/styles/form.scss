@@ -32,7 +32,13 @@
     font-weight: 500;
     display: block;
     text-align: left;
-    // padding-bottom: 4px;
+    padding-bottom: 4px;
+
+    &--cinema {
+      @include onDesktopBig {
+        padding-bottom: 14px;
+      }
+    }
   }
 
   &-input {
@@ -50,7 +56,7 @@
     outline-color: #FF8D96;
 
     @include onDesktopBig {
-      width: 405.635px;
+      // width: 405.635px; // doesn't work at character creation page  Its broken then
       height: 52px;
     }
 
@@ -74,13 +80,17 @@
 
     }
 
+    &--meta {
+      margin-bottom: 26px; //desktop
+    }
+
     &--color {
       cursor: pointer;
       width: 22px;
       height: 22px;
       border-radius: 4px;
       border: 1px solid var(--W, #FFF);
-      background-color: #FFF0A2;
+      // background-color: #FFF0A2;
     }
 
     &--button {
@@ -102,12 +112,16 @@
     height: 51px;
     background-color: transparent;
     border: none;
+
   }
 
   &__character {
     display: flex;
 
     justify-content: space-between;
+
+    position: relative;
+    align-items: center;
   }
 
   &__left-side {
@@ -117,9 +131,17 @@
     border-radius: 24px;
     padding: 74px 80px;
 
+    @include onDesktopBig {
+      width: 503px;
+      height: 545px;
+      flex-shrink: 0;
+    }
+
     &-industry {
       display: flex;
       flex-direction: column;
+
+      margin-bottom: 18px;
 
 
       &-buttons {
@@ -187,6 +209,25 @@
     }
 
 
+
+  }
+
+  &__center-side {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onDesktopBig {
+      width: 976px;
+      height: 976px;  
+    }
+
+    &-button {
+      width: 205px;
+      height: 81px;
+      border-color: #30374D;
+    }
 
   }
 }

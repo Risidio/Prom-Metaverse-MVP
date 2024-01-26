@@ -1,22 +1,24 @@
 // import RedButton from "../Components/Buttons/RedButton";
 import ProfileForm from "../Components/Forms/ProfileForm";
+import QuestionIcon from "../Components/Icons/Question";
 
 const CharacterCreation = () => {
   return (
 
-      <section className="character">
-<div className="logo"></div>
+    <section className="character">
+      <div className="logo"></div>
+      <QuestionIcon></QuestionIcon>
 
-<div className="character-container">
-<h1 className="character-title">
-About you
-{/* <br>
-</br> */}
-
-</h1>
-<ProfileForm></ProfileForm>
-</div>
-      </section>
+      <div className="character-container">
+        <h1 className="character-title">
+          About
+          <br>
+          </br>
+          you
+        </h1>
+        <ProfileForm></ProfileForm>
+      </div>
+    </section>
   );
 }
 

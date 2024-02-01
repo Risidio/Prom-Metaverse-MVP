@@ -1,7 +1,7 @@
  const Connect = () => {
   return (
     <>
-      <p className="welcome__message-connect">Connect to wallet</p>
+      <p className="welcome__message-connect">Log in with wallet</p>
       <div className="welcome__icon-container">
         <svg
           width="43"

@@ -1,4 +1,6 @@
 .logo {
+  display: none;
+
   width: 54px;
   height: 54px;
   background-position: center;
@@ -10,6 +12,10 @@
   position: fixed;
   top: 21px;
   left: 26px;
+
+  @include onTablet {
+    display: block;
+  }
 
   @include onDesktopSmall {
     width: 84px;

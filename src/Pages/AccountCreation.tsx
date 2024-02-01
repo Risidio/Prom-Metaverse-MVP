@@ -9,9 +9,9 @@ const AccountCreation = () => {
     <main>
     <div className="welcome-background">
 
-      <div className="welcome-logo"></div>
+      <div className="logo"></div>
       <Link to={"?"}>
-        <div className="welcome-question">?</div>
+        <div className="question">?</div>
       </Link>
       <div className="welcome__message welcome__message--form">
         <div className="welcome__message-container--form">

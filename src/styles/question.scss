@@ -1,0 +1,21 @@
+.question {
+  width: 41px;
+  height: 41px;
+  background-color: #fff;
+  border-radius: 50%;
+  color: #000;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+
+  position: fixed;
+  top: 21px;
+  right: 26px;
+
+  display: none;
+
+  @include onTablet {
+    display: block;
+  }
+}

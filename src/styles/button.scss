@@ -110,9 +110,21 @@
 
 .button {
   &--red {
-    width: 253.05px;
-height: 68px;
+    padding: 16px 50px;
+    font-size: 14px;
 
-margin: 0 auto;
+    @include onTablet {
+      font-size: 17px;
+    }
+  }
+
+  &--white {
+    padding: 10px 50px;
+    border: 1px solid var(--G2, #B6BAC4);
+
+    @include onTablet {
+      padding: 16px 50px;
+
+    }
   }
 }

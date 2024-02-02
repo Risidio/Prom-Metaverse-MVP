@@ -80,16 +80,20 @@ const SignupForm = () => {
           setConfirmPassword(e.target.value);
         }} />
 
-      <button className="form-button">
+      {/* <button className="form-button"> */}
 
-      <RedButton type="submit" className="h-[48px] w-[203px]" text="Create an account"/>
+      <RedButton type="submit"
+      className="mb-2"
+      //  className="h-[48px] w-[203px]" 
+       text="Create an account"/>
 
 
-        <Link to="/signin" className="welcome__message-link">
+        <Link to="/signin" className="welcome__message-link
+        welcome__message-link--create">
           Already have an account ?
         </Link>
 
-      </button>
+      {/* </button> */}
    
       <ToastContainer />
     </form>

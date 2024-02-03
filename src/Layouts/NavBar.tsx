@@ -10,8 +10,13 @@ import absent from '../assets/absent.svg';
 import offline from '../assets/offline.svg';
 
 import WhiteButton from "../Components/Buttons/WhiteButton";
-import Status from "../Components/Status/Status";
+import Status from "./Status/Status";
 import { useState } from "react";
+// import PopupMessage from "./PopupMessage";
+import MessagePopup from "./Popup/MessagePopup";
+import BagPopup from "./Popup/BagPopup";
+import FriendsPopup from "./Popup/FriendsPopup";
+import NotificationPopup from "./Popup/NotificationPopup";
 
 
 type Props = {
@@ -28,25 +33,42 @@ const Navbar: React.FC<Props> = (
   const [selectedStatus, setSelectedStatus] = useState<string>('online'); // State to store the selected status
   const [selectedStatusClass, setSelectedStatusClass] = useState('none');
 
+
+  const [popupVisibility, setPopupVisibility] = useState<{ [key: number]: boolean }>({});
+
+  const togglePopup = (index: number) => {
+    setPopupVisibility((prev) => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   const icons = [
     {
       iconName: 'message',
       iconPath: message,
+      PopupContent: MessagePopup,
     },
 
     {
       iconName: 'bag',
       iconPath: bag,
+      PopupContent: BagPopup,
+
     },
 
     {
       iconName: 'friends',
       iconPath: friends,
+      PopupContent: FriendsPopup,
+
     },
 
     {
       iconName: 'notification',
       iconPath: notification,
+      PopupContent: NotificationPopup,
+
     },
 
   ];
@@ -76,7 +98,6 @@ const Navbar: React.FC<Props> = (
 
   const showStatusBar = () => {
     setSelectedStatusClass(prevClass => (prevClass === 'block' ? 'none' : 'block'));
-    // setSelectedStatusClass('block');
   }
 
   return (
@@ -115,18 +136,33 @@ const Navbar: React.FC<Props> = (
       <div className="navbar__icons-container">
 
         {icons.map((icon, index) => {
+          const PopupContent = icon.PopupContent;
+
           return (
-            <Icon imgPath={icon.iconPath}
-              imgAlt={icon.iconName}
-              key={index} />
+            <>
+              <Icon
+                imgPath={icon.iconPath}
+                imgAlt={icon.iconName}
+                key={index}
+                onClick={() => togglePopup(index)}
+              />
+
+              {popupVisibility[index] && PopupContent && (
+                // Используем переменную с компонентом
+                <PopupContent key={index} />
+              )}
+            </>
+
+
           )
         })}
 
-        <WhiteButton pathLink="/fast-travel"
+        <WhiteButton
           text="Fast travel"
           className="button--fastTravel" />
 
       </div>
+
 
     </section>
   );

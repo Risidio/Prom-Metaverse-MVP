@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
 import SigninForm from "../Components/Forms/Login"
-import Connect from "../Components/Wallet/ConnectToWallet"
+import Connect from "../Layouts/Wallet/ConnectToWallet"
+import QuestionIcon from "../Components/Icons/Question"
 
 
 
@@ -9,11 +9,9 @@ const SignIn = () => {
     <main>
     <div className="welcome-background">
 
-      <div className="welcome-logo"></div>
-      <Link to={"?"}>
-        <div className="welcome-question">?</div>
-      </Link>
-      <div className="welcome__message welcome__message--form">
+      <div className="logo"></div>
+      <QuestionIcon></QuestionIcon>
+      <div className="welcome__message">
         <div className="welcome__message-container--form">
           <h1 className="welcome__message-title">
             Login into account

@@ -68,6 +68,9 @@
     &--2 {
       margin-bottom: 10px;
 
+      @include onDesktopBig {
+        margin-bottom: 64px;
+      }
     }
 
     &--3 {
@@ -77,6 +80,22 @@
         margin-bottom: 40px;
       }
 
+    }
+
+    &--4 {
+      @include onDesktopSmall {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--5 {
+      @include onDesktopSmall {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktopBig {
+        margin-bottom: 30px;
+      }
     }
 
     &--meta {
@@ -91,6 +110,103 @@
       border: 1px solid var(--W, #FFF);
       // background-color: #FFF0A2;
     }
+
+    &-skin {
+
+      &--1 {
+        background-color: #FFEBC2 !important;
+      }
+
+      &--2 {
+        background-color: #FFEBC2 !important;
+      }
+
+      &--3 {
+        background-color: #FFEBC2 !important;
+
+      }
+
+      &--4 {
+        background-color: #FFEBC2 !important;
+
+      }
+
+      &--5 {
+        background-color: #FFF0A2 !important;
+
+      }
+
+      &--6 {
+        background-color: #F66744 !important;
+      }
+
+      &--7 {
+        background-color: #734106 !important;
+      }
+
+      &--8 {
+        background-color: #543507 !important;
+      }
+
+      &--9 {
+        background-color: #301506 !important;
+      }
+
+      &--10 {
+        background-color: #000 !important;
+      }
+
+    }
+
+
+    &-hair {
+      &--1 {
+        background-color: #FFEBC2 !important;
+      }
+
+
+
+      &--2 {
+        background-color: #FFEBC2 !important;
+      }
+
+      &--3 {
+        background-color: #543507 !important;
+
+      }
+
+      &--4 {
+        background-color: #DC1720 !important;
+
+      }
+
+      &--5 {
+        background-color:#000 !important;
+
+      }
+
+      &--6 {
+        background-color: #111F51 !important;
+      }
+
+      &--7 {
+        background-color: #4194D0 !important;
+      }
+
+      &--8 {
+        background-color: #6A139F !important;
+      }
+
+      &--9 {
+        background-color: #EB9AD9 !important;
+      }
+
+      &--10 {
+        background-color:#D4251F !important;
+      }
+
+    }
+
 
     &--button {
       width: 296px;
@@ -219,7 +335,7 @@
 
     @include onDesktopBig {
       width: 976px;
-      height: 976px;  
+      height: 976px;
     }
 
     &-button {

@@ -9,27 +9,42 @@ import TransparentButton from '../Buttons/TransparentButton';
 
 const ProfileForm = () => {
 
-  const skinColorArray = [
-    // '#FFEBC2',
-    // '#FFEBC2',
-    // '#FFEBC2',
-    // '#F66744',
-    // '#734106',
-    // '#543507',
-    // '#734106',
-    // '#301506',
-    // '#000',
+  // const skinColorArray = [
+  //   // '#FFEBC2',
+  //   // '#FFEBC2',
+  //   // '#FFEBC2',
+  //   // '#F66744',
+  //   // '#734106',
+  //   // '#543507',
+  //   // '#734106',
+  //   // '#301506',
+  //   // '#000',
 
-    'bg-yellow-200',
-    'bg-yellow-200',
-    'bg-yellow-200',
-    'bg-orange-500',
-    'bg-brown-800',
-    'bg-brown-600',
-    'bg-orange-500',
-    'bg-brown-900',
-    'bg-black',
-    ]
+  //   'bg-yellow-200',
+  //   'bg-yellow-200',
+  //   'bg-yellow-200',
+  //   'bg-orange-500',
+  //   'bg-brown-800', // - 
+  //   'bg-brown-600', // - 
+  //   'bg-orange-500', // -
+  //   'bg-brown-900', // -
+  //   'bg-black', // -
+  //   ]
+
+  const colorArray = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+  ]
+
+
 
   return (
     <form className="form__character">
@@ -90,39 +105,14 @@ const ProfileForm = () => {
           <h1 className='form-title'>Skin</h1>
           <div className='form__right-side-colors-container'>
 
-            {skinColorArray.map((skinColor)=> {
+            {colorArray.map((skinColor) => {
               return (
                 <input type='button'
-                className={`form-input--color 
-                ${skinColor}
+                  className={`form-input--color
+                form-input-skin--${skinColor}
                 `}></input>
               )
             })}
-
-            {/* <input type="button" className='form-input--color
-            bg-[#000]'
-            value={ '#000'}
-            />
- */}
-            {/* <input type="button" className='form-input--color'
-            />
-            <input type="button" className='form-input--color'
-            />
-            <input type="button" className='form-input--color'
-            />
-            <input type="button" className='form-input--color'
-            />
-            <input type="button" className='form-input--color'
-            />
-            <input type="button" className='form-input--color'
-            />
-            <input type="button" className='form-input--color'
-            />
-            <input type="button" className='form-input--color'
-            />
-            <input type="button" className='form-input--color'
-            /> */}
-
           </div>
         </div>
 
@@ -134,36 +124,14 @@ const ProfileForm = () => {
 
           <div className='form__right-side-colors-container
           form__right-side-colors-container--hair'>
-            <input type="button" className='form-input--color'
-            // value="#ff0000"
-            />
-            <input type="button" className='form-input--color'
-            // value="#ff0000"
-            />
-            <input type="button" className='form-input--color'
-            // value="#ff0000"
-            />
-            <input type="button" className='form-input--color'
-            // value="#ff0000"
-            />
-            <input type="button" className='form-input--color'
-            // value="#ff0000"
-            />
-            <input type="button" className='form-input--color'
-            // value="#ff0000"
-            />
-            <input type="button" className='form-input--color'
-            // value="#ff0000"
-            />
-            <input type="button" className='form-input--color'
-            // value="#ff0000"
-            />
-            <input type="button" className='form-input--color'
-            // value="#ff0000"
-            />
-            <input type="button" className='form-input--color'
-            // value="#ff0000"
-            />
+            {colorArray.map((skinColor) => {
+              return (
+                <input type='button'
+                  className={`form-input--color
+                form-input-hair--${skinColor}
+                `}></input>
+              )
+            })}
 
           </div>
         </div>
@@ -198,10 +166,6 @@ const ProfileForm = () => {
 
         <RedButton text='Create my character' type='submit'
           className='button--red'></RedButton>
-
-
-
-
       </div>
 
 

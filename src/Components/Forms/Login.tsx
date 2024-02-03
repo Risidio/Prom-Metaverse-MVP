@@ -10,25 +10,25 @@ const SigninForm = () => {
 
   const navigate = useNavigate()
 
-  
+
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
 
-  
 
-  const handleAccountCreation = async(e: FormEvent) =>{
+
+  const handleAccountCreation = async (e: FormEvent) => {
     e.preventDefault()
 
-    const login = {email, password}
-    try{
+    const login = { email, password }
+    try {
       const response = await fetch("https://9b61-41-66-202-242.ngrok-free.app/auth/login",
-      { 
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(login),
-      }
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(login),
+        }
       );
 
       if (response.ok) {
@@ -57,31 +57,27 @@ const SigninForm = () => {
     <form className="form" onSubmit={handleAccountCreation}>
 
       <TextInput name="email" type="email" label="E-mail"
-        className="form-input--1"  value={email}
-        onChange={(e: ChangeEvent <HTMLInputElement>) => {
+        className="form-input--4" value={email}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => {
           setEmail(e.target.value)
-        }}/>
+        }} />
 
-      <p className="form-notification">PROM will never send you any email except for the account creation validation.</p>
 
       <TextInput name="password" type="password" label="Password"
-        className="form-input--2" value={password} onChange={(e: ChangeEvent <HTMLInputElement>) => {
+        className="form-input--5" value={password} onChange={(e: ChangeEvent<HTMLInputElement>) => {
           setPassword(e.target.value)
-        }}/>
+        }} />
+
+      <RedButton type="submit"
+        className="h-[48px] w-[203px] mb-3"
+        text="Login" />
 
 
+      <Link to="/account" className="welcome__message-link">
+        No account yet? Create an account
+      </Link>
 
-<button className="form-button">
-
-      <RedButton type="submit" className="h-[48px] w-[203px]" text="Login"/>
-        <Link to="/" className="welcome__message-link">
-          Already have an account ?
-        </Link>
-
-</button>
-  
-
-<ToastContainer />
+      <ToastContainer />
     </form>
   );
 }

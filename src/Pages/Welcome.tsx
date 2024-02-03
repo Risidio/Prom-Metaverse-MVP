@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import RedButton from "../Components/Buttons/RedButton";
 import WhiteButton from "../Components/Buttons/WhiteButton";
-import Connect from "../Components/Wallet/ConnectToWallet";
+import Connect from "../Layouts/Wallet/ConnectToWallet";
 
 
 const Welcome = () => {

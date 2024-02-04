@@ -22,8 +22,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
-
     }
 
     &-content {
@@ -31,6 +29,19 @@
       height: 84px;
       background-image: url('./assets/userIcon.svg');
       border-radius: 50%;
+
+      &--notification {
+        width: 61px;
+        height: 52px;
+
+        background-image: url('./assets/avatarSmall.svg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 0%;
+
+        margin-right: 28px;
+      }
+
     }
   }
 

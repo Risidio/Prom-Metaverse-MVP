@@ -105,9 +105,6 @@ const Navbar: React.FC<Props> = (
       <div className="navbar__img-container">
         <div className="navbar__img-content"></div>
 
-        {/* <div className="navbar__img-status-container">
-
-        </div> */}
       </div>
 
       <button className={`navbar__status`}

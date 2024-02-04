@@ -3,6 +3,12 @@
   width: 37px; /* Ширина треугольника */
   height: 37px; /* Высота треугольника */
   z-index: 0;
+
+  &--notification {
+    width: 7px; /* Ширина треугольника */
+    height: 7px; /* Высота треугольника */
+  
+  }
 }
 
 .triangle-up {
@@ -15,4 +21,15 @@
   top: 10px;
   left: 160px;
   transform: rotate(-180deg);
+
+  &--notification {
+    top: 10px;
+    z-index: -1;
+
+    border-left: 20px solid transparent; /* Измените размеры бордера, чтобы настроить ширину треугольника */
+    border-right: 20px solid transparent; /* Измените размеры бордера, чтобы настроить ширину треугольника */
+    border-bottom: 40px solid #fff; /* Измените цвет и высоту, чтобы настроить высоту и цвет треугольника */
+  
+
+  }
 }

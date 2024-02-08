@@ -1,6 +1,6 @@
 const MessagePopup = () => {
   return (
-    <div className="navbar__popup"> message 1</div>
+    <div>message</div>
   )
 }
 

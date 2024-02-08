@@ -2,12 +2,14 @@ type Props = {
   className?: string,
   text: string,
   type?: "button" | "submit",
+  onClick?: () => void;
 }
 
 const WhiteButton: React.FC<Props> = ({
   className,
   text,
   type,
+  onClick,
 
 }) => {
   return (
@@ -19,8 +21,11 @@ const WhiteButton: React.FC<Props> = ({
     text-[17px] 
     font-semibold
     button--white`}
-      type={type}>
+      type={type}
+      onClick={onClick}>
       {text}
+    
+
     </button>
 
   )

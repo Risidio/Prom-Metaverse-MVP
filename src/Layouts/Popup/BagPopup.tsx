@@ -1,6 +1,6 @@
 import WhiteButton from "../../Components/Buttons/WhiteButton";
 import TriangleDiv from "../../Components/TriangleDiv";
-import MovieCard from "../MovieCard/MovieCard";
+import MovieCard from "../Cards/MovieCard/MovieCard";
 
 const BagPopup = () => {
 

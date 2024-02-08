@@ -17,6 +17,7 @@ import MessagePopup from "./Popup/MessagePopup";
 import BagPopup from "./Popup/BagPopup";
 import FriendsPopup from "./Popup/FriendsPopup";
 import NotificationPopup from "./Popup/NotificationPopup";
+import FastTravelPopup from "./Popup/FastTravelPopup";
 
 
 type Props = {
@@ -35,13 +36,22 @@ const Navbar: React.FC<Props> = (
 
 
   const [popupVisibility, setPopupVisibility] = useState<{ [key: number]: boolean }>({});
+  const [popupMessageVisibility, setPopupMessageVisibility] = useState(false);
+  const [searchInput, setSearchInput] = useState('');
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(e.target.value);
+  };
   const togglePopup = (index: number) => {
     setPopupVisibility((prev) => ({
       ...prev,
       [index]: !prev[index]
     }));
   };
+
+  const showFastPopup = () => {
+    setPopupMessageVisibility(!popupMessageVisibility);
+  }
 
   const icons = [
     {
@@ -146,7 +156,9 @@ const Navbar: React.FC<Props> = (
 
               {popupVisibility[index] && PopupContent && (
                 // Используем переменную с компонентом
-                <PopupContent key={index} />
+                <PopupContent key={index} contactValue={searchInput}
+                  handleInputChange={handleInputChange}
+                />
               )}
             </>
 
@@ -156,7 +168,14 @@ const Navbar: React.FC<Props> = (
 
         <WhiteButton
           text="Fast travel"
-          className="button--fastTravel" />
+          className="button--fastTravel"
+          onClick={showFastPopup} />
+
+        {popupMessageVisibility &&
+          <FastTravelPopup></FastTravelPopup>
+
+        }
+
 
       </div>
 

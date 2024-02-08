@@ -1,0 +1,40 @@
+.profile {
+  width: 677px;
+height: 299px;
+border-radius: 37px;
+background: var(--W, #FFF);
+box-shadow: 0px 4px 32.7px 0px rgba(0, 0, 0, 0.11);
+position: absolute;
+padding: 20px 18px 40px 40px;
+
+
+&__user {
+
+  &-icon {
+    width: 84px;
+    height: 84px;
+    background-image: url('./assets/userIcon.svg');
+    border-radius: 50%;
+  
+  }
+
+  &-status {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #FFF;
+    box-sizing: border-box;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    bottom: -10px;
+    left: 35px;
+  }
+  
+}
+
+
+}

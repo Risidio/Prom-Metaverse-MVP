@@ -1,5 +1,5 @@
 import TriangleDiv from "../../Components/TriangleDiv";
-import NotificationCard from "../NotificationCard/NotificationCard";
+import NotificationCard from "../Cards/NotificationCard/NotificationCard";
 
 const NotificationPopup = () => {
   return (

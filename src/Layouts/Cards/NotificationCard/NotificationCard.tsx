@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useState } from "react";
-import TransparentButton from "../../Components/Buttons/TransparentButton";
-import RedButton from "../../Components/Buttons/RedButton";
+import TransparentButton from "../../../Components/Buttons/TransparentButton";
+import RedButton from "../../../Components/Buttons/RedButton";
 
 type Props = {
   userName: string,

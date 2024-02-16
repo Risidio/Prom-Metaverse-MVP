@@ -25,6 +25,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+      // position: relative;
+
+      &--profile {
+        position: relative;
+        bottom: 0;
+        left: 0;
+      }
     }
 
     &-content {
@@ -125,6 +133,11 @@
 
     bottom: -10px;
     left: 35px;
+
+    &--profile {
+      bottom: 0;
+      left: 65px;
+    }
   }
 
   &__popup {

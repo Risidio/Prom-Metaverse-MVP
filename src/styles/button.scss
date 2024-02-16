@@ -50,4 +50,50 @@
     color: #747474 !important;
     font-size: 12px !important;
   }
+
+  &--wallet {
+    border-radius: 38px;
+    border: 1px solid var(--G2, #B6BAC4);
+    display: inline-flex;
+    padding: 16px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &--my-profile {
+    display: inline-flex;
+    padding: 16px 50px;
+    height: 42px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 38px;
+    border: 1px solid var(--G2, #B6BAC4);
+  }
+
+  &--log-out {
+    border: none;
+  }
+
+  &--avatar {
+    padding: 0;
+    width: 200px;
+    height: 41px;
+    margin: 0 auto;
+  }
+
+  &--user-right {
+    padding: 0;
+    width: 117px;
+    height: 26px;
+    font-size: 12px !important;
+  }
+
+  &--edit {
+    width: 153px;
+    height: 51px;
+    color: #5B6179;
+    position: absolute;
+    right: 0;
+  }
 }

@@ -12,12 +12,19 @@ import offline from '../assets/offline.svg';
 import WhiteButton from "../Components/Buttons/WhiteButton";
 import Status from "./Status/Status";
 import { useState } from "react";
+import BagPopup from "./Popup/NavBarPopup/BagPopup";
+import FastTravelPopup from "./Popup/NavBarPopup/FastTravelPopup";
+import FriendsPopup from "./Popup/NavBarPopup/FriendsPopup";
+import MessagePopup from "./Popup/NavBarPopup/MessagePopup";
+import NotificationPopup from "./Popup/NavBarPopup/NotificationPopup";
+import ProfilePopup from "./Popup/NavBarPopup/ProfilePopup";
 // import PopupMessage from "./PopupMessage";
-import MessagePopup from "./Popup/MessagePopup";
-import BagPopup from "./Popup/BagPopup";
-import FriendsPopup from "./Popup/FriendsPopup";
-import NotificationPopup from "./Popup/NotificationPopup";
-import FastTravelPopup from "./Popup/FastTravelPopup";
+// import MessagePopup from "./Popup/NavBarPopups/MessagePopup";
+// import BagPopup from "./Popup/NavBarPopups/NavBarPopup/BagPopup";
+// import FriendsPopup from "./Popup/NavBarPopups/FriendsPopup";
+// import NotificationPopup from "./Popup/NavBarPopups/NotificationPopup";
+// import FastTravelPopup from "./Popup/NavBarPopups/NavBarPopup/FastTravelPopup";
+// import ProfilePopup from "./Popup/NavBarPopups/ProfilePopup";
 
 
 type Props = {
@@ -37,6 +44,7 @@ const Navbar: React.FC<Props> = (
 
   const [popupVisibility, setPopupVisibility] = useState<{ [key: number]: boolean }>({});
   const [popupMessageVisibility, setPopupMessageVisibility] = useState(false);
+  const [popupProfile, setPopupProfile] = useState(false);
   const [searchInput, setSearchInput] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,6 +59,10 @@ const Navbar: React.FC<Props> = (
 
   const showFastPopup = () => {
     setPopupMessageVisibility(!popupMessageVisibility);
+  }
+
+  const showProfilePopup = () => {
+    setPopupProfile(!popupProfile);
   }
 
   const icons = [
@@ -112,10 +124,17 @@ const Navbar: React.FC<Props> = (
 
   return (
     <section className="navbar">
-      <div className="navbar__img-container">
+      <button
+        onClick={showProfilePopup}
+        className="navbar__img-container">
         <div className="navbar__img-content"></div>
 
-      </div>
+
+      </button>
+
+      {popupProfile && <ProfilePopup
+          userName="User Name"></ProfilePopup>}
+
 
       <button className={`navbar__status`}
         onClick={showStatusBar}>

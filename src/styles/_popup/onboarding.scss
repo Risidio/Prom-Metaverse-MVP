@@ -1,0 +1,99 @@
+.onboarding-message {
+  position: relative;
+
+  border-radius: 37px;
+  background-color: #fff;
+  top: 20%;
+  left: 25%;
+
+
+  &--0 {
+    width: 677px;
+    height: 312px;
+  }
+
+  &--1 {
+    width: 751px;
+    height: 430px;
+  }
+
+  &--2 {
+    width: 677px;
+    height: 296px;
+  }
+
+
+  &--3 {
+    width: 677px;
+    height: 317px;
+  }
+
+  &--4 {
+    display: none;
+  }
+
+  &-title {
+    font-family: Jost;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    margin-bottom: 15px;
+
+    color: $Primary;
+
+  }
+
+  &-message {
+    font-family: Jost;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+
+
+  }
+
+  &-img {
+    width: 178px;
+    height: 178px;
+    border-radius: 50%;
+
+
+    position: absolute;
+
+    left: -80px;
+    top: 20px;
+
+    background-image: url('./assets/welcomeAvatar.svg');
+
+
+  }
+
+  &-container {
+    padding: 68px 79px 5px 150px;
+
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+     
+
+    &-button {
+      width: 51px;
+      height: 51px;
+      background-color: $Primary !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+
+    }
+  }
+}

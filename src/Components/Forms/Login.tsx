@@ -21,11 +21,13 @@ const SigninForm = () => {
 
     const login = { email, password }
     try {
-      const response = await fetch("https://9b61-41-66-202-242.ngrok-free.app/auth/login",
+      const response = await fetch("http://localhost:3619/auth/login",
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json", //always json
+              // "Authorization": `Bearer ${localStorage.get("token")}`, //token from a local storage
+              
           },
           body: JSON.stringify(login),
         }

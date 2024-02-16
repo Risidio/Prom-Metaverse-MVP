@@ -1,40 +1,108 @@
 .profile {
   width: 677px;
-height: 299px;
-border-radius: 37px;
-background: var(--W, #FFF);
-box-shadow: 0px 4px 32.7px 0px rgba(0, 0, 0, 0.11);
-position: absolute;
-padding: 20px 18px 40px 40px;
+  height: 299px;
+  border-radius: 37px;
+  background: var(--W, #FFF);
+  box-shadow: 0px 4px 32.7px 0px rgba(0, 0, 0, 0.11);
+  position: absolute;
+  padding: 40px 18px 40px 40px;
 
+  bottom: 130px;
+  left: -15px;
 
-&__user {
+  &__user {
 
-  &-icon {
-    width: 84px;
-    height: 84px;
-    background-image: url('./assets/userIcon.svg');
-    border-radius: 50%;
-  
+    &-icon {
+      width: 84px;
+      height: 84px;
+      background-image: url('./assets/userIcon.svg');
+      border-radius: 50%;
+
+    }
+
+    &-status {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-color: #FFF;
+      box-sizing: border-box;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      bottom: -10px;
+      left: 35px;
+    }
+
   }
 
-  &-status {
-    position: absolute;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background-color: #FFF;
-    box-sizing: border-box;
-  
+
+  &__info {
     display: flex;
     align-items: center;
-    justify-content: center;
-  
-    bottom: -10px;
-    left: 35px;
+    gap: 14px;
+    margin-bottom: 31px;
+
+    &-title {
+      color: var(--Primary, #DC1720);
+      text-align: center;
+      font-family: Jost;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: end;
+    }
+
+    &-level {
+      font-family: Jost;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 200%;
+
+      &--reward {
+        color: var(--G3, #979EA9);
+      }
+    }
   }
-  
-}
 
+  &__wallet {
+    width: 601px;
+    height: 100px;
+    border-radius: 8px;
+    background: var(--G1, #E8EBEF);
+    padding: 28px;
+    display: flex;
 
+    align-items: center;
+
+    &-img {
+      margin-right: 25px;
+    }
+
+    &-text {
+      color: var(--G4, #5B6179);
+      font-family: Jost;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 200%;
+      margin-right: 115px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+  }
 }

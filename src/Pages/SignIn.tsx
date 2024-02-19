@@ -18,7 +18,7 @@ const SignIn = () => {
           </h1>
           <SigninForm />
 
-          <Connect></Connect>
+          <Connect text="Log in with wallet"></Connect>
 
         </div>
       </div>

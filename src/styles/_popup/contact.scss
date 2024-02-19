@@ -2,7 +2,6 @@
   position: absolute;
   bottom: 105px;
 
-  // top: -630px;
   left: -15px;
 
   width: 366px;
@@ -49,6 +48,8 @@
       font-size: 16px;
       font-weight: 400;
       line-height: 200%;
+      outline: none;
+      color: #030D2E;
     }
 
     &-search-icon {
@@ -82,6 +83,7 @@
       flex-direction: column;
       padding-left: 23px;
     }
+
     &-title {
       color: var(--Primary, #DC1720);
       font-size: 16px;
@@ -104,11 +106,47 @@
 
     }
 
-    &-button{
+    &-button {
       width: 30.656px;
-height: 30px;
-flex-shrink: 0;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    &-status {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 10px;
+      left: 45px;
+
+      &--online {
+        background-color: #B0C147;
+      }
+
+      &--absent {
+        background-color: #F8A900;
+      }
+
+      &--offline {
+        display: none;
+      }
     }
   }
 
+  &__error {
+    &-text {
+      font-family: Jost;
+      font-size: 16px;
+      line-height: 200%;
+      font-weight: 300;
+      color: $G2;
+      text-align: center;
+    }
+
+    &-link {
+      color: $Primary;
+      text-decoration: underline;
+    }
+  }
 }

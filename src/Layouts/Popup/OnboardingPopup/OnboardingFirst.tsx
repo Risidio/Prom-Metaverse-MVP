@@ -1,36 +1,49 @@
 import { useState } from "react";
 import WhiteButton from "../../../Components/Buttons/WhiteButton";
+import TriangleDiv from "../../../Components/TriangleDiv";
 
 type Props = {
   textArray: string[];
-    userName?: string,
-    titleArray: string[];
-  }
+  userName?: string,
+  titleArray: string[];
+}
 const OnBoardingFirst: React.FC<Props> = ({
   textArray,
   userName,
   titleArray,
 }) => {
   const [onboardingIndex, setOnboardingIndex] = useState<number>(0);
+
+  const [showTriangle, setShowTriangle] = useState(false);
+
   const handleButtonClick = () => {
     setOnboardingIndex(prevIndex => prevIndex + 1);
-    };
+    setShowTriangle(true);
+    console.log(onboardingIndex);
+  };
+
+  const handleSkipClick = () => {
+    setOnboardingIndex(4);
+  }
   return (
-    
+
     <article className={`onboarding-message onboarding-message--${onboardingIndex}`}>
       <div className="onboarding-message-img"></div>
 
       <div className="onboarding-message-container">
         <h1 className="onboarding-message-title">
-        {titleArray[onboardingIndex]} {userName}        </h1>
+          {titleArray[onboardingIndex]} {userName}
+        </h1>
 
         <p className="onboarding-message-message">
-        {textArray[onboardingIndex]}        </p>
+          {textArray[onboardingIndex]}
+        </p>
       </div>
 
 
       <div className="onboarding-message__buttons">
         <WhiteButton text="Skip Tutorial"
+        onClick={handleSkipClick}
           type="button"></WhiteButton>
 
         <button type="button"
@@ -42,6 +55,8 @@ const OnBoardingFirst: React.FC<Props> = ({
 
         </button>
       </div>
+
+      {showTriangle && <TriangleDiv classNameSecond="triangle-up--travel"></TriangleDiv>}
     </article>
   )
 }

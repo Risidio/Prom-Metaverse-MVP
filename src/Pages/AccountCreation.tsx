@@ -19,7 +19,7 @@ const AccountCreation = () => {
           </h1>
           <SignupForm />
 
-          <Connect></Connect>
+          <Connect text="Log in with wallet"></Connect>
 
         </div>
       </div>

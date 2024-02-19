@@ -38,7 +38,7 @@ const Welcome = () => {
                 className="welcome__message-button--white"
                 text="Sign in"/>
             </Link>
-            <Connect></Connect>
+            <Connect text="Log in with wallet"></Connect>
           </div>
         </div>
       </div>

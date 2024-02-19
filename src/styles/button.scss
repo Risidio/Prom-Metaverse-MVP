@@ -96,4 +96,13 @@
     position: absolute;
     right: 0;
   }
+
+  &--wallet {
+    margin: 0 auto;
+    margin-top: 20px;
+
+    @include onDesktopBig {
+      margin-top: 60px;
+    }
+  }
 }

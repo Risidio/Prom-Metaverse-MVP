@@ -1,40 +1,30 @@
 import classNames from "classnames";
-import { useState } from "react";
 import TransparentButton from "../../../Components/Buttons/TransparentButton";
 import RedButton from "../../../Components/Buttons/RedButton";
 
 type Props = {
   userName: string,
   userActionDescription: string,
+  notificationType: 'add' | 'script',
 }
 
 const NotificationCard: React.FC<Props> = ({
   userName,
   userActionDescription,
+  notificationType,
 }) => {
 
-  const [activeButton, setActiveButton] = useState(false);
-  // const [buttonsVisible, setButtonsVisible] = useState(false);
-
-
-  const handlerClick = () => {
-    setActiveButton(!activeButton);
-
-
-  }
 
   const handlerAccept = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
-
   }
   return (
-    <button
+    <div
       className={classNames(
         "notification__card",
-        { "notification__card--active": activeButton }
+        { "notification__card--add": notificationType === 'add' }
       )}
-      type="button"
-      onClick={handlerClick}>
+    >
 
       <div className="notification__card-top">
         <div className="navbar__img-content navbar__img-content--notification"></div>
@@ -49,28 +39,26 @@ const NotificationCard: React.FC<Props> = ({
             {userName} {userActionDescription}
           </p>
 
+          <div
+            className={classNames(
+              "notification__card-buttons",
+              {
+                "notification__card-buttons--block": notificationType === 'add',
+              }
+            )}
+          >
+            <TransparentButton text="Deny"
+              className="button--transparent"
+              onClick={(event) => handlerAccept(event)} />
 
+            <RedButton text="Accept"
+              onClick={(event) => handlerAccept(event)}
+              className="button--accept" />
+          </div>
         </div>
       </div>
 
-      <div
-        className={classNames(
-          "notification__card-buttons",
-          {
-            "notification__card-buttons--block": activeButton,
-
-          }
-        )}
-      >
-        <TransparentButton text="Deny"
-          className="button--transparent"
-          onClick={(event) => handlerAccept(event)} />
-
-        <RedButton text="Accept"
-          onClick={(event) => handlerAccept(event)}
-          className="button--accept" />
-      </div>
-    </button>
+    </div>
   );
 }
 

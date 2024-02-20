@@ -28,22 +28,21 @@
 
     padding: 22px 17px 12px 13px;
 
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+    transition: all 0.3s;
+    cursor: pointer;
 
-    &--active {
-      background-color: #F7F7F7 !important;
-
-      width: 325px;
-      height: 153px;
-
+    &:hover {
+      background-color: #F7F7F7;
     }
 
+    &--add {
+      height: 150px;
+    }
 
     &-top {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 20px;
-
 
       &--text {
         flex-direction: column;
@@ -81,9 +80,8 @@
 
       &--block {
         display: flex;
+        margin-top: 15px;
       }
-
     }
   }
-
 }

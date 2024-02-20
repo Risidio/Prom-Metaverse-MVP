@@ -2,6 +2,8 @@ type Props = {
   userName: string,
   role: string,
   status: string,
+  handleCallVisibility: () => void,
+  onButtonClick: (userName: string) => void;
 };
 
 
@@ -9,6 +11,8 @@ const ContactCard: React.FC<Props> = ({
   userName,
   role,
   status,
+  handleCallVisibility,
+  onButtonClick,
 }) => {
   return (
     <div className="contact__card">
@@ -40,6 +44,10 @@ const ContactCard: React.FC<Props> = ({
         <button className="contact__card-button"
           type="button"
           name="call"
+          onClick={() => {
+            onButtonClick(userName);
+            handleCallVisibility();
+          }}
           disabled={status !== undefined && status !== 'online'}>
 
           {(status !== undefined && status !== 'online') ? (

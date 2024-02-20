@@ -10,26 +10,30 @@ const NotificationPopup = () => {
 
       <section className="notification__card-container">
         <NotificationCard
+          notificationType="add"
           userName="userName"
-          userActionDescription="want to add you in their contact list"/>
+          userActionDescription="want to add you in their contact list" />
 
         <NotificationCard
+          notificationType="script"
           userName="userName"
-          userActionDescription="Reviews your script 'script title"/>
+          userActionDescription="Reviews your script 'script title" />
 
         <NotificationCard
+          notificationType="script"
           userName="userName"
-          userActionDescription="Reviews your script 'script title"/>
+          userActionDescription="Reviews your script 'script title" />
 
         <NotificationCard
+          notificationType="script"
           userName="userName"
-          userActionDescription="Reviews your script 'script title"/>
+          userActionDescription="Reviews your script 'script title" />
 
 
       </section>
 
       <TriangleDiv classNameMain="triangle-container--notification"
-      classNameSecond="triangle-up--notification"></TriangleDiv>
+        classNameSecond="triangle-up--notification"></TriangleDiv>
 
     </article>
   )

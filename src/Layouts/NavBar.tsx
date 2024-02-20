@@ -18,23 +18,35 @@ import FriendsPopup from "./Popup/NavBarPopup/FriendsPopup";
 import MessagePopup from "./Popup/NavBarPopup/MessagePopup";
 import NotificationPopup from "./Popup/NavBarPopup/NotificationPopup";
 import ProfilePopup from "./Popup/NavBarPopup/ProfilePopup";
-// import PopupMessage from "./PopupMessage";
-// import MessagePopup from "./Popup/NavBarPopups/MessagePopup";
-// import BagPopup from "./Popup/NavBarPopups/NavBarPopup/BagPopup";
-// import FriendsPopup from "./Popup/NavBarPopups/FriendsPopup";
-// import NotificationPopup from "./Popup/NavBarPopups/NotificationPopup";
-// import FastTravelPopup from "./Popup/NavBarPopups/NavBarPopup/FastTravelPopup";
-// import ProfilePopup from "./Popup/NavBarPopups/ProfilePopup";
+
+type Collaborator = {
+  userName: string,
+  role: string,
+  status: string,
+}
 
 
 type Props = {
   userName: string,
   level: number,
+  contactValue: string,
+  handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+  handleCallVisibility: () => void,
+  collaborators: Collaborator[],
+  onButtonClick: (userName: string) => void;
+  showNoFound: boolean,
 }
 
 const Navbar: React.FC<Props> = (
   { userName,
     level,
+    contactValue,
+    handleInputChange,
+    handleCallVisibility,
+    collaborators,
+    onButtonClick,
+    showNoFound,
   }
 ) => {
 
@@ -45,11 +57,7 @@ const Navbar: React.FC<Props> = (
   const [popupVisibility, setPopupVisibility] = useState<{ [key: number]: boolean }>({});
   const [popupMessageVisibility, setPopupMessageVisibility] = useState(false);
   const [popupProfile, setPopupProfile] = useState(false);
-  const [searchInput, setSearchInput] = useState('');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchInput(e.target.value);
-  };
   const togglePopup = (index: number) => {
     setPopupVisibility((prev) => ({
       ...prev,
@@ -121,7 +129,6 @@ const Navbar: React.FC<Props> = (
   const showStatusBar = () => {
     setSelectedStatusClass(prevClass => (prevClass === 'block' ? 'none' : 'block'));
   }
-
   return (
     <section className="navbar">
       <button
@@ -174,10 +181,13 @@ const Navbar: React.FC<Props> = (
               />
 
               {popupVisibility[index] && PopupContent && (
-                // Используем переменную с компонентом
-                <PopupContent key={index} contactValue={searchInput}
-                  handleInputChange={handleInputChange}
-                />
+                <PopupContent key={index} contactValue={contactValue}
+                handleInputChange={handleInputChange}
+                handleCallVisibility={handleCallVisibility}
+                collaborators={collaborators} 
+                onButtonClick={onButtonClick}
+                showNoFound={showNoFound}
+                 />
               )}
             </>
 

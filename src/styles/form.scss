@@ -68,6 +68,9 @@
     &--2 {
       margin-bottom: 10px;
 
+      @include onDesktopBig {
+        margin-bottom: 64px;
+      }
     }
 
     &--3 {
@@ -77,6 +80,22 @@
         margin-bottom: 40px;
       }
 
+    }
+
+    &--4 {
+      @include onDesktopSmall {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--5 {
+      @include onDesktopSmall {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktopBig {
+        margin-bottom: 30px;
+      }
     }
 
     &--meta {
@@ -91,6 +110,103 @@
       border: 1px solid var(--W, #FFF);
       // background-color: #FFF0A2;
     }
+
+    &-skin {
+
+      &--1 {
+        background-color: #FFEBC2 !important;
+      }
+
+      &--2 {
+        background-color: #FFEBC2 !important;
+      }
+
+      &--3 {
+        background-color: #FFEBC2 !important;
+
+      }
+
+      &--4 {
+        background-color: #FFEBC2 !important;
+
+      }
+
+      &--5 {
+        background-color: #FFF0A2 !important;
+
+      }
+
+      &--6 {
+        background-color: #F66744 !important;
+      }
+
+      &--7 {
+        background-color: #734106 !important;
+      }
+
+      &--8 {
+        background-color: #543507 !important;
+      }
+
+      &--9 {
+        background-color: #301506 !important;
+      }
+
+      &--10 {
+        background-color: #000 !important;
+      }
+
+    }
+
+
+    &-hair {
+      &--1 {
+        background-color: #FFEBC2 !important;
+      }
+
+
+
+      &--2 {
+        background-color: #FFEBC2 !important;
+      }
+
+      &--3 {
+        background-color: #543507 !important;
+
+      }
+
+      &--4 {
+        background-color: #DC1720 !important;
+
+      }
+
+      &--5 {
+        background-color:#000 !important;
+
+      }
+
+      &--6 {
+        background-color: #111F51 !important;
+      }
+
+      &--7 {
+        background-color: #4194D0 !important;
+      }
+
+      &--8 {
+        background-color: #6A139F !important;
+      }
+
+      &--9 {
+        background-color: #EB9AD9 !important;
+      }
+
+      &--10 {
+        background-color:#D4251F !important;
+      }
+
+    }
+
 
     &--button {
       width: 296px;
@@ -128,12 +244,20 @@
     height: 450px;
     background: var(--W, #FFF);
     border-radius: 24px;
-    padding: 74px 80px;
+    padding: 34px 40px;
+    position: relative;
+
+    z-index: 23;
+
+    top: -130px;
+
 
     @include onDesktopBig {
       width: 503px;
       height: 545px;
       flex-shrink: 0;
+      padding: 74px 80px;
+
     }
 
     &-industry {
@@ -217,9 +341,19 @@
     flex-direction: column;
     align-items: center;
 
+
+    position: relative;
+
+    top: -200px;
+
+    z-index: 0;
+
+    // width: 500px; //
+    // height: 500px; //
+ 
     @include onDesktopBig {
       width: 976px;
-      height: 976px;  
+      height: 976px;
     }
 
     &-button {

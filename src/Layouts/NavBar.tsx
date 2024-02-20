@@ -10,43 +10,95 @@ import absent from '../assets/absent.svg';
 import offline from '../assets/offline.svg';
 
 import WhiteButton from "../Components/Buttons/WhiteButton";
-import Status from "../Components/Status/Status";
+import Status from "./Status/Status";
 import { useState } from "react";
+import BagPopup from "./Popup/NavBarPopup/BagPopup";
+import FastTravelPopup from "./Popup/NavBarPopup/FastTravelPopup";
+import FriendsPopup from "./Popup/NavBarPopup/FriendsPopup";
+import MessagePopup from "./Popup/NavBarPopup/MessagePopup";
+import NotificationPopup from "./Popup/NavBarPopup/NotificationPopup";
+import ProfilePopup from "./Popup/NavBarPopup/ProfilePopup";
+
+type Collaborator = {
+  userName: string,
+  role: string,
+  status: string,
+}
 
 
 type Props = {
   userName: string,
   level: number,
+  contactValue: string,
+  handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+  handleCallVisibility: () => void,
+  collaborators: Collaborator[],
+  onButtonClick: (userName: string) => void;
+  showNoFound: boolean,
 }
 
 const Navbar: React.FC<Props> = (
   { userName,
     level,
+    contactValue,
+    handleInputChange,
+    handleCallVisibility,
+    collaborators,
+    onButtonClick,
+    showNoFound,
   }
 ) => {
 
   const [selectedStatus, setSelectedStatus] = useState<string>('online'); // State to store the selected status
   const [selectedStatusClass, setSelectedStatusClass] = useState('none');
 
+
+  const [popupVisibility, setPopupVisibility] = useState<{ [key: number]: boolean }>({});
+  const [popupMessageVisibility, setPopupMessageVisibility] = useState(false);
+  const [popupProfile, setPopupProfile] = useState(false);
+
+  const togglePopup = (index: number) => {
+    setPopupVisibility((prev) => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
+  const showFastPopup = () => {
+    setPopupMessageVisibility(!popupMessageVisibility);
+  }
+
+  const showProfilePopup = () => {
+    setPopupProfile(!popupProfile);
+  }
+
   const icons = [
     {
       iconName: 'message',
       iconPath: message,
+      PopupContent: MessagePopup,
     },
 
     {
       iconName: 'bag',
       iconPath: bag,
+      PopupContent: BagPopup,
+
     },
 
     {
       iconName: 'friends',
       iconPath: friends,
+      PopupContent: FriendsPopup,
+
     },
 
     {
       iconName: 'notification',
       iconPath: notification,
+      PopupContent: NotificationPopup,
+
     },
 
   ];
@@ -76,18 +128,20 @@ const Navbar: React.FC<Props> = (
 
   const showStatusBar = () => {
     setSelectedStatusClass(prevClass => (prevClass === 'block' ? 'none' : 'block'));
-    // setSelectedStatusClass('block');
   }
-
   return (
     <section className="navbar">
-      <div className="navbar__img-container">
+      <button
+        onClick={showProfilePopup}
+        className="navbar__img-container">
         <div className="navbar__img-content"></div>
 
-        {/* <div className="navbar__img-status-container">
 
-        </div> */}
-      </div>
+      </button>
+
+      {popupProfile && <ProfilePopup
+          userName="User Name"></ProfilePopup>}
+
 
       <button className={`navbar__status`}
         onClick={showStatusBar}>
@@ -115,18 +169,45 @@ const Navbar: React.FC<Props> = (
       <div className="navbar__icons-container">
 
         {icons.map((icon, index) => {
+          const PopupContent = icon.PopupContent;
+
           return (
-            <Icon imgPath={icon.iconPath}
-              imgAlt={icon.iconName}
-              key={index} />
+            <>
+              <Icon
+                imgPath={icon.iconPath}
+                imgAlt={icon.iconName}
+                key={index}
+                onClick={() => togglePopup(index)}
+              />
+
+              {popupVisibility[index] && PopupContent && (
+                <PopupContent key={index} contactValue={contactValue}
+                handleInputChange={handleInputChange}
+                handleCallVisibility={handleCallVisibility}
+                collaborators={collaborators} 
+                onButtonClick={onButtonClick}
+                showNoFound={showNoFound}
+                 />
+              )}
+            </>
+
+
           )
         })}
 
-        <WhiteButton pathLink="/fast-travel"
+        <WhiteButton
           text="Fast travel"
-          className="button--fastTravel" />
+          className="button--fastTravel"
+          onClick={showFastPopup} />
+
+        {popupMessageVisibility &&
+          <FastTravelPopup></FastTravelPopup>
+
+        }
+
 
       </div>
+
 
     </section>
   );

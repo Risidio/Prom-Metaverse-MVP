@@ -2,8 +2,11 @@
   position: fixed;
   bottom: 15px;
   left: 8%;
+  // min-width: 600px;
+  width: 85%;
 
-  width: 1244px;
+  // max-width: 1244px;
+
   height: 80px;
   border-radius: 20px;
   background: var(--W, #FFF);
@@ -23,7 +26,13 @@
       justify-content: center;
       align-items: center;
 
+      // position: relative;
 
+      &--profile {
+        position: relative;
+        bottom: 0;
+        left: 0;
+      }
     }
 
     &-content {
@@ -31,6 +40,30 @@
       height: 84px;
       background-image: url('./assets/userIcon.svg');
       border-radius: 50%;
+
+      &--notification {
+        width: 61px;
+        height: 52px;
+
+        background-image: url('./assets/avatarSmall.svg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 0%;
+
+        margin-right: 28px;
+      }
+
+      &--contact {
+        width: 61px;
+        height: 61px;
+
+        background-image: url('./assets/avatarSmall.svg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 0%;
+
+      }
+
     }
   }
 
@@ -100,5 +133,16 @@
 
     bottom: -10px;
     left: 35px;
+
+    &--profile {
+      bottom: 0;
+      left: 65px;
+    }
+  }
+
+  &__popup {
+    width: 100px;
+    height: 100px;
+    background-color: #B6BAC4;
   }
 }

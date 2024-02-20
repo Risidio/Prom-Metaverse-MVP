@@ -1,0 +1,50 @@
+.call {
+  padding: 50px 40px 47px;
+  width: 518px;
+  height: 180px;
+  border-radius: 37px;
+
+  backdrop-filter: blur(16.149999618530273px);
+  background: rgba(255, 255, 255, 0.799);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: absolute;
+top: 13px;
+right: 13px;
+
+
+  &--none {
+    display: none;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &-img {
+    width: 83px;
+    height: 83px;
+    border-radius: 50%;
+    background-image: url('./assets/userIcon.svg');
+    background-position: center;
+    background-size: cover;
+    margin-right: 15px;
+  }
+
+  &__text {
+    font-family: Jost;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 151%;
+
+    &-title {
+      line-height: 112%;
+      font-size: 17px;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,32 +1,15 @@
-// import { NavLink } from "react-router-dom"
-
-// const WhiteButton = () => {
-//   return (
-//     <NavLink to={'/signin'}
-//       className="button button--white">
-//       <button className="button__container button__container--white
-//   button-text button-text--white">
-//         Sign in
-//       </button>
-//     </NavLink>
-
-
-//   )
-// }
-
-// export default WhiteButton
-
-
 type Props = {
   className?: string,
   text: string,
   type?: "button" | "submit",
+  onClick?: () => void;
 }
 
 const WhiteButton: React.FC<Props> = ({
   className,
   text,
   type,
+  onClick,
 
 }) => {
   return (
@@ -38,18 +21,12 @@ const WhiteButton: React.FC<Props> = ({
     text-[17px] 
     font-semibold
     button--white`}
-   type={type}>
-   {text}
- </button>
+      type={type}
+      onClick={onClick}>
+      {text}
+    
 
-  //   <NavLink to={pathLink}
-  //     className="button button--white">
-  //     <button className={`button__container button__container--white
-  // button-text button-text--white ${className}`}>
-  //       {text}
-  //     </button>
-  //   </NavLink>
-
+    </button>
 
   )
 }

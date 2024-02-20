@@ -6,6 +6,7 @@ import SignIn from "./Pages/SignIn";
 import 'react-toastify/dist/ReactToastify.css';
 import CharacterCreation from "./Pages/ChatacterCreation";
 import OnBoarding from "./Pages/Onboarding";
+import InvalidWallet from "./Layouts/Wallet/InvalidWallet";
 
 
 function App() {
@@ -24,10 +25,15 @@ function App() {
 
           <Route
             path="/account"
-            element={(
-              <AccountCreation />
-            )}
+            element={<AccountCreation />} />
+
+
+          <Route
+            path="invalid-wallet"
+            element={<InvalidWallet />}
           />
+
+
           <Route
             path="/signin"
             element={(

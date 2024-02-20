@@ -4,11 +4,14 @@ type Props = {
   className?: string,
   text: string,
   type?: "button" | "submit";
-}
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;}
 
 const RedButton: React.FC<Props> = ({
 
-  text, type, className }) => {
+  text,
+   type, 
+   className, 
+  onClick }) => {
   return (
 
     <button className={`${className}
@@ -19,8 +22,10 @@ const RedButton: React.FC<Props> = ({
        text-[17px] 
        font-semibold
        button--red`}
-      type={type}>
+      type={type}
+      onClick={onClick}>
       {text}
+      
     </button>
 
 

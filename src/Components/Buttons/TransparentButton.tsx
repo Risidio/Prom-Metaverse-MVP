@@ -1,7 +1,8 @@
 type Props = {
   className?: string,
   text: string,
-  type?: "button" | "submit";
+  type?: "button" | "submit",
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void,
 }
 
 
@@ -9,6 +10,7 @@ const TransparentButton: React.FC<Props> = ({
   className,
   text,
   type,
+  onClick
 }) => {
 
   return (
@@ -20,7 +22,8 @@ const TransparentButton: React.FC<Props> = ({
       font-semibold
       border border-solid border-1`
     }
-      type={type}>
+      type={type}
+      onClick={onClick}>
       {text}
     </button>
 

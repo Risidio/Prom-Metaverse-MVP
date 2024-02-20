@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const QuestionIcon = () => {
   return (
     <Link to={"/?"}>
-      <div className="welcome-question">?</div>
+      <div className="question">?</div>
     </Link>
 
   );

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import RedButton from "../Components/Buttons/RedButton";
 import WhiteButton from "../Components/Buttons/WhiteButton";
-import Connect from "../Components/Wallet/ConnectToWallet";
+import Connect from "../Layouts/Wallet/ConnectToWallet";
 
 
 const Welcome = () => {
@@ -38,7 +38,7 @@ const Welcome = () => {
                 className="welcome__message-button--white"
                 text="Sign in"/>
             </Link>
-            <Connect></Connect>
+            <Connect text="Log in with wallet"></Connect>
           </div>
         </div>
       </div>

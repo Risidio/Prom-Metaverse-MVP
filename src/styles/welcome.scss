@@ -1,6 +1,7 @@
 .welcome {
   &-background {
-    background-image: url('./assets/background.png');
+    background-image: url('./assets/backgroundNew.png') !important;
+
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -54,6 +55,8 @@
 
       }
     }
+
+    
 
     &-container {
       padding: 50px 45px;

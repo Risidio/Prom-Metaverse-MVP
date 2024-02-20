@@ -11,11 +11,6 @@
 @import '../src/styles/_utils/vars';
 @import '../src/styles/_utils/mixins';
 
-// @import 'tailwindcss/base';
-// @import 'tailwindcss/components';
-// @import 'tailwindcss/utilities';
-
-
 
 @import '../src/styles/welcome.scss';
 @import '../src/styles/page.scss';
@@ -27,3 +22,14 @@
 @import "./styles/logo.scss";
 @import "./styles/character.scss";
 @import "./styles/question.scss";
+@import "./styles/_popup/bag.scss";
+@import "./styles/moviecard.scss";
+@import "./styles/triangle.scss";
+@import "./styles/_popup/notification.scss";
+@import "./styles/_popup/contact.scss";
+@import "./styles/_popup/fastTravel.scss";
+@import "./styles/_popup/profile.scss";
+@import "./styles/_popup/user.scss";
+@import './styles/_popup/onboarding.scss';
+@import './styles/wallet.scss';
+@import './styles/_popup/call.scss';

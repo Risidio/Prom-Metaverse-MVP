@@ -181,7 +181,7 @@
       }
 
       &--5 {
-        background-color:#000 !important;
+        background-color: #000 !important;
 
       }
 
@@ -202,7 +202,7 @@
       }
 
       &--10 {
-        background-color:#D4251F !important;
+        background-color: #D4251F !important;
       }
 
     }
@@ -215,6 +215,7 @@
       border-radius: 36px;
       background: var(--W, #FFF) !important;
       box-shadow: 0px 1px 11px 2px rgba(0, 0, 0, 0.00);
+      margin: 0 17px;
     }
 
 
@@ -233,11 +234,23 @@
   &__character {
     display: flex;
 
-    justify-content: space-between;
+    // justify-content: space-between;
 
     position: relative;
     align-items: center;
+
+    position: relative;
+
+    top: -230px;
+
+    @include onDesktopBig {
+      top: -190px;
+
+    }
   }
+
+
+
 
   &__left-side {
     width: 403px;
@@ -247,9 +260,10 @@
     padding: 34px 40px;
     position: relative;
 
-    z-index: 23;
+    z-index: 1;
 
-    top: -130px;
+    top: -60px;
+    left: 50px;
 
 
     @include onDesktopBig {
@@ -298,12 +312,25 @@
     display: flex;
     flex-direction: column;
 
+    position: relative;
+
+    top: -150px;
+
+    @include onDesktopBig {
+      position: static;
+    }
+
 
     &-colors {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+
+      @include onDesktopBig {
+        margin-bottom: 40px;
+
+      }
 
       &-container {
         display: flex;
@@ -321,46 +348,109 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+
+      @include onDesktopBig {
+        margin-bottom: 40px;
+
+      }
     }
 
     &-top {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+
+      @include onDesktopBig {
+        margin-bottom: 40px;
+
+      }
+    }
+
+
+    &-buttons {
+      display: flex;
+      align-items: center;
+    }
+
+
+    &-red-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
 
 
   }
 
-  &__center-side {
+  &__center {
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    &-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
 
-    position: relative;
+      // position: relative;
 
-    top: -200px;
+      // top: -200px;
 
-    z-index: 0;
+      z-index: 0;
+
+
+      &-button {
+        width: 205px;
+        height: 81px;
+        border-color: #30374D;
+        position: relative;
+
+        bottom: 320px;
+
+        @include onDesktopBig {
+          bottom: 200px;
+
+        }
+
+
+        // top: -150px;
+      }
+
+
+    }
+
+
+    &-img {
+      background-size: cover;
+      // background-size: 110%;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      // background-color: #111F51;
+
+      // z-index: -4;
+      background-image: url('./assets/avatar.svg');
+
+      width: 376px;
+      height: 940px;
+
+      position: relative;
+      top: -150px;
+    }
+
 
     // width: 500px; //
     // height: 500px; //
- 
+
     @include onDesktopBig {
-      width: 976px;
+      width: 676px;
       height: 976px;
+
+      top: -170px;
+
     }
 
-    &-button {
-      width: 205px;
-      height: 81px;
-      border-color: #30374D;
-    }
 
   }
 }

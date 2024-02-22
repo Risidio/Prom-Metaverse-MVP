@@ -9,6 +9,14 @@
 
   z-index: 2;
 
+  @include onDesktopBig {
+    width: 1525px;
+    height: 945px;
+
+    bottom: 80%;
+    left: 0%;
+  }
+
 
   &__top {
     display: flex;
@@ -35,6 +43,11 @@
     box-shadow: 0px 4px 55.4px 0px rgba(0, 0, 0, 0.64);
     border-radius: 0px 0px 20px 20px;
 
+
+    @include onDesktopBig {
+      height: 897px;
+    }
+
   }
 
   &__left {
@@ -47,7 +60,7 @@
 
     @include onDesktopBig {
       padding: 81px 42px 21px;
-
+      height: 897px;
     }
 
     &-title {
@@ -77,6 +90,11 @@
 
     }
 
+    &-button {
+      display: flex;
+      justify-content: center;
+    }
+
     &-item {
       color: black;
       position: relative;
@@ -103,6 +121,11 @@
       background-size: cover;
       margin-bottom: 15px;
 
+      @include onDesktopBig {
+        height: 709px;
+        margin: 0;
+      }
+
     }
   }
 
@@ -120,7 +143,10 @@
         display: flex;
         gap: 16px;
         margin-bottom: 22px;
+      }
 
+      &--settings {
+        position: relative;
       }
     }
 
@@ -139,6 +165,36 @@
         text-decoration: underline;
       }
     }
+
+    &-settings {
+      width: 208px;
+      height: 119px;
+      background-color: #FFF;
+      border-radius: 11px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+      padding: 14px 7px 0;
+      position: absolute;
+      z-index: 1;
+      right: 8%;
+      top: 200px;
+
+      &-option {
+        font-family: Jost;
+        font-size: 13px;
+        width: 100%;
+        border-radius: 7px;
+        line-height: 200%;
+        margin-bottom: 5px;
+        transition: all 0.3s;
+
+        &:hover {
+          background-color: $G1;
+
+        }
+
+      }
+    }
+
   }
 
 
@@ -205,6 +261,43 @@
       width: 200px;
       background-position: center;
       background-size: cover;
+    }
+  }
+
+
+  &__password {
+    width: 567px;
+    height: 634px;
+    background-color: #FFF;
+    border-radius: 24px;
+    padding: 66px 80px;
+
+    position: absolute;
+
+    top: 0%;
+    left: 25%;
+
+    @include onDesktopBig {
+      top: 25%;
+      left: 35%;
+    }
+
+    &-title {
+      font-family: Jost;
+      font-size: 36px;
+      line-height: 150%;
+      font-weight: 200;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    &-form {
+      &-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+      }
     }
   }
 }

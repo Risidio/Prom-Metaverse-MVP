@@ -26,8 +26,8 @@ const FriendsPopup: React.FC<Props> = ({
 }) => {
 
   return (
-    <article 
-    className="contact"
+    <article
+      className="contact"
     >
 
       <form className="contact__form"
@@ -41,8 +41,8 @@ const FriendsPopup: React.FC<Props> = ({
             className="button--contact"
             type="button"
             text="Add Contact"
-            onClick={onButtonClickAdd} 
-            />
+            onClick={onButtonClickAdd}
+          />
 
         </div>
 
@@ -87,7 +87,6 @@ const FriendsPopup: React.FC<Props> = ({
                 className='contact__error-text contact__error-link'>
                 search for user
               </NavLink></>
-
           )
         }
 

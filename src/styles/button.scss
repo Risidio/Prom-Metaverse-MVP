@@ -80,6 +80,11 @@
     width: 200px;
     height: 41px;
     margin: 0 auto;
+
+    @include onDesktopBig {
+      position: relative;
+      bottom: 40px;
+    }
   }
 
   &--user-right {
@@ -115,5 +120,11 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 112%;
+  }
+
+  &--create-character {
+    width: 253px;
+    height: 51px;
+    padding: 0;
   }
 }

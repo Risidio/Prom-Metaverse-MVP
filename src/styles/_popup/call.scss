@@ -12,12 +12,24 @@
   justify-content: space-between;
 
   position: absolute;
-top: 13px;
-right: 13px;
+  top: 13px;
+  right: 13px;
 
 
   &--none {
     display: none;
+  }
+
+  &--active{
+    top: 30%;
+    left: 13px;
+
+  }
+
+  &--incoming {
+    top: 13px;
+    left: 13px;
+  
   }
 
   &__left {
@@ -45,6 +57,32 @@ right: 13px;
       line-height: 112%;
       font-size: 17px;
       font-weight: 500;
+    }
+
+    &-active {
+      font-size: 14px;
+      color: $Primary;
+      font-weight: 500;
+    }
+
+    &-duration {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 18px;
+
+    &-text {
+      font-family: Jost;
+      font-size: 14px;
+      line-height: 200%;
+      color: #5B6179;
+      font-weight: 300;
+
     }
   }
 }

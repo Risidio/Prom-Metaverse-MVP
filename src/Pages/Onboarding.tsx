@@ -3,84 +3,20 @@ import QuestionIcon from "../Components/Icons/Question";
 import Navbar from "../Layouts/NavBar";
 import OutgoingCall from "../Layouts/Popup/Call/OutgoingCall";
 import OnBoardingFirst from "../Layouts/Popup/OnboardingPopup/OnboardingFirst";
+import IncomingCall from "../Layouts/Popup/Call/IncomingCall";
+import ActiveCall from "../Layouts/Popup/Call/ActiveCall";
+import { collaboratorsArray, textArray, titleArray, users } from "../utils/arrays/arrays";
 
 const OnBoarding = () => {
-
-  const titleArray = [
-    'Hi {Username}',
-    'Your Profile',
-    'Tools',
-    'Screenwriter building',
-  ];
-
-  const textArray = [
-    'My name is Alex, and I’m here to help you with your journey in the people’s republic of movies. Let’s create the future of movie together.',
-    `You will find your profile here, you can edit your information and keep track of your level. You earn experience every time you take action to grow PROM, and when you have enough experience, you gain a level and reward to thank you for your contribution.`,
-    'Here you’ll find useful tools at your disposal to travel faster, contact partners or look at your work!',
-    'In this first version, PROM focuses on tools to help screenwriters. When you are ready, you can click on the building to enter inside. '
-  ];
-  const collaboratorsArray = [
-    {
-      userName: 'Peter',
-      role: 'Investor',
-      status: 'online'
-    },
-    {
-      userName: 'Celine',
-      role: 'Movie director',
-      status: 'online'
-    },
-    {
-      userName: 'Nataliia',
-      role: 'Screenwriter',
-      status: 'absent'
-    },
-    {
-      userName: 'Preye',
-      role: 'Actor',
-      status: 'offline'
-    },
-    {
-      userName: 'David',
-      role: 'Screenwriter',
-      status: 'offline'
-    },
-    {
-      userName: 'Zanjeel',
-      role: 'Screenwriter',
-      status: 'offline'
-    },
-    {
-      userName: 'Olaide',
-      role: 'Screenwriter',
-      status: 'offline'
-    },
-    {
-      userName: 'User7',
-      role: 'Screenwriter',
-      status: 'offline'
-    },
-    {
-      userName: 'User8',
-      role: 'Screenwriter',
-      status: 'offline'
-    },
-    {
-      userName: 'User9',
-      role: 'Screenwriter',
-      status: 'offline'
-    },
-    {
-      userName: 'User10',
-      role: 'Screenwriter',
-      status: 'offline'
-    },
-  ]
-
-
   const [callVisibility, setCallVisibility] = useState(false);
   const [selectedUser, setSelectedUser] = useState('');
+  const [fetchedCollaboratos, setFetchedCollaborators] = useState(collaboratorsArray);
   const [noFound, setNoFound] = useState(false);
+  const [noFoundUser, setNoFoundUser] = useState(false);
+
+
+  const [searchInput, setSearchInput] = useState('');
+  const [searchInputUsers, setSearchInputUsers] = useState('');
 
   const handleCallVisibility = () => {
     setCallVisibility(!callVisibility);
@@ -90,17 +26,46 @@ const OnBoarding = () => {
     setSelectedUser(userName);
   };
 
-  const [searchInput, setSearchInput] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
   };
 
+  const handleInputChangeUsers = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInputUsers(e.target.value);
+  };
 
-  const filteredCollaborators = collaboratorsArray
+
+
+
+  const filteredCollaborators = fetchedCollaboratos
     .filter(collaborator => collaborator.userName
       .toLowerCase()
       .includes(searchInput.toLowerCase()));
+
+  const filteredUsers = users
+    .filter(user => user.userName
+      .toLowerCase()
+      .includes(searchInputUsers.toLowerCase()));
+
+
+
+  const handleAddUser = (userName: string, role: string, status: string) => {
+    // Check if the user is not already in the collaboratorsArray
+    if (!collaboratorsArray.some(collaborator => collaborator.userName === userName)) {
+      // Add a new collaborator with the provided userName, role, and status
+      const newUser = {
+        userName,
+        role,  // You can provide a default role for the new user
+        status,  // You can provide a default status for the new user
+      };
+
+      // Update the collaboratorsArray using the state setter
+      setFetchedCollaborators(prevCollaborators => [...prevCollaborators, newUser]);
+
+      console.log(1);
+    }
+  };
 
 
   useEffect(() => {
@@ -110,6 +75,15 @@ const OnBoarding = () => {
       setNoFound(false);
     }
   }, [filteredCollaborators]);
+
+  useEffect(() => {
+    if (filteredUsers.length > 0) {
+      setNoFoundUser(true);
+    } else {
+      setNoFoundUser(false);
+    }
+  }, [filteredUsers]);
+
 
   return (
     <main>
@@ -121,13 +95,20 @@ const OnBoarding = () => {
           textArray={textArray}
           titleArray={titleArray}></OnBoardingFirst>
         <Navbar userName="userName"
-          level={1}
-          contactValue={searchInput}
-          handleInputChange={handleInputChange}
-          handleCallVisibility={handleCallVisibility}
-          collaborators={filteredCollaborators}
-          onButtonClick={handleButtonClick}
-          showNoFound={noFound}
+        level={1}
+        contactValue={searchInput}
+        handleInputChange={handleInputChange}
+        handleCallVisibility={handleCallVisibility}
+
+        collaborators={filteredCollaborators}
+        onButtonClick={handleButtonClick}
+        showNoFound={noFound}
+
+        users={filteredUsers}
+        contactValueUser={searchInputUsers} 
+        handleInputChangeUser={handleInputChangeUsers } 
+        onButtonClickAddUser={handleAddUser}
+        showNoFoundUser={noFoundUser}
         />
 
 
@@ -136,6 +117,20 @@ const OnBoarding = () => {
             handleCallVisibility={handleCallVisibility}
             userName={selectedUser} />
         }
+
+        {callVisibility &&
+          <IncomingCall
+            handleCallVisibility={handleCallVisibility}
+            userName={selectedUser} />
+        }
+
+
+        {callVisibility &&
+          <ActiveCall
+            handleCallVisibility={handleCallVisibility}
+            userName={selectedUser} callDuration={'10:05'} />
+        }
+
       </div>
     </main>
   );

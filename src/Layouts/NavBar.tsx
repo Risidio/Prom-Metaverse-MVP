@@ -18,12 +18,8 @@ import FriendsPopup from "./Popup/NavBarPopup/FriendsPopup";
 import MessagePopup from "./Popup/NavBarPopup/MessagePopup";
 import NotificationPopup from "./Popup/NavBarPopup/NotificationPopup";
 import ProfilePopup from "./Popup/NavBarPopup/ProfilePopup";
-
-type Collaborator = {
-  userName: string,
-  role: string,
-  status: string,
-}
+import { User } from "../utils/types/User";
+import Users from "./Popup/NavBarPopup/Users";
 
 
 type Props = {
@@ -33,9 +29,14 @@ type Props = {
   handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 
   handleCallVisibility: () => void,
-  collaborators: Collaborator[],
+  collaborators: User[],
+  users: User[],
   onButtonClick: (userName: string) => void;
   showNoFound: boolean,
+  contactValueUser: string,
+  handleInputChangeUser: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onButtonClickAddUser: (userName: string, role: string, status: string) => void;
+  showNoFoundUser: boolean,
 }
 
 const Navbar: React.FC<Props> = (
@@ -45,8 +46,13 @@ const Navbar: React.FC<Props> = (
     handleInputChange,
     handleCallVisibility,
     collaborators,
+    users,
     onButtonClick,
     showNoFound,
+    contactValueUser,
+    handleInputChangeUser,
+    onButtonClickAddUser,
+    showNoFoundUser,
   }
 ) => {
 
@@ -57,6 +63,16 @@ const Navbar: React.FC<Props> = (
   const [popupVisibility, setPopupVisibility] = useState<{ [key: number]: boolean }>({});
   const [popupMessageVisibility, setPopupMessageVisibility] = useState(false);
   const [popupProfile, setPopupProfile] = useState(false);
+
+  const [showFriendsPopup, setShowFriendsPopup] = useState(true);
+
+  const handleButtonClickAdd = () => {
+    setShowFriendsPopup(!showFriendsPopup);
+  }
+
+  const handleButtonClickBack = () => {
+    setShowFriendsPopup(!showFriendsPopup);
+  }
 
   const togglePopup = (index: number) => {
     setPopupVisibility((prev) => ({
@@ -90,8 +106,7 @@ const Navbar: React.FC<Props> = (
     {
       iconName: 'friends',
       iconPath: friends,
-      PopupContent: FriendsPopup,
-
+      PopupContent: showFriendsPopup ? FriendsPopup : Users,
     },
 
     {
@@ -140,7 +155,7 @@ const Navbar: React.FC<Props> = (
       </button>
 
       {popupProfile && <ProfilePopup
-          userName="User Name"></ProfilePopup>}
+        userName="User Name"></ProfilePopup>}
 
 
       <button className={`navbar__status`}
@@ -182,12 +197,22 @@ const Navbar: React.FC<Props> = (
 
               {popupVisibility[index] && PopupContent && (
                 <PopupContent key={index} contactValue={contactValue}
-                handleInputChange={handleInputChange}
-                handleCallVisibility={handleCallVisibility}
-                collaborators={collaborators} 
-                onButtonClick={onButtonClick}
-                showNoFound={showNoFound}
-                 />
+                  handleInputChange={handleInputChange}
+                  handleCallVisibility={handleCallVisibility}
+                  collaborators={collaborators}
+                  onButtonClick={onButtonClick}
+                  showNoFound={showNoFound}
+                  onButtonClickAdd={handleButtonClickAdd}
+
+                  users={users}
+                  onButtonClickBack={handleButtonClickBack}
+                  contactValueUser={contactValueUser}
+                  handleInputChangeUser={handleInputChangeUser}
+
+                  onButtonClickAddUser={onButtonClickAddUser}
+                  showNoFoundUser={showNoFoundUser}
+
+                />
               )}
             </>
 
@@ -204,8 +229,6 @@ const Navbar: React.FC<Props> = (
           <FastTravelPopup></FastTravelPopup>
 
         }
-
-
       </div>
 
 

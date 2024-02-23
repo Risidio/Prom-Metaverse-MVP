@@ -6,6 +6,7 @@ import OnBoardingFirst from "../Layouts/Popup/OnboardingPopup/OnboardingFirst";
 import IncomingCall from "../Layouts/Popup/Call/IncomingCall";
 import ActiveCall from "../Layouts/Popup/Call/ActiveCall";
 import { collaboratorsArray, textArray, titleArray, users } from "../utils/arrays/arrays";
+import Pin from "../Components/Icons/Pin";
 
 const OnBoarding = () => {
   const [callVisibility, setCallVisibility] = useState(false);
@@ -132,6 +133,8 @@ const OnBoarding = () => {
         }
 
       </div>
+      <Pin menuBuildingName="ScriptWriter Building" menuBuildingText="Here you can come read, review and share scripts with the other PROM citizens" />
+
     </main>
   );
 }

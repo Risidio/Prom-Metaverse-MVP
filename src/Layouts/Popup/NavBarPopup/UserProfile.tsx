@@ -2,6 +2,7 @@ import { useState } from "react";
 import RedButton from "../../../Components/Buttons/RedButton";
 import TransparentButton from "../../../Components/Buttons/TransparentButton";
 import TextArea from "../../../Components/Inputs/TextArea";
+import ChangePassword from "../Settings/ChangePassword";
 
 type Props = {
   userName: string,
@@ -9,11 +10,15 @@ type Props = {
   pronouns: string,
   scriptNumber: number,
   closeModal: () => void,
+  // openSettings: () => void,
+
+  // showSettings: boolean,
 }
 const UserProfile: React.FC<Props> = ({
   userName, roles, pronouns,
   scriptNumber,
   closeModal,
+  // openSettings,
 }) => {
 
   const redButtonsArrayText = [
@@ -22,10 +27,20 @@ const UserProfile: React.FC<Props> = ({
     'Open-minded',
   ];
 
-  const[inputValue, setInputValue] = useState('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum')
+  const [inputValue, setInputValue] = useState('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum')
+  const [showSettings, setShowSettings] = useState(false);
+  const [showChangePassword, setShowChangePassword] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputValue(e.target.value);
+  }
+
+  const openSettings = () => {
+    setShowSettings(!showSettings);
+  }
+
+  const handleChangePassword = () => {
+    setShowChangePassword(!showChangePassword);
   }
 
   return (
@@ -67,8 +82,12 @@ const UserProfile: React.FC<Props> = ({
 
           <div className="user__left-img"></div>
 
-          <RedButton text="Change your Avatar"
-            className="button--avatar"></RedButton>
+          <div className="user__left-button">
+            <RedButton text="Change your Avatar"
+              className="button--avatar"></RedButton>
+
+
+          </div>
 
         </div>
 
@@ -88,47 +107,78 @@ const UserProfile: React.FC<Props> = ({
 
             </button>
 
+
+            <button type="button"
+              onClick={openSettings}
+              className="user__right-button--settings"
+            >
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="26" height="26" rx="8" fill="#30374D" />
+                <circle cx="7" cy="13" r="2" fill="white" />
+                <circle cx="13" cy="13" r="2" fill="white" />
+                <circle cx="19" cy="13" r="2" fill="white" />
+              </svg>
+
+            </button>
+
+            {showSettings &&
+              <div className="user__right-settings">
+                <button className="user__right-settings-option"
+                  onClick={handleChangePassword}>Change password</button>
+                <button className="user__right-settings-option">Notification settings</button>
+                <button className="user__right-settings-option">Profile details</button>
+
+              </div>
+            }
+
+
           </div>
 
           <h1 className="user__right-title">
             <span className="user__right-title--underline"><b>29</b> collaborators
-              </span> | <b>1029</b> persons enjoyed your work
+            </span> | <b>1029</b> persons enjoyed your work
           </h1>
 
           <form action="" className="user__form">
 
-            <TextArea name={"about"} 
-            label={"About"}
-            onChange={handleInputChange}
-            value={inputValue}
-            className="user__form-input"
+            <TextArea name={"about"}
+              label={"About"}
+              onChange={handleInputChange}
+              value={inputValue}
+              className="user__form-input"
 
             ></TextArea>
 
             <TransparentButton text="Edit"
-            
-            className="button--edit"></TransparentButton>
+
+              className="button--edit"></TransparentButton>
           </form>
 
           <div className="user__scripts">
             <h1 className="user__scripts-title">
               Scripts<span className="user__scripts-title--span">({scriptNumber})</span></h1>
 
-              <div className="user__scripts-container">
-                <div className="user__scripts-img"></div>
+            <div className="user__scripts-container">
+              <div className="user__scripts-img"></div>
 
-                <div className="user__scripts-img"></div>
-                <div className="user__scripts-img"></div>
-                <div className="user__scripts-img"></div>
-                <div className="user__scripts-img"></div>
-                <div className="user__scripts-img"></div>
-                <div className="user__scripts-img"></div>
-                <div className="user__scripts-img"></div>
+              <div className="user__scripts-img"></div>
+              <div className="user__scripts-img"></div>
+              <div className="user__scripts-img"></div>
+              <div className="user__scripts-img"></div>
+              <div className="user__scripts-img"></div>
+              <div className="user__scripts-img"></div>
+              <div className="user__scripts-img"></div>
 
-              </div>
+            </div>
           </div>
         </div>
       </section>
+
+
+      {showChangePassword && 
+
+      <ChangePassword closeModal={handleChangePassword}></ChangePassword>
+        }
     </article>
   );
 }

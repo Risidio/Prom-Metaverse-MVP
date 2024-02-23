@@ -1,48 +1,47 @@
 import { NavLink } from "react-router-dom";
 import WhiteButton from "../../../Components/Buttons/WhiteButton";
 import TriangleDiv from "../../../Components/TriangleDiv";
-import ContactCard from "../../Cards/ContactCard";
 import { User } from "../../../utils/types/User";
+import UserCard from "../../Cards/UserCard";
+
 
 type Props = {
-  contactValue: string,
-  handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  handleCallVisibility: () => void,
-  collaborators: User[],
-  onButtonClick: (userName: string) => void;
-  showNoFound: boolean,
-  onButtonClickAdd: () => void,
+  contactValueUser: string,
+  handleInputChangeUser: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  users: User[],
+  onButtonClickAddUser: (userName: string, role: string, status: string) => void;
+  showNoFoundUser: boolean,
+  onButtonClickBack: () => void,
 };
 
-const FriendsPopup: React.FC<Props> = ({
-  contactValue,
-  handleInputChange,
-  handleCallVisibility,
-  collaborators,
-  onButtonClick,
-  showNoFound,
-  onButtonClickAdd,
-
+const Users: React.FC<Props> = ({
+  contactValueUser,
+  handleInputChangeUser,
+  onButtonClickAddUser,
+  showNoFoundUser,
+  users,
+  onButtonClickBack,
 }) => {
 
+
   return (
-    <article
-      className="contact"
+    <article 
+    className="contact"
     >
 
       <form className="contact__form"
         action="get">
         <div className="contact__form-top">
           <h1 className="contact__form-title">
-            Your collaborators
+            Users
           </h1>
 
           <WhiteButton
             className="button--contact"
             type="button"
-            text="Add Contact"
-            onClick={onButtonClickAdd}
-          />
+            text="Back to collaborators"
+            onClick={onButtonClickBack} 
+            />
 
         </div>
 
@@ -50,8 +49,8 @@ const FriendsPopup: React.FC<Props> = ({
           <input type="text"
             className="contact__form-search-input"
             placeholder="Search a contact"
-            onChange={handleInputChange}
-            value={contactValue} />
+            onChange={handleInputChangeUser}
+            value={contactValueUser} />
 
           <i className="contact__form-search-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
@@ -61,43 +60,40 @@ const FriendsPopup: React.FC<Props> = ({
         </div>
 
       </form>
-
       <section className="contact__contacts-container">
 
-        {
-          showNoFound ? (
-            collaborators
-              .map((collaborator) => (
-                <ContactCard
-                  userName={collaborator.userName}
-                  role={collaborator.role}
-                  status={collaborator.status}
-                  key={collaborator.userName}
-                  handleCallVisibility={handleCallVisibility}
-                  onButtonClick={onButtonClick}
-                />
-              ))
+{
+  showNoFoundUser ? (
+    users
+      .map((user) => (
+        <UserCard
+          userName={user.userName}
+          role={user.role}
+          key={user.userName}
+          onButtonClickAdd={onButtonClickAddUser}
+        />
+      ))
 
-          ) : (
-            <>
-              <p className="contact__error-text">
-                {contactValue} is not on your collaborators list
-              </p>
-              <NavLink to={'users'}
-                className='contact__error-text contact__error-link'>
-                search for user
-              </NavLink></>
-          )
-        }
+  ) : (
+    <>
+      <p className="contact__error-text">
+        user with a name {contactValueUser} is not found
+      </p>
+      <NavLink to={'users'}
+        className='contact__error-text contact__error-link'>
+        search for user
+      </NavLink></>
 
-      </section>
-
-      <TriangleDiv
-        classNameSecond="triangle-up--contact"></TriangleDiv>
-
-
-    </article>
   )
 }
 
-export default FriendsPopup;
+
+</section>
+      <TriangleDiv
+        classNameSecond="triangle-up--contact"></TriangleDiv>
+    </article>
+
+  )
+}
+
+export default Users;

@@ -4,31 +4,90 @@ import SelectInput from '../Inputs/SelectInput';
 import RedButton from '../Buttons/RedButton';
 import ButtonInput from '../Inputs/ButtonInput';
 import TransparentButton from '../Buttons/TransparentButton';
+import { useState } from 'react';
+import ArrowLeft from '../Buttons/ArrowLeft';
+import ArrowRight from '../Buttons/ArrowRight';
 
 const ProfileForm = () => {
-  // const skinColorArray = [
-  //   // '#FFEBC2',
-  //   // '#FFEBC2',
-  //   // '#FFEBC2',
-  //   // '#F66744',
-  //   // '#734106',
-  //   // '#543507',
-  //   // '#734106',
-  //   // '#301506',
-  //   // '#000',
-
-  //   'bg-yellow-200',
-  //   'bg-yellow-200',
-  //   'bg-yellow-200',
-  //   'bg-orange-500',
-  //   'bg-brown-800', // -
-  //   'bg-brown-600', // -
-  //   'bg-orange-500', // -
-  //   'bg-brown-900', // -
-  //   'bg-black', // -
-  //   ]
 
   const colorArray = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+
+
+  const hairLengths = ['Short', 'Medium', 'Long'];
+  const TopArray = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+  const bottomArray = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+  const accessoryArray = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+
+
+  const [selectedHair, setSelectedHair] = useState(hairLengths[0]);
+  const [selectedTop, setSelectedTop] = useState(TopArray[0]);
+  const [selectedBottom, setSelectedBottom] = useState(bottomArray[0]);
+  const [selectedAccessory, setSelectedAccessory] = useState(accessoryArray[0]);
+
+
+  const handlePrevClickHair = () => {
+    const currentIndex = hairLengths.indexOf(selectedHair);
+    const newIndex = (currentIndex - 1 + hairLengths.length) % hairLengths.length;
+    setSelectedHair(hairLengths[newIndex]);
+
+  };
+
+  const handleNextClickHair = () => {
+    const currentIndex = hairLengths.indexOf(selectedHair);
+    const newIndex = (currentIndex + 1) % hairLengths.length;
+    setSelectedHair(hairLengths[newIndex]);
+
+  };
+
+
+
+  const handlePrevClickTop = () => {
+    const currentIndex = TopArray.indexOf(selectedTop);
+    const newIndex = (currentIndex - 1 + TopArray.length) % TopArray.length;
+    setSelectedTop(TopArray[newIndex]);
+
+  };
+
+  const handleNextClickTop = () => {
+    const currentIndex = TopArray.indexOf(selectedTop);
+    const newIndex = (currentIndex + 1) % TopArray.length;
+    setSelectedTop(TopArray[newIndex]);
+
+  };
+
+
+  const handlePrevClickBottom = () => {
+    const currentIndex = bottomArray.indexOf(selectedBottom);
+    const newIndex = (currentIndex - 1 + bottomArray.length) % bottomArray.length;
+    setSelectedBottom(bottomArray[newIndex]);
+
+  };
+
+  const handleNextClickBottom = () => {
+    const currentIndex = bottomArray.indexOf(selectedBottom);
+    const newIndex = (currentIndex + 1) % bottomArray.length;
+    setSelectedBottom(bottomArray[newIndex]);
+
+  };
+
+  const handlePrevClickAccessory = () => {
+    const currentIndex = accessoryArray.indexOf(selectedAccessory);
+    const newIndex = (currentIndex - 1 + accessoryArray.length) % accessoryArray.length;
+    setSelectedAccessory(accessoryArray[newIndex]);
+
+  };
+
+  const handleNextClickAccessory = () => {
+    const currentIndex = accessoryArray.indexOf(selectedAccessory);
+    const newIndex = (currentIndex + 1) % accessoryArray.length;
+    setSelectedAccessory(accessoryArray[newIndex]);
+
+  };
+
+
+
+
+
 
   return (
     <form className='form__character'>
@@ -75,14 +134,14 @@ const ProfileForm = () => {
       </div>
 
       <div className='form__center-side'>
-        {/* <img src={avatar} alt="avatar"
-          className="form__character" /> */}
+
+        <div className='form__center-img'></div>
 
         <TransparentButton
           type='submit'
           className='form__center-side-button'
           text={'Random look'}
-        ></TransparentButton>
+        />
       </div>
 
       <div className='form__right-side'>
@@ -104,13 +163,18 @@ const ProfileForm = () => {
 
         <div className='form__right-side-hair'>
           <h1 className='form-title'>Hair</h1>
-          <input
-            type='button'
-            name='hair-button'
-            id=''
-            value={'Long'}
-            className='form-input--button'
-          />
+
+          <div className='form__right-side-buttons'>
+            <ArrowLeft handleClick={handlePrevClickHair}></ArrowLeft>
+            <input
+              type='button'
+              name='hair-button'
+              id=''
+              value={selectedHair}
+              className='form-input--button '
+            />
+            <ArrowRight handleClick={handleNextClickHair}></ArrowRight>
+          </div>
 
           <div
             className='form__right-side-colors-container
@@ -131,53 +195,63 @@ const ProfileForm = () => {
 
         <div className='form__right-side-top'>
           <h1 className='form-title'>Top</h1>
-          <input
-            type='button'
-            name='hair-button'
-            id=''
-            value={'Item Name'}
-            className='form-input--button'
-          />
+
+          <div className='form__right-side-buttons'>
+            <ArrowLeft handleClick={handlePrevClickTop}></ArrowLeft>
+            <input
+              type='button'
+              name='top'
+              id=''
+              value={selectedTop}
+              className='form-input--button '
+            />
+            <ArrowRight handleClick={handleNextClickTop}></ArrowRight>
+          </div>
+
         </div>
 
         <div className='form__right-side-top'>
           <h1 className='form-title'>Bottom</h1>
-          <input
-            type='button'
-            name='hair-button'
-            id=''
-            value={'Item Name'}
-            className='form-input--button'
-          />
+
+          <div className='form__right-side-buttons'>
+            <ArrowLeft handleClick={handlePrevClickBottom}></ArrowLeft>
+            <input
+              type='button'
+              name='bottom'
+              id=''
+              value={selectedBottom}
+              className='form-input--button '
+            />
+            <ArrowRight handleClick={handleNextClickBottom}></ArrowRight>
+          </div>
+
         </div>
 
-        <div className='form__right-side-top'>
-          <h1 className='form-title'>Top</h1>
-          <input
-            type='button'
-            name='hair-button'
-            id=''
-            value={'Item Name'}
-            className='form-input--button'
-          />
-        </div>
 
         <div className='form__right-side-top'>
           <h1 className='form-title'>Accessory</h1>
-          <input
-            type='button'
-            name='hair-button'
-            id=''
-            value={'Item Name'}
-            className='form-input--button'
-          />
+          <div className='form__right-side-buttons'>
+            <ArrowLeft handleClick={handlePrevClickAccessory}></ArrowLeft>
+            <input
+              type='button'
+              name='accessory'
+              id=''
+              value={selectedAccessory}
+              className='form-input--button '
+            />
+            <ArrowRight handleClick={handleNextClickAccessory}></ArrowRight>
+          </div>
         </div>
 
+        <div className='form__right-side-red-button'>
         <RedButton
           text='Create my character'
           type='submit'
-          className='button--red'
+          className='button--create-character'
         ></RedButton>
+
+        </div>
+
       </div>
     </form>
   );

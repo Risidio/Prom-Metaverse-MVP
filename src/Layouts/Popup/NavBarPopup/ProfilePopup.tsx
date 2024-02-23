@@ -43,6 +43,7 @@ const ProfilePopup: React.FC<Props> = (
   const [selectedStatusClass, setSelectedStatusClass] = useState('none');
 
   const [userProfileVisibility, setUserProfileVisibility] = useState(false);
+  
 
   const showStatusBar = () => {
     setSelectedStatusClass(prevClass => (prevClass === 'block' ? 'none' : 'block'));
@@ -60,6 +61,10 @@ const ProfilePopup: React.FC<Props> = (
   const handleCloseModal = () => {
     setUserProfileVisibility(false);
   }
+
+  // const handleOpenSettings = () => {
+
+  // }
 
 
   return (
@@ -132,6 +137,7 @@ const ProfilePopup: React.FC<Props> = (
         pronouns={'(He / Him)'}
         scriptNumber={1}
         closeModal={handleCloseModal}
+        // openSettings={handleOpenSettings}
         ></UserProfile>
       }
 

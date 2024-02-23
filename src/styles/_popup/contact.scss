@@ -13,6 +13,11 @@
   padding: 22px 13px 3px 23px;
 
 
+  &--none {
+    display: none;
+  }
+
+
   &__form {
     margin-bottom: 31px;
 
@@ -82,6 +87,7 @@
       display: flex;
       flex-direction: column;
       padding-left: 23px;
+
     }
 
     &-title {

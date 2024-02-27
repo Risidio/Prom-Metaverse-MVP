@@ -8,7 +8,7 @@ type Props = {
   closeModal: () => void,
 }
 
-const Password: React.FC<Props> = ({
+const PasswordChangeForm: React.FC<Props> = ({
   closeModal,
 }) => {
   const [currentPassword, setCurrentPassword] = useState<string>("")
@@ -47,4 +47,4 @@ const Password: React.FC<Props> = ({
   )
 }
 
-export default Password;
+export default PasswordChangeForm;

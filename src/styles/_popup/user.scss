@@ -297,6 +297,11 @@
         display: flex;
         justify-content: center;
         gap: 50px;
+
+        &--profile {
+          margin-top: 32px;
+
+        }
       }
     }
   }

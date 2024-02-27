@@ -3,6 +3,8 @@ import RedButton from "../../../Components/Buttons/RedButton";
 import TransparentButton from "../../../Components/Buttons/TransparentButton";
 import TextArea from "../../../Components/Inputs/TextArea";
 import ChangePassword from "../Settings/ChangePassword";
+import ProfileSettings from "../Settings/ProfileSettings";
+import { NavLink } from "react-router-dom";
 
 type Props = {
   userName: string,
@@ -10,15 +12,11 @@ type Props = {
   pronouns: string,
   scriptNumber: number,
   closeModal: () => void,
-  // openSettings: () => void,
-
-  // showSettings: boolean,
 }
 const UserProfile: React.FC<Props> = ({
   userName, roles, pronouns,
   scriptNumber,
   closeModal,
-  // openSettings,
 }) => {
 
   const redButtonsArrayText = [
@@ -30,6 +28,7 @@ const UserProfile: React.FC<Props> = ({
   const [inputValue, setInputValue] = useState('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum')
   const [showSettings, setShowSettings] = useState(false);
   const [showChangePassword, setShowChangePassword] = useState(false);
+  const [showProfileChange, setShowProfileChange] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputValue(e.target.value);
@@ -41,6 +40,10 @@ const UserProfile: React.FC<Props> = ({
 
   const handleChangePassword = () => {
     setShowChangePassword(!showChangePassword);
+  }
+
+  const handleProfileSettings = () => {
+    setShowProfileChange(!showProfileChange);
   }
 
   return (
@@ -124,9 +127,13 @@ const UserProfile: React.FC<Props> = ({
             {showSettings &&
               <div className="user__right-settings">
                 <button className="user__right-settings-option"
-                  onClick={handleChangePassword}>Change password</button>
-                <button className="user__right-settings-option">Notification settings</button>
-                <button className="user__right-settings-option">Profile details</button>
+                  onClick={handleChangePassword}>
+                  Change password
+                </button>
+                <button className="user__right-settings-option"
+                  onClick={handleProfileSettings}>
+                  Profile details
+                </button>
 
               </div>
             }
@@ -159,7 +166,9 @@ const UserProfile: React.FC<Props> = ({
               Scripts<span className="user__scripts-title--span">({scriptNumber})</span></h1>
 
             <div className="user__scripts-container">
-              <div className="user__scripts-img"></div>
+              <NavLink to='/script'>
+                <div className="user__scripts-img"></div>
+              </NavLink>
 
               <div className="user__scripts-img"></div>
               <div className="user__scripts-img"></div>
@@ -175,10 +184,14 @@ const UserProfile: React.FC<Props> = ({
       </section>
 
 
-      {showChangePassword && 
+      {showChangePassword &&
 
-      <ChangePassword closeModal={handleChangePassword}></ChangePassword>
-        }
+        <ChangePassword closeModal={handleChangePassword}></ChangePassword>
+      }
+
+      {showProfileChange && <ProfileSettings closeModal={handleProfileSettings}></ProfileSettings>}
+
+
     </article>
   );
 }

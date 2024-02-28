@@ -20,6 +20,7 @@ import NotificationPopup from "./Popup/NavBarPopup/NotificationPopup";
 import ProfilePopup from "./Popup/NavBarPopup/ProfilePopup";
 import { User } from "../utils/types/User";
 import Users from "./Popup/NavBarPopup/Users";
+import AwardPopup from "./Popup/NavBarPopup/AwardPopup";
 
 
 type Props = {
@@ -65,6 +66,7 @@ const Navbar: React.FC<Props> = (
   const [popupProfile, setPopupProfile] = useState(false);
 
   const [showFriendsPopup, setShowFriendsPopup] = useState(true);
+  const [awardPopup, setAwardPopup] = useState(false);
 
   const handleButtonClickAdd = () => {
     setShowFriendsPopup(!showFriendsPopup);
@@ -144,6 +146,10 @@ const Navbar: React.FC<Props> = (
   const showStatusBar = () => {
     setSelectedStatusClass(prevClass => (prevClass === 'block' ? 'none' : 'block'));
   }
+
+  const handleShowAwardPopup = () => {
+setAwardPopup(!awardPopup);
+  }
   return (
     <section className="navbar">
       <button
@@ -172,13 +178,26 @@ const Navbar: React.FC<Props> = (
         <h1 className="navbar__title-text navbar__title-text--name">
           {`Hi {${userName}}`}
         </h1>
-        <h2 className="navbar__title-text navbar__title-text--level">
-          Level {level}
-          {' '}
+
+
+        <button onClick={handleShowAwardPopup}>
+          <h2 className="navbar__title-text navbar__title-text--level">
+            Level {level} | <span className="font-medium">430 </span>
+            <svg className="inline"
+              width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#FFCD61" />
+              <path d="M9.84375 2.5C5.7875 2.5 2.5 5.7875 2.5 9.84375C2.5 13.9 5.7875 17.1875 9.84375 17.1875C13.9 17.1875 17.1875 13.9 17.1875 9.84375C17.1875 7.89607 16.4138 6.02815 15.0366 4.65093C13.6593 3.27371 11.7914 2.5 9.84375 2.5ZM9.84375 15.3562C8.38174 15.3562 6.97962 14.7755 5.94582 13.7417C4.91203 12.7079 4.33125 11.3058 4.33125 9.84375C4.33125 8.38174 4.91203 6.97962 5.94582 5.94582C6.97962 4.91203 8.38174 4.33125 9.84375 4.33125C11.3058 4.33125 12.7079 4.91203 13.7417 5.94582C14.7755 6.97962 15.3562 8.38174 15.3562 9.84375C15.3562 11.3058 14.7755 12.7079 13.7417 13.7417C12.7079 14.7755 11.3058 15.3562 9.84375 15.3562ZM8.0125 9.85L9.85 12.6L11.675 9.85L9.85 7.09375L8.0125 9.85Z" fill="white" />
+            </svg>
+
+            {/* {' '}
           <span className="navbar__title-text 
           navbar__title-text--level
-          navbar__title-text--next">Reach lvl {level + 1} to earn 100</span>
-        </h2>
+          navbar__title-text--next">Reach lvl {level + 1} to earn 100</span> */}
+          </h2>
+
+        </button>
+
+        {awardPopup && <AwardPopup closeAwardModal={handleShowAwardPopup}></AwardPopup>}
       </div>
 
       <div className="navbar__icons-container">
@@ -229,6 +248,7 @@ const Navbar: React.FC<Props> = (
           <FastTravelPopup></FastTravelPopup>
 
         }
+
       </div>
 
 

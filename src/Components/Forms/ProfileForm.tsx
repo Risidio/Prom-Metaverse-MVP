@@ -130,7 +130,12 @@ const ProfileForm = () => {
           className='form-input'
           label='You want to use prom as a :'
           classNameLabel='form-title--cinema'
-        />
+          options={[
+            'Photographer',
+            'Production Artist',
+            'Producer',
+            'Production Designer',
+          ]} />
       </div>
 
       <div className='form__center-side'>
@@ -244,11 +249,11 @@ const ProfileForm = () => {
         </div>
 
         <div className='form__right-side-red-button'>
-        <RedButton
-          text='Create my character'
-          type='submit'
-          className='button--create-character'
-        ></RedButton>
+          <RedButton
+            text='Create my character'
+            type='submit'
+            className='button--create-character'
+          ></RedButton>
 
         </div>
 

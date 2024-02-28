@@ -1,0 +1,78 @@
+.onBuildingHover {
+  position: absolute;
+  top: 350px;
+  right: 25rem;
+  width: 139px;
+  height: 139px;
+  z-index: 2;
+}
+
+.onBillboardHover {
+  position: absolute;
+  top: 280px;
+  left: 840px;
+  width: 139px;
+  height: 139px;
+  z-index: 3;
+}
+
+.building-wrapper {
+  width: 417px;
+  height: 174px;
+  border-radius: 50%;
+  position: absolute;
+  top: 441px;
+  right: 263px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+.pin-heading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  margin-bottom: -15px;
+}
+.pin-heading-primary {
+  font-family: 'Jost';
+  font-size: 32px;
+  line-height: 40px;
+  color: #dc1720;
+}
+.pin-info-container {
+  margin: 20px auto;
+  width: 342px;
+  text-align: center;
+}
+.pin-info-text {
+  font-family: 'Jost';
+  line-height: 32px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #030d2e;
+}
+
+// billboard wrapper
+
+.billboard-wrapper {
+  width: 417px;
+  height: 174px;
+  border-radius: 50%;
+  position: absolute;
+  position: absolute;
+  top: 375px;
+  right: 611px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  z-index: 2;
+}

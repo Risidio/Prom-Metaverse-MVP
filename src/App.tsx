@@ -7,6 +7,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import CharacterCreation from "./Pages/ChatacterCreation";
 import OnBoarding from "./Pages/Onboarding";
 import InvalidWallet from "./Layouts/Wallet/InvalidWallet";
+import ScriptPage from "./Pages/ScriptPage";
+import ForgotPasswordPage from "./Pages/ForgotPasswordPage";
+import ResetPasswordPage from "./Pages/ResetPasswordPage";
 
 
 function App() {
@@ -54,6 +57,30 @@ function App() {
               (<OnBoarding />)
             }
           />
+
+          <Route
+            path="/script"
+            element={
+              (<ScriptPage></ScriptPage>)
+            }
+          />
+
+          <Route
+            path="/forgot-password"
+            element={
+              (<ForgotPasswordPage />)
+            }
+          />
+
+          <Route
+            path="/reset-password"
+            element={
+              (<ResetPasswordPage />)
+            }
+          />
+
+
+
 
         </Routes>
       </BrowserRouter>

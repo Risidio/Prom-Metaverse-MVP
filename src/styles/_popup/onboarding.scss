@@ -16,7 +16,7 @@
   &--1 {
     width: 751px;
     height: 430px;
-    top:23%;
+    top: 23%;
     left: 7%;
 
 
@@ -25,7 +25,7 @@
   &--2 {
     width: 677px;
     height: 296px;
-    top:38%;
+    top: 38%;
 
     left: 40%;
 
@@ -35,7 +35,7 @@
   &--3 {
     width: 677px;
     height: 317px;
-    top:8%;
+    top: 8%;
 
     left: 15%;
 
@@ -79,8 +79,8 @@
     top: 20px;
 
     background-image: url('./assets/welcomeAvatar.svg');
-background-position: center;
-background-size: cover;
+    background-position: center;
+    background-size: cover;
 
   }
 
@@ -97,7 +97,7 @@ background-size: cover;
     position: absolute;
     right: 10px;
     bottom: 20px;
-     
+
 
     &-button {
       width: 51px;

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 // import RedButton from "../Buttons/RedButton";
 import TextInput from "../Inputs/TextInput";
 import { ChangeEvent, FormEvent, useState } from "react";
@@ -66,9 +66,14 @@ const SigninForm = () => {
 
 
       <TextInput name="password" type="password" label="Password"
-        className="form-input--5" value={password} onChange={(e: ChangeEvent<HTMLInputElement>) => {
+        className="form-input mb-2" value={password} onChange={(e: ChangeEvent<HTMLInputElement>) => {
           setPassword(e.target.value)
         }} />
+
+        <NavLink to={"/forgot-password"}
+        className={'block mb-10 text-left underline decoration-solid font-light'}>
+          Forgot password
+        </NavLink>
 
       <RedButton type="submit"
         className="h-[48px] w-[203px] mb-3"

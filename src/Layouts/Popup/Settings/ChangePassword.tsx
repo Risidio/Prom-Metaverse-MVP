@@ -1,4 +1,4 @@
-import Password from "../../../Components/Forms/Password";
+import Password from "../../../Components/Forms/PasswordChangeForm";
 type Props = {
   closeModal: () => void,
 }

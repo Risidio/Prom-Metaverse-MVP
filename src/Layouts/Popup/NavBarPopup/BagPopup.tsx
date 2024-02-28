@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import WhiteButton from "../../../Components/Buttons/WhiteButton";
 import TriangleDiv from "../../../Components/TriangleDiv";
 import MovieCard from "../../Cards/MovieCard/MovieCard";
@@ -50,8 +51,11 @@ const BagPopup = () => {
         </div>
 
         <div className="bag__scripts-movies">
-          <MovieCard title="Movie"
-            description="A new live" />
+          <NavLink to={'/script'}>
+            <MovieCard title="Movie"
+              description="A new live" />
+
+          </NavLink>
 
           <MovieCard title="Movie"
             description="A new live" />

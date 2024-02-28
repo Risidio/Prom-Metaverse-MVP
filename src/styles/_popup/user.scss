@@ -9,6 +9,20 @@
 
   z-index: 2;
 
+
+  &--guest {
+    left: -140%;
+    bottom: 50px;
+
+    @include onDesktopBig {
+
+      position: fixed;
+
+      top: 80px;
+    }
+
+  }
+
   @include onDesktopBig {
     width: 1525px;
     height: 945px;
@@ -78,6 +92,12 @@
         font-size: 16px;
       }
 
+      &--guest {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
 
     }
 
@@ -143,10 +163,33 @@
         display: flex;
         gap: 16px;
         margin-bottom: 22px;
+
+
+        &--contact {
+          position: relative;
+          top: -10%;
+          right: -35%;
+        }
       }
 
       &--settings {
         position: relative;
+      }
+
+      &--message {
+        width: 275px;
+        height: 51px;
+        padding: 0;
+      }
+
+      &--add-contact {
+        width: 53px;
+        height: 51px;
+        border: 1px solid $G2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
       }
     }
 
@@ -193,6 +236,25 @@
         }
 
       }
+    }
+
+    &-description {
+      font-family: Jost;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 200%;
+      color: #030D2E;
+      font-weight: 400;
+      text-align: left;
+      margin-bottom: 31px;
+
+
+      &--title {
+        font-weight: 400;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
     }
 
   }

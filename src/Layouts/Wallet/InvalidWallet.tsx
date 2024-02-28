@@ -6,30 +6,30 @@ import QuestionIcon from "../../Components/Icons/Question";
 const InvalidWallet = () => {
   return (
     <div className="welcome-background">
-            <div className="logo"></div>
+      <div className="logo"></div>
       <QuestionIcon></QuestionIcon>
 
-    <article className="wallet">
-      <h1 className="wallet-title">
-        Opps
-      </h1>
+      <article className="wallet">
+        <h1 className="wallet-title">
+          Opps
+        </h1>
 
-      <p className="wallet-description">
-        Looks like you don’t currently have these wallet, to continue download it below!
-      </p>
+        <p className="wallet-description">
+          Looks like you don’t currently have these wallet, to continue download it below!
+        </p>
 
-      <div className="wallet-img"></div>
+        <div className="wallet-img"></div>
 
-      <Connect text={"Or try these wallets"}></Connect>
+        <Connect text={"Or try these wallets"}></Connect>
 
 
-      <NavLink to={'/signin'} className='wallet-button'>
-        <WhiteButton className="button--wallet"
-        text="Back to Log in"></WhiteButton>
-      </NavLink>
-    </article>
+        <NavLink to={'/signin'} className='wallet-button'>
+          <WhiteButton className="button--wallet"
+            text="Back to Log in"></WhiteButton>
+        </NavLink>
+      </article>
 
-</div>
+    </div>
   )
 }
 

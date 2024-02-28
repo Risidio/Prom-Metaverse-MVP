@@ -48,7 +48,7 @@ const OnBoarding = () => {
     user.userName.toLowerCase().includes(searchInputUsers.toLowerCase())
   );
 
-  const handleAddUser = (userName: string, role: string, status: string) => {
+  const handleAddUser = (userName: string, roles: string[], status: string) => {
     // Check if the user is not already in the collaboratorsArray
     if (
       !collaboratorsArray.some(
@@ -58,7 +58,7 @@ const OnBoarding = () => {
       // Add a new collaborator with the provided userName, role, and status
       const newUser = {
         userName,
-        role, // You can provide a default role for the new user
+        roles, // You can provide a default role for the new user
         status, // You can provide a default status for the new user
       };
 
@@ -71,7 +71,6 @@ const OnBoarding = () => {
       console.log(1);
     }
   };
-
   useEffect(() => {
     if (filteredCollaborators.length > 0) {
       setNoFound(true);
@@ -92,12 +91,12 @@ const OnBoarding = () => {
     <main>
       <div className='onboarding'>
         <div className='logo'></div>
-        <QuestionIcon></QuestionIcon>
+        <QuestionIcon/>
 
         <OnBoardingFirst
           textArray={textArray}
           titleArray={titleArray}
-        ></OnBoardingFirst>
+        />
         <Navbar
           userName='userName'
           level={1}
@@ -140,6 +139,9 @@ const OnBoarding = () => {
         menuBuildingName='ScriptWriter Building'
         menuBuildingText='Here you can come read, review and share scripts with the other PROM citizens'
       />
+
+
+      
     </main>
   );
 };

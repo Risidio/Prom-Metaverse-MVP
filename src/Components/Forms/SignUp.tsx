@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import TextInput from "../Inputs/TextInput";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -85,18 +85,33 @@ const SignupForm = () => {
       {/* <button className="form-button"> */}
 
       <RedButton type="submit"
-      className="mb-2"
-      //  className="h-[48px] w-[203px]" 
-       text="Create an account"/>
+        className="mb-2 none"
+        text="Create an account" />
+      {/* remove the none classname later in the button above */}
 
 
-        <Link to="/signin" className="welcome__message-link
+
+      {/* the button below is temporary for a demonstration */}
+
+      <NavLink to={"/character-creation"}>
+        <RedButton type="submit"
+          className="mb-2"
+          text="Create an account" />
+
+      </NavLink>
+
+      {/* end of the button for Netlify. Remove later */}
+
+
+
+
+      <Link to="/signin" className="welcome__message-link
         welcome__message-link--create">
-          Already have an account ?
-        </Link>
+        Already have an account ?
+      </Link>
 
       {/* </button> */}
-   
+
       <ToastContainer />
     </form>
   );

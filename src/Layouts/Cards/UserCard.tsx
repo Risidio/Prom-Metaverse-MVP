@@ -2,14 +2,14 @@ import WhiteButton from "../../Components/Buttons/WhiteButton";
 
 type Props = {
   userName: string,
-  role: string,
-  onButtonClickAdd: (userName: string, role: string, status: string) => void;
+  roles: string[],
+  onButtonClickAdd: (userName: string, roles: string[], status: string) => void;
 };
 
 
 const ContactCard: React.FC<Props> = ({
   userName,
-  role,
+  roles,
   onButtonClickAdd,
 }) => {
   return (
@@ -25,14 +25,14 @@ const ContactCard: React.FC<Props> = ({
         </h1>
 
         <h2 className="contact__card-role">
-          {role}
+          {roles}
         </h2>
       </div>
 
       <WhiteButton text="Add"
         type="button"
         className="button--user-add"
-        onClick={() => onButtonClickAdd(userName, role, status)}/>
+        onClick={() => onButtonClickAdd(userName, roles, status)}/>
     </div>
   );
 }

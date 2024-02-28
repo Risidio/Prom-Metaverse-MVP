@@ -21,6 +21,7 @@ import ProfilePopup from "./Popup/NavBarPopup/ProfilePopup";
 import { User } from "../utils/types/User";
 import Users from "./Popup/NavBarPopup/Users";
 import AwardPopup from "./Popup/NavBarPopup/AwardPopup";
+import UserGuestProfile from "./Popup/NavBarPopup/UserGuestProfile";
 
 
 type Props = {
@@ -36,8 +37,9 @@ type Props = {
   showNoFound: boolean,
   contactValueUser: string,
   handleInputChangeUser: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onButtonClickAddUser: (userName: string, role: string, status: string) => void;
+  onButtonClickAddUser: (userName: string, roles: string[], status: string) => void;
   showNoFoundUser: boolean,
+
 }
 
 const Navbar: React.FC<Props> = (
@@ -57,6 +59,14 @@ const Navbar: React.FC<Props> = (
   }
 ) => {
 
+
+  const randomUser:User = {
+    userName: "randomUser",
+    status: "online",
+    roles: ['screnwritter', 'director'],
+    pronouns: 'He/him',
+  } // this object is only for a demonstration. Remove it later
+
   const [selectedStatus, setSelectedStatus] = useState<string>('online'); // State to store the selected status
   const [selectedStatusClass, setSelectedStatusClass] = useState('none');
 
@@ -67,6 +77,12 @@ const Navbar: React.FC<Props> = (
 
   const [showFriendsPopup, setShowFriendsPopup] = useState(true);
   const [awardPopup, setAwardPopup] = useState(false);
+
+  const [showGuestUserProfile, setShowGuestUserProfile] = useState(false);
+
+  const handleShowGuestUserProfile = () => {
+    setShowGuestUserProfile(!showGuestUserProfile);
+  }
 
   const handleButtonClickAdd = () => {
     setShowFriendsPopup(!showFriendsPopup);
@@ -148,7 +164,7 @@ const Navbar: React.FC<Props> = (
   }
 
   const handleShowAwardPopup = () => {
-setAwardPopup(!awardPopup);
+    setAwardPopup(!awardPopup);
   }
   return (
     <section className="navbar">
@@ -231,6 +247,8 @@ setAwardPopup(!awardPopup);
                   onButtonClickAddUser={onButtonClickAddUser}
                   showNoFoundUser={showNoFoundUser}
 
+
+                  showGuestUserProfile={handleShowGuestUserProfile}
                 />
               )}
             </>
@@ -248,6 +266,14 @@ setAwardPopup(!awardPopup);
           <FastTravelPopup></FastTravelPopup>
 
         }
+
+        {showGuestUserProfile && <UserGuestProfile 
+        userName={randomUser.userName}
+         roles={randomUser.roles || []} 
+         pronouns={randomUser.pronouns || ''} 
+         scriptNumber={0} 
+         status={randomUser.status}
+         closeGuestUserProfile={handleShowGuestUserProfile}></UserGuestProfile>}
 
       </div>
 

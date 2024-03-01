@@ -18,6 +18,9 @@ const ScriptPage = () => {
 
   const [searchInput, setSearchInput] = useState('');
   const [searchInputUsers, setSearchInputUsers] = useState('');
+  // const [showGuestUserProfile, setShowGuestUserProfile] = useState(false);
+
+
   const [movie, setMovie] = useState({
 
     title: "Title",
@@ -64,14 +67,15 @@ const ScriptPage = () => {
 
 
 
-  const handleAddUser = (userName: string, role: string, status: string) => {
+  const handleAddUser = (userName: string, roles: string[], status: string) => {
     // Check if the user is not already in the collaboratorsArray
     if (!collaboratorsArray.some(collaborator => collaborator.userName === userName)) {
       // Add a new collaborator with the provided userName, role, and status
       const newUser = {
         userName,
-        role,  // You can provide a default role for the new user
-        status,  // You can provide a default status for the new user
+        roles,  // You can provide a default role for the new user
+        status,
+        // You can provide a default status for the new user
       };
 
       // Update the collaboratorsArray using the state setter
@@ -80,6 +84,11 @@ const ScriptPage = () => {
       console.log(1);
     }
   };
+
+  // const handleShowGuestUserProfile = () => {
+  //   setShowGuestUserProfile(!showGuestUserProfile);
+  //     }
+    
 
 
   useEffect(() => {
@@ -122,6 +131,10 @@ const ScriptPage = () => {
         handleInputChangeUser={handleInputChangeUsers } 
         onButtonClickAddUser={handleAddUser}
         showNoFoundUser={noFoundUser}
+
+
+        // showGuestUserProfile={handleShowGuestUserProfile}
+      
         />
 
 

@@ -33,7 +33,7 @@ const Welcome = () => {
               Visit as a guest
             </Link>
 
-            <Link to="/account">
+            <Link to="/signin">
               <WhiteButton
                 className="welcome__message-button--white"
                 text="Sign in"/>

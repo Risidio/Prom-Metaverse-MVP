@@ -9,7 +9,7 @@ type Props = {
   contactValueUser: string,
   handleInputChangeUser: (event: React.ChangeEvent<HTMLInputElement>) => void;
   users: User[],
-  onButtonClickAddUser: (userName: string, role: string, status: string) => void;
+  onButtonClickAddUser: (userName: string, roles: string[], status: string) => void;
   showNoFoundUser: boolean,
   onButtonClickBack: () => void,
 };
@@ -68,8 +68,8 @@ const Users: React.FC<Props> = ({
       .map((user) => (
         <UserCard
           userName={user.userName}
-          role={user.role}
-          key={user.userName}
+          roles={user.roles || []} 
+                    key={user.userName}
           onButtonClickAdd={onButtonClickAddUser}
         />
       ))

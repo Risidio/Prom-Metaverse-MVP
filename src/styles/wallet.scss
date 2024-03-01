@@ -1,11 +1,19 @@
 .wallet {
-  width: 567px;
-  height: 650px;
+  width: 356px;
+  height: 665px;
 
 
   background-color: #fff;
   border-radius: 24px;
-  padding: 46px 83px 80px;
+  padding: 69px 45px 71px;
+
+
+  @include onTablet {
+    width: 567px;
+    height: 650px;
+    padding: 46px 83px 80px;
+
+  }
 
 
   @include onDesktopBig {
@@ -21,18 +29,29 @@
     font-family: Jost;
     font-weight: 200;
     line-height: 150%;
-    font-size: 36px;
+    font-size: 26px;
     text-transform: capitalize;
     text-align: center;
+    letter-spacing: -1.1%;
+
+    @include onTablet {
+      font-size: 36px;
+
+    }
   }
 
   &-description {
     font-family: Jost;
     font-weight: 300;
     line-height: 200%;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     margin-bottom: 35px;
+
+    @include onTablet {
+      font-size: 16px;
+
+    }
 
     @include onDesktopBig {
       margin-bottom: 45px;
@@ -42,11 +61,17 @@
   }
 
   &-img {
-    width: 208px;
-    height: 208px;
+    width: 185px;
+    height: 185px;
     border-radius: 50%;
     background-color: #D9D9D9;
-    margin: 0 auto 50px;
+    margin: 0 auto 30px;
+
+    @include onTablet {
+      width: 208px;
+      height: 208px;
+  margin-bottom: 50px;
+    }
 
     @include onDesktopBig {
       margin-bottom: 60px;
@@ -54,9 +79,9 @@
 
   }
 
-  &-button{
+  &-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    }
+  }
 }

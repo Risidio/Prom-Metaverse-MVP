@@ -12,6 +12,9 @@ type Props = {
   onButtonClick: (userName: string) => void;
   showNoFound: boolean,
   onButtonClickAdd: () => void,
+  // showGuestUserProfile: (userName: string) => void,
+  showGuestUserProfile: () => void,
+
 };
 
 const FriendsPopup: React.FC<Props> = ({
@@ -22,6 +25,7 @@ const FriendsPopup: React.FC<Props> = ({
   onButtonClick,
   showNoFound,
   onButtonClickAdd,
+  showGuestUserProfile,
 
 }) => {
 
@@ -70,11 +74,12 @@ const FriendsPopup: React.FC<Props> = ({
               .map((collaborator) => (
                 <ContactCard
                   userName={collaborator.userName}
-                  role={collaborator.role}
+                  roles={collaborator.roles || []}
                   status={collaborator.status}
                   key={collaborator.userName}
                   handleCallVisibility={handleCallVisibility}
                   onButtonClick={onButtonClick}
+                  showGuestUserProfile={showGuestUserProfile}
                 />
               ))
 

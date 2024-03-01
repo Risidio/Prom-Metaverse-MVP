@@ -126,6 +126,10 @@
       bottom: 10px;
       left: 45px;
 
+      &--guest {
+        position: static;
+      }
+
       &--online {
         background-color: #B0C147;
       }

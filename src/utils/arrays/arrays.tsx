@@ -15,57 +15,57 @@ export const titleArray = [
 export const collaboratorsArray = [
   {
     userName: 'Peter',
-    role: 'Investor',
+    roles: ['Investor', 'director'],
     status: 'online'
   },
   {
     userName: 'Celine',
-    role: 'Movie director',
+    roles: ['Movie director'],
     status: 'online'
   },
   {
     userName: 'Nataliia',
-    role: 'Screenwriter',
+    roles: ['Screenwriter'],
     status: 'absent'
   },
   {
     userName: 'Preye',
-    role: 'Actor',
+    roles: ['Actor'],
     status: 'offline'
   },
   {
     userName: 'David',
-    role: 'Screenwriter',
+    roles: ['Screenwriter'],
     status: 'offline'
   },
   {
     userName: 'Zanjeel',
-    role: 'Screenwriter',
+    roles: ['Screenwriter'],
     status: 'offline'
   },
   {
     userName: 'Olaide',
-    role: 'Screenwriter',
+    roles: ['Screenwriter'],
     status: 'offline'
   },
   {
     userName: 'User7',
-    role: 'Screenwriter',
+    roles: ['Screenwriter'],
     status: 'offline'
   },
   {
     userName: 'User8',
-    role: 'Screenwriter',
+    role: ['Screenwriter'],
     status: 'offline'
   },
   {
     userName: 'User9',
-    role: 'Screenwriter',
+    role: ['Screenwriter'],
     status: 'offline'
   },
   {
     userName: 'User10',
-    role: 'Screenwriter',
+    role: ['Screenwriter'],
     status: 'offline'
   },
 ]
@@ -74,57 +74,57 @@ export const collaboratorsArray = [
 export const users = [
   {
     userName: 'Alice',
-    role: 'Investor',
+    roles: ['Movie director'],
     status: 'online'
   },
   {
     userName: 'Bob',
-    role: 'Movie director',
+    roles: ['Movie director'],
     status: 'online'
   },
   {
     userName: 'Eva',
-    role: 'Screenwriter',
+    roles: ['Movie director'],
     status: 'absent'
   },
   {
     userName: 'Michael',
-    role: 'Actor',
+    roles: ['Movie director'],
     status: 'offline'
   },
   {
     userName: 'Sophie',
-    role: 'Screenwriter',
+    roles: ['Movie director'],
     status: 'offline'
   },
   {
     userName: 'Alex',
-    role: 'Screenwriter',
+    roles: ['Movie director'],
     status: 'offline'
   },
   {
     userName: 'Olivia',
-    role: 'Screenwriter',
+    roles: ['Movie director'],
     status: 'offline'
   },
   {
     userName: 'Daniel',
-    role: 'Screenwriter',
+    roles: ['Movie director'],
     status: 'offline'
   },
   {
     userName: 'Emma',
-    role: 'Screenwriter',
+    roles: ['Movie director'],
     status: 'offline'
   },
   {
     userName: 'Lucas',
-    role: 'Screenwriter',
+    roles: ['Movie director'],
     status: 'offline'
   },
   {
     userName: 'Isabella',
-    role: 'Screenwriter',
+    roles: ['Movie director'],
     status: 'offline'
   }
 ];

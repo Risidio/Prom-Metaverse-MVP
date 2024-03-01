@@ -7,6 +7,7 @@ import TransparentButton from '../Buttons/TransparentButton';
 import { useState } from 'react';
 import ArrowLeft from '../Buttons/ArrowLeft';
 import ArrowRight from '../Buttons/ArrowRight';
+import { NavLink } from 'react-router-dom';
 
 const ProfileForm = () => {
 
@@ -252,8 +253,25 @@ const ProfileForm = () => {
           <RedButton
             text='Create my character'
             type='submit'
-            className='button--create-character'
-          ></RedButton>
+            className='button--create-character none'
+          />
+          {/* remove the none classname later in the button above */}
+
+
+          {/* the button below is temporary for a demonstration */}
+
+
+          <NavLink to={'/onboarding'}>
+            <RedButton
+              text='Create my character'
+              type='submit'
+              className='button--create-character'
+            />
+
+          </NavLink>
+
+          {/* end of the button for Netlify. Remove later */}
+
 
         </div>
 

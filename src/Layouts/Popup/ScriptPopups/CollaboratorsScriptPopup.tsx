@@ -40,7 +40,7 @@ const CollaboratorsScriptPopup: React.FC<Props> = ({
                 </h1>
 
                 <h2 className="script__collaborator-card-text">
-                  {collaborator.role}
+                  {collaborator.roles}
                 </h2>
               </div>
 

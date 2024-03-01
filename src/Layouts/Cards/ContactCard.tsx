@@ -1,25 +1,32 @@
 type Props = {
   userName: string,
-  role: string,
+  roles: string[],
   status: string,
   handleCallVisibility: () => void,
   onButtonClick: (userName: string) => void;
-};
+  // showGuestUserProfile: (userName: string) => void,
+  showGuestUserProfile: () => void,
+};  
+
 
 
 const ContactCard: React.FC<Props> = ({
   userName,
-  role,
+  roles,
   status,
   handleCallVisibility,
   onButtonClick,
+  showGuestUserProfile,
 }) => {
   return (
     <div className="contact__card">
-      <div className="navbar__img-content--contact
+      <button
+      // onClick={() =>showGuestUserProfile(userName)}
+      onClick={showGuestUserProfile}
+       className="navbar__img-content--contact
       h-51px">
         <div className={`contact__card-status contact__card-status--${status}`}></div>
-      </div>
+      </button>
 
       <div className="contact__card-info">
         <h1 className="contact__card-title">
@@ -27,7 +34,7 @@ const ContactCard: React.FC<Props> = ({
         </h1>
 
         <h2 className="contact__card-role">
-          {role}
+          {roles}
         </h2>
       </div>
 

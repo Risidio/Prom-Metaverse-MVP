@@ -26,8 +26,8 @@ const SigninForm = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json", //always json
-              // "Authorization": `Bearer ${localStorage.get("token")}`, //token from a local storage
-              
+            // "Authorization": `Bearer ${localStorage.get("token")}`, //token from a local storage
+
           },
           body: JSON.stringify(login),
         }
@@ -70,14 +70,30 @@ const SigninForm = () => {
           setPassword(e.target.value)
         }} />
 
-        <NavLink to={"/forgot-password"}
+      <NavLink to={"/forgot-password"}
         className={'block mb-10 text-left underline decoration-solid font-light'}>
-          Forgot password
-        </NavLink>
+        Forgot password
+      </NavLink>
 
       <RedButton type="submit"
-        className="h-[48px] w-[203px] mb-3"
+        className="h-[48px] w-[203px] mb-3 none"
         text="Login" />
+
+      {/* remove the none classname later in the button above */}
+
+
+      {/* the button below is temporary for a demonstration */}
+
+      <NavLink to={'/onboarding'}>
+        <RedButton type="submit"
+          className="h-[48px] w-[203px] mb-3"
+          text="Login" />
+
+      </NavLink>
+
+      {/* end of the button for Netlify. Remove later */}
+
+
 
 
       <Link to="/account" className="welcome__message-link">

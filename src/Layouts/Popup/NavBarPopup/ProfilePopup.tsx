@@ -116,7 +116,7 @@ const ProfilePopup: React.FC<Props> = (
         </svg>
 
         <p className='profile__wallet-text'>
-          No wallet connectet
+          No wallet connected
         </p>
 
         <TransparentButton type='button'

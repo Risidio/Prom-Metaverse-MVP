@@ -66,7 +66,7 @@ const ShareSettings: React.FC<Props> = ({
           <RadioInput
             name={"sharedOptions"}
             id={"option2"}
-            text={"Only upon Request"} 
+            text={"Only upon request"} 
             value="option2"    
                     onRadioChange={handleRadioChange}
             isCheked={selectedOption === "option2"}
@@ -77,7 +77,7 @@ const ShareSettings: React.FC<Props> = ({
           <RadioInput
             name={"sharedOptions"}
             id={"option3"}
-            text={"Only with my colloborators"} 
+            text={"Only with my collaborators"} 
             value="option3"   
                      onRadioChange={handleRadioChange}
             isCheked={selectedOption === "option3"}

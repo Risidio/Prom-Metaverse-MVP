@@ -129,7 +129,7 @@ const ProfileForm = () => {
 
         <SelectInput
           className='form-input'
-          label='You want to use prom as a :'
+          label='You want to use Prom as a :'
           classNameLabel='form-title--cinema'
           options={[
             'Photographer',

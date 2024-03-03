@@ -27,7 +27,7 @@ const ScriptPage = () => {
     type: "movie",
     status: "Finished",
     pagesAmount: 135,
-    genres: ['Comedy', 'drama'],
+    genres: ['Comedy', 'Drama'],
     privacy: "private script",
     author: "username",
     cowriters: ['username', 'username'],

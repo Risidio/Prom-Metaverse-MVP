@@ -53,15 +53,15 @@ const BagPopup = () => {
         <div className="bag__scripts-movies">
           <NavLink to={'/script'}>
             <MovieCard title="Movie"
-              description="A new live" />
+              description="A New Life" />
 
           </NavLink>
 
           <MovieCard title="Movie"
-            description="A new live" />
+              description="A New Life" />
 
           <MovieCard title="Movie"
-            description="A new live" />
+              description="A New Life" />
 
 
         </div>
@@ -70,11 +70,11 @@ const BagPopup = () => {
 
       <section className="bag__bottom">
         <h1 className="bag__bottom-title">
-          Your Borkmarked scipts
+          Your bookmarked scripts
         </h1>
 
         <p className="bag__bottom-description">
-          You don’t have any scipts bokmarked yet, go to the board on the sciptwriter builing to read some.
+          You don’t have any scripts bookmarked yet, go to the board on the Scriptwriter Building to read some.
         </p>
       </section>
 

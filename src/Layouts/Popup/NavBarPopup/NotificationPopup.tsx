@@ -12,22 +12,22 @@ const NotificationPopup = () => {
         <NotificationCard
           notificationType="add"
           userName="userName"
-          userActionDescription="want to add you in their contact list" />
+          userActionDescription="wants to add you in their contact list" />
 
         <NotificationCard
           notificationType="script"
           userName="userName"
-          userActionDescription="Reviews your script 'script title" />
+          userActionDescription="reviews your script 'script title" />
 
         <NotificationCard
           notificationType="script"
           userName="userName"
-          userActionDescription="Reviews your script 'script title" />
+          userActionDescription="reviews your script 'script title" />
 
         <NotificationCard
           notificationType="script"
           userName="userName"
-          userActionDescription="Reviews your script 'script title" />
+          userActionDescription="reviews your script 'script title" />
 
 
       </section>

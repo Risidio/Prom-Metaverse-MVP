@@ -12,6 +12,7 @@ import {
   users,
 } from '../utils/arrays/arrays';
 import Pin from '../Components/Icons/Pin';
+import GeneralChat from '../Layouts/Popup/GeneralChat/GeneralChat';
 
 const OnBoarding = () => {
   const [callVisibility, setCallVisibility] = useState(false);
@@ -93,6 +94,9 @@ const OnBoarding = () => {
         <div className='logo'></div>
         <QuestionIcon/>
 
+        <GeneralChat></GeneralChat>
+
+
         <OnBoardingFirst
           textArray={textArray}
           titleArray={titleArray}
@@ -139,6 +143,7 @@ const OnBoarding = () => {
         menuBuildingName='Scriptwriter Building'
         menuBuildingText='Here you can come read, review and share scripts with the other PROM citizens'
       />
+
 
 
       

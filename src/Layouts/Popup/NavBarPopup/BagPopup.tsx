@@ -77,21 +77,29 @@ const BagPopup = () => {
 
         <div className='bag__scripts-movies'>
           <NavLink to={'/script'}>
-            <MovieCard title='Movie' description='A new live' />
+
+            <MovieCard title="Movie"
+              description="A New Life" />
+
           </NavLink>
 
-          <MovieCard title='Movie' description='A new live' />
+          <MovieCard title="Movie"
+              description="A New Life" />
+
+          <MovieCard title="Movie"
+              description="A New Life" />
 
           <MovieCard title='Movie' description='A new live' />
         </div>
       </section>
 
-      <section className='bag__bottom'>
-        <h1 className='bag__bottom-title'>Your Borkmarked scipts</h1>
+      <section className="bag__bottom">
+        <h1 className="bag__bottom-title">
+          Your bookmarked scripts
+        </h1>
 
-        <p className='bag__bottom-description'>
-          You don’t have any scipts bokmarked yet, go to the board on the
-          sciptwriter builing to read some.
+        <p className="bag__bottom-description">
+          You don’t have any scripts bookmarked yet, go to the board on the Scriptwriter Building to read some.
         </p>
       </section>
 

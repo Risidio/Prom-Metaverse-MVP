@@ -136,7 +136,7 @@ const OnBoarding = () => {
         )}
       </div>
       <Pin
-        menuBuildingName='ScriptWriter Building'
+        menuBuildingName='Scriptwriter Building'
         menuBuildingText='Here you can come read, review and share scripts with the other PROM citizens'
       />
 

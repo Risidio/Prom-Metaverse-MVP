@@ -12,6 +12,7 @@ import {
   users,
 } from '../utils/arrays/arrays';
 import Pin from '../Components/Icons/Pin';
+import Billboard from '../Layouts/Popup/BillboardPopup/Billboard';
 
 const OnBoarding = () => {
   const [callVisibility, setCallVisibility] = useState(false);
@@ -91,12 +92,9 @@ const OnBoarding = () => {
     <main>
       <div className='onboarding'>
         <div className='logo'></div>
-        <QuestionIcon/>
+        <QuestionIcon />
 
-        <OnBoardingFirst
-          textArray={textArray}
-          titleArray={titleArray}
-        />
+        <OnBoardingFirst textArray={textArray} titleArray={titleArray} />
         <Navbar
           userName='userName'
           level={1}
@@ -140,8 +138,7 @@ const OnBoarding = () => {
         menuBuildingText='Here you can come read, review and share scripts with the other PROM citizens'
       />
 
-
-      
+      <Billboard />
     </main>
   );
 };

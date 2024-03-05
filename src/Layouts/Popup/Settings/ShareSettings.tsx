@@ -4,7 +4,7 @@ type Props = {
   isToggled: boolean,
   toggleShare: () => void,
   selectedOption: string, // Add selectedOption to props
-  handleRadioChange: (id: string) => void; 
+  handleRadioChange: (id: string) => void;
 
 };
 const ShareSettings: React.FC<Props> = ({
@@ -58,33 +58,33 @@ const ShareSettings: React.FC<Props> = ({
             id={"option1"}
             text={"With everyone"}
             value="option1"
-                        onRadioChange={handleRadioChange}
+            onRadioChange={handleRadioChange}
             isCheked={selectedOption === "option1"}
-            //  isCheked={isChecked}            
-             />
+          //  isCheked={isChecked}            
+          />
 
           <RadioInput
             name={"sharedOptions"}
             id={"option2"}
-            text={"Only upon request"} 
-            value="option2"    
-                    onRadioChange={handleRadioChange}
+            text={"Only upon request"}
+            value="option2"
+            onRadioChange={handleRadioChange}
             isCheked={selectedOption === "option2"}
-            // isCheked={isChecked}            
+          // isCheked={isChecked}            
 
-            />
+          />
 
           <RadioInput
             name={"sharedOptions"}
             id={"option3"}
-            text={"Only with my collaborators"} 
-            value="option3"   
-                     onRadioChange={handleRadioChange}
+            text={"Only with my collaborators"}
+            value="option3"
+            onRadioChange={handleRadioChange}
             isCheked={selectedOption === "option3"}
-            // isCheked={isChecked}            
- 
-            />
-      </div>
+          // isCheked={isChecked}            
+
+          />
+        </div>
 
       )}
 

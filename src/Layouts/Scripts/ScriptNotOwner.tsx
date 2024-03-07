@@ -5,6 +5,8 @@ import { Script } from "../../utils/types/Script"
 import TransparentButton from "../../Components/Buttons/TransparentButton"
 import WhiteButton from "../../Components/Buttons/WhiteButton"
 import ReviewCard from "../Cards/ReviewCard"
+import { useState } from "react"
+import classNames from "classnames"
 
 
 type Props = {
@@ -15,8 +17,17 @@ const ScriptNotOwner: React.FC<Props> = ({
   script,
   // setScript,
 }) => {
+  // const [activeButton, setActiveButton] = useState('first');
+  // const handleButtonClick = (button: string) => {
+  //   setActiveButton(button);
+  // };
 
+  const [isActive, setIsActive] = useState('1');
 
+  const handleActiveClick = (id: string) => {
+    console.log(1);
+    setIsActive(id);
+  }
 
   return (
 
@@ -79,8 +90,11 @@ const ScriptNotOwner: React.FC<Props> = ({
 
           {script.privacy === 'public script' && (
             <>
-              <RedButton text="Read the script" />
-              <TransparentButton text="Collaborate" />
+              <RedButton text="Read the script" 
+              className="script__left-button-public mb-5"/>
+              <TransparentButton text="Collaborate"
+              className="script__left-button-public"
+              />
             </>
 
           )}
@@ -88,7 +102,8 @@ const ScriptNotOwner: React.FC<Props> = ({
 
         <div className="script__right script__right--not-owner">
 
-          <div className="script__right-header script__right-header--not-owner">
+          <div className="script__right-header script__right-header--not-owner
+          justify-between">
 
             {script.privacy === 'public script' &&
               <WhiteButton text="Send"></WhiteButton>
@@ -203,12 +218,31 @@ const ScriptNotOwner: React.FC<Props> = ({
                 ) : (
                   <div className="sript__right-reviews-card">
                     <div className="script__right-reviews-top">
-                      <div className="script__right-reviews-top-buttons">
-                        <button>
+                      <div className="script__right-reviews-button-container">
+                        <button
+                        id="1"
+                          className={classNames(
+                            "script__right-reviews-button ",
+                             {
+                             "script__right-reviews-button--active": isActive === '1',
+                          }
+                          )}
+
+                          onClick={() => handleActiveClick('1')}
+
+                        >
                           Professional Coverage
                         </button>
 
-                        <button>
+                        <button
+                        id="2"
+                          className={classNames(
+                            "script__right-reviews-button", {
+                            "script__right-reviews-button--active": isActive === '2',
+                          }
+                          )}
+                          onClick={() => handleActiveClick('2')}
+                        >
                           Short Review
                         </button>
 
@@ -222,8 +256,8 @@ const ScriptNotOwner: React.FC<Props> = ({
                     {script.reviews?.map((review) => {
                       return (
                         <ReviewCard
-                      author={review.author}
-                      date={review.date}
+                          author={review.author}
+                          date={review.date}
                           key={review.author.userName}></ReviewCard>
                       )
                     })}

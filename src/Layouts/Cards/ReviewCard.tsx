@@ -1,15 +1,31 @@
+import SliderComponent from "../../Components/Slider/Slider";
 import { User } from "../../utils/types/User";
 
 type Props = {
   author: User,
   date: Date,
-
-  // review: Review,
 }
 const ReviewCard: React.FC<Props> = ({
   author,
   date,
 }) => {
+
+  const formatCustomDate = (date: Date) => {
+    const day = date.getDate().toString().padStart(2, '0');
+  const monthNames = [
+    'January', 'February', 'March', 'April',
+    'May', 'June', 'July', 'August',
+    'September', 'October', 'November', 'December'
+  ];
+  const month = monthNames[date.getMonth()];
+  const hours = date.getHours().toString().padStart(2, '0');
+  const minutes = date.getMinutes().toString().padStart(2, '0');
+
+  return `${day} ${month} ${hours}:${minutes}`;
+  } 
+
+  const formattedDate = formatCustomDate(date);
+
   return (
 <section className="review">
   <div className="review__top">
@@ -17,11 +33,11 @@ const ReviewCard: React.FC<Props> = ({
 
     <div className="review__top-info">
       <h1 className="review__top-title">{author.userName}
-      <span className="review__top-title--role">| {author.roles} </span>
+      <span className="review__top-title--role">{' '}| {author.roles} </span>
       </h1>
 
       <p className="review__top-date">
-        {date.toLocaleString()}
+       {formattedDate}
       </p>
 
       <div className="script__public">
@@ -57,7 +73,25 @@ const ReviewCard: React.FC<Props> = ({
 
 
     </div>
+
+    <div className="review__top-recommend">
+      Recommend
+    </div>
   </div>
+
+  <SliderComponent title="storyline"/>
+
+  <SliderComponent title="characters"/>
+
+  <SliderComponent title="structure"/>
+
+  <button className="review-read">
+    Read more
+  </button>
+
+
+
+
 </section>
   )
 }

@@ -22,6 +22,7 @@ const ScriptPageNotOwner = () => {
   const [searchInputUsers, setSearchInputUsers] = useState('');
 
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const scriptPrivateExample: Script = {
 
     title: "French Twist",
@@ -110,7 +111,7 @@ const ScriptPageNotOwner = () => {
         {
           author: {
             userName: "User Name",
-            roles: undefined,
+            roles: ['screenwriter'],
             status: "",
             pronouns: undefined,
             scripts: undefined,
@@ -192,12 +193,6 @@ const ScriptPageNotOwner = () => {
     }
   };
 
-  // const handleShowGuestUserProfile = () => {
-  //   setShowGuestUserProfile(!showGuestUserProfile);
-  //     }
-
-
-
   useEffect(() => {
     if (filteredCollaborators.length > 0) {
       setNoFound(true);
@@ -221,8 +216,8 @@ const ScriptPageNotOwner = () => {
         <QuestionIcon></QuestionIcon>
 
         <ScriptNotOwner 
-        // script={scriptPublicExample}
-         script={scriptPrivateExample}
+        script={scriptPublicExample}
+        //  script={scriptPrivateExample}
         ></ScriptNotOwner>
 
 

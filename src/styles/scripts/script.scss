@@ -114,6 +114,14 @@
     &-button {
       display: flex;
       justify-content: center;
+
+      &-public {
+        display: block;
+        margin: 0 auto;
+        width: 252px;
+        height: 51px;
+        padding: 0;
+      }
     }
 
     &-item {
@@ -172,9 +180,9 @@
 
       @include onDesktopBig {
         padding: 40px 106px;
-  
+
       }
-  
+
 
     }
 
@@ -314,6 +322,42 @@
         color: $G4;
         line-height: 200%;
         font-weight: 300;
+      }
+
+      &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      &-button {
+        height: 26px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        display: block;
+        padding: 0 8% 0;
+        border-radius: 8px;
+
+        font-size: 14px;
+        font-weight: 500;
+
+        &--active {
+          color: #fff;
+          background-color: $Primary;
+        }
+
+        &-container {
+          width: 364px;
+          height: 36px;
+          border-radius: 11px;
+          border: 1px solid $G2;
+          display: flex;
+          padding: 5px;
+          // justify-content: space-between;
+        }
+
       }
     }
 

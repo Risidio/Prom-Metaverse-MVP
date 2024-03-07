@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import RedButton from "../../../Components/Buttons/RedButton";
 import WhiteButton from "../../../Components/Buttons/WhiteButton";
 
@@ -8,13 +9,17 @@ type Props = {
   scriptNumber: number,
   status: string,
   closeGuestUserProfile: () => void,
+  // showScriptNotOwner: () => void,
 
 }
 const UserGuestProfile: React.FC<Props> = ({
-  userName, roles, pronouns,
+  userName, 
+  roles,
+  pronouns,
   scriptNumber,
   status,
   closeGuestUserProfile,
+  // showScriptNotOwner,
 }) => {
 
   const redButtonsArrayText = [
@@ -119,6 +124,13 @@ const UserGuestProfile: React.FC<Props> = ({
               Scripts<span className="user__scripts-title--span">({scriptNumber})</span></h1>
 
             <div className="user__scripts-container">
+
+            <NavLink to='/script-not-owner'
+              // onClick={showScriptNotOwner}
+              >
+                <div className='user__scripts-img'></div>
+              </NavLink>
+
               <div className="user__scripts-img"></div>
 
               <div className="user__scripts-img"></div>

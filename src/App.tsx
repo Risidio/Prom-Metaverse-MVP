@@ -10,6 +10,7 @@ import InvalidWallet from "./Layouts/Wallet/InvalidWallet";
 import ScriptPage from "./Pages/ScriptPage";
 import ForgotPasswordPage from "./Pages/ForgotPasswordPage";
 import ResetPasswordPage from "./Pages/ResetPasswordPage";
+import ScriptPageNotOwner from "./Pages/ScriptPageNotOwner";
 
 
 function App() {
@@ -62,6 +63,13 @@ function App() {
             path="/script"
             element={
               (<ScriptPage></ScriptPage>)
+            }
+          />
+
+<Route
+            path="/script-not-owner"
+            element={
+              (<ScriptPageNotOwner/>)
             }
           />
 

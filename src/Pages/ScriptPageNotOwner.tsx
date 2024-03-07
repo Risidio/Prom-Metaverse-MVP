@@ -4,14 +4,11 @@ import Navbar from "../Layouts/NavBar";
 import ActiveCall from "../Layouts/Popup/Call/ActiveCall";
 import IncomingCall from "../Layouts/Popup/Call/IncomingCall";
 import OutgoingCall from "../Layouts/Popup/Call/OutgoingCall";
-// import OnBoardingFirst from "../Layouts/Popup/OnboardingPopup/OnboardingFirst";
 import { collaboratorsArray, users } from "../utils/arrays/arrays";
-import ScriptOwner from "../Layouts/Scripts/ScriptOwner";
-// import ScriptNotOwner from "../Layouts/Scripts/ScriptNotOwner";
-// import { Route, Routes, useNavigate } from "react-router-dom";
+import ScriptNotOwner from "../Layouts/Scripts/ScriptNotOwner";
+import { Script } from "../utils/types/Script";
 
-const ScriptPage = () => {
-  // const navigate = useNavigate();
+const ScriptPageNotOwner = () => {
 
 
   const [callVisibility, setCallVisibility] = useState(false);
@@ -24,25 +21,126 @@ const ScriptPage = () => {
   const [searchInput, setSearchInput] = useState('');
   const [searchInputUsers, setSearchInputUsers] = useState('');
 
-  // const [scriptOwnerPageVisibility, setScriptOwnerPageVisibility] = useState(false);
-  // const [scriptNotOwnerPageVisibility, setScriptNotOwnerPageVisibility] = useState(false);
 
-  // const [showGuestUserProfile, setShowGuestUserProfile] = useState(false);
+  const scriptPrivateExample: Script = {
 
-
-  const [movie, setMovie] = useState({
-
-    title: "Title",
+    title: "French Twist",
     type: "movie",
     status: "Finished",
     pagesAmount: 135,
     genres: ['Comedy', 'Drama'],
-    privacy: "private script",
-    author: "username",
-    cowriters: ['username', 'username'],
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+    privacy: "private script" as const, 
+    author: {
+      userName: "Eric",
+      roles: undefined,
+      status: "",
+      pronouns: undefined,
+      scripts: undefined,
+      collaborators: undefined,
+      views: undefined
+    },
 
-  })
+    cowriters: [
+      {
+        userName: 'username1',
+        roles: undefined,
+        status: '',
+        pronouns: undefined,
+        scripts: undefined,
+        collaborators: undefined,
+        views: undefined
+      },
+      {
+        userName: 'username2',
+        roles: undefined,
+        status: '',
+        pronouns: undefined,
+        scripts: undefined,
+        collaborators: undefined,
+        views: undefined
+      },
+      // ... дополнительные объекты User, если необходимо
+    ], 
+       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+       reviews: [],
+
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const scriptPublicExample: Script = {
+
+    title: "French Twist",
+    type: "movie",
+    status: "Finished",
+    pagesAmount: 135,
+    genres: ['Comedy', 'Drama'],
+    privacy: "public script" as const, 
+    author: {
+      userName: "Eric",
+      roles: undefined,
+      status: "",
+      pronouns: undefined,
+      scripts: undefined,
+      collaborators: undefined,
+      views: undefined
+    },
+
+    cowriters: [
+      {
+        userName: 'username1',
+        roles: undefined,
+        status: '',
+        pronouns: undefined,
+        scripts: undefined,
+        collaborators: undefined,
+        views: undefined
+      },
+      {
+        userName: 'username2',
+        roles: undefined,
+        status: '',
+        pronouns: undefined,
+        scripts: undefined,
+        collaborators: undefined,
+        views: undefined
+      },
+    ], 
+       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+       reviews: [
+        {
+          author: {
+            userName: "User Name",
+            roles: undefined,
+            status: "",
+            pronouns: undefined,
+            scripts: undefined,
+            collaborators: undefined,
+            views: undefined
+          },
+          review: "Some review text",
+          rate: 4,
+          date: new Date(),
+        },
+
+        {
+          author: {
+            userName: "User Name 2",
+            roles: undefined,
+            status: "",
+            pronouns: undefined,
+            scripts: undefined,
+            collaborators: undefined,
+            views: undefined
+          },
+          review: "Some review text 2",
+          rate: 4,
+          date: new Date(),
+        },
+
+      ],
+    
+  }
+
 
   const handleCallVisibility = () => {
     setCallVisibility(!callVisibility);
@@ -116,70 +214,16 @@ const ScriptPage = () => {
     }
   }, [filteredUsers]);
 
-
-
-
-  // const handleScriptOwnerVisibility = () => {
-  //   setScriptOwnerPageVisibility(!scriptOwnerPageVisibility);
-  // };
-
-  // useEffect(() => {
-  //   // Вызываем функцию при первой загрузке
-  //   handleScriptOwnerVisibility();
-  // }, []);
-
-  // const handleScriptNotOwnerVisibility = () => {
-  //   navigate('/script/yours');
-
-  //   // setScriptNotOwnerPageVisibility(!scriptNotOwnerPageVisibility);
-  // };
-
-  // useEffect(() => {
-  //   // Вызываем функцию при первой загрузке
-  //   handleScriptNotOwnerVisibility();
-  // }, []);
-
-
-
-
   return (
     <main>
       <div className="script-page">
         <div className="logo"></div>
         <QuestionIcon></QuestionIcon>
 
-        {/* <Routes>
-          <Route path='owner'
-          element={
-            <ScriptOwner
-            movie={movie}
-            setMovie={setMovie} 
-            ></ScriptOwner>
-          }>
-          </Route>
-
-          <Route
-          path="not-owner"
-          element={
-            <ScriptNotOwner></ScriptNotOwner>
-          }
-          ></Route>
-          
-        </Routes> */}
-
-        {/* {scriptOwnerPageVisibility &&
-          <ScriptOwner movie={movie}
-            setMovie={setMovie} />
-        }
-
-{scriptNotOwnerPageVisibility &&
-          <ScriptNotOwner />
-        } */}
-
-        <ScriptOwner
-        movie={movie}
-        setMovie={setMovie}
-        ></ScriptOwner>
+        <ScriptNotOwner 
+        // script={scriptPublicExample}
+         script={scriptPrivateExample}
+        ></ScriptNotOwner>
 
 
 
@@ -198,13 +242,6 @@ const ScriptPage = () => {
           handleInputChangeUser={handleInputChangeUsers}
           onButtonClickAddUser={handleAddUser}
           showNoFoundUser={noFoundUser}
-
-          // showScriptOwner={handleScriptOwnerVisibility}
-          // showScriptNotOwner={handleScriptNotOwnerVisibility}
-
-
-        // showGuestUserProfile={handleShowGuestUserProfile}
-
         />
 
 
@@ -233,4 +270,4 @@ const ScriptPage = () => {
   )
 }
 
-export default ScriptPage;
+export default ScriptPageNotOwner;

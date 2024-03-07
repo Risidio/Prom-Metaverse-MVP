@@ -40,6 +40,10 @@ type Props = {
   onButtonClickAddUser: (userName: string, roles: string[], status: string) => void;
   showNoFoundUser: boolean,
 
+  // showScriptOwner: () => void,
+  // showScriptNotOwner: () => void,
+
+
 }
 
 const Navbar: React.FC<Props> = (
@@ -56,6 +60,8 @@ const Navbar: React.FC<Props> = (
     handleInputChangeUser,
     onButtonClickAddUser,
     showNoFoundUser,
+    // showScriptOwner,
+    // showScriptNotOwner,
   }
 ) => {
 
@@ -177,6 +183,7 @@ const Navbar: React.FC<Props> = (
       </button>
 
       {popupProfile && <ProfilePopup
+      // showScriptOwner={showScriptOwner}
         userName="User Name"></ProfilePopup>}
 
 
@@ -267,13 +274,18 @@ const Navbar: React.FC<Props> = (
 
         }
 
-        {showGuestUserProfile && <UserGuestProfile 
+        {showGuestUserProfile && 
+      
+        <UserGuestProfile 
         userName={randomUser.userName}
          roles={randomUser.roles || []} 
          pronouns={randomUser.pronouns || ''} 
          scriptNumber={0} 
          status={randomUser.status}
-         closeGuestUserProfile={handleShowGuestUserProfile}></UserGuestProfile>}
+         closeGuestUserProfile={handleShowGuestUserProfile}
+        //  showScriptNotOwner={showScriptNotOwner}
+         />
+          }
 
       </div>
 

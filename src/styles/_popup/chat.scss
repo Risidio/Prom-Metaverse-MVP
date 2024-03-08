@@ -149,6 +149,10 @@
     position: absolute;
     right: -11.4%;
     top: 20px;
-;
+
+    @include onDesktopBig {
+      right: -8.4%;
+
+    }
   }
 }

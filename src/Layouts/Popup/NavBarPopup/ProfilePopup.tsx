@@ -13,10 +13,12 @@ import UserProfile from './UserProfile';
 type Props = {
   // showStatusBar: () => void,
   userName: string,
+  // showScriptOwner: () => void,
 }
 const ProfilePopup: React.FC<Props> = (
   {
     userName,
+    // showScriptOwner,
 
   }
   // showStatusBar,
@@ -137,6 +139,7 @@ const ProfilePopup: React.FC<Props> = (
         pronouns={'(He / Him)'}
         scriptNumber={1}
         closeModal={handleCloseModal}
+        // showScriptOwner={showScriptOwner}
         // openSettings={handleOpenSettings}
         ></UserProfile>
       }

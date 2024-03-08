@@ -13,6 +13,7 @@ type Props = {
   pronouns: string;
   scriptNumber: number;
   closeModal: () => void;
+  // showScriptOwner: () => void,
 };
 const UserProfile: React.FC<Props> = ({
   userName,
@@ -20,6 +21,7 @@ const UserProfile: React.FC<Props> = ({
   pronouns,
   scriptNumber,
   closeModal,
+  // showScriptOwner,
 }) => {
   const redButtonsArrayText = ['Open-minded', 'Open-minded', 'Open-minded'];
 
@@ -219,7 +221,9 @@ const UserProfile: React.FC<Props> = ({
             </h1>
 
             <div className='user__scripts-container'>
-              <NavLink to='/script'>
+              <NavLink to='/script'
+              // onClick={showScriptOwner}
+              >
                 <div className='user__scripts-img'></div>
               </NavLink>
 

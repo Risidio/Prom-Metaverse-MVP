@@ -1,4 +1,4 @@
-import { Script } from "./Movie";
+import { Script } from "./Script";
 
 export type User = {
   userName: string,

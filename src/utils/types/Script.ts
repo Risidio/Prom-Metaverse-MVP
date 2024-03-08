@@ -1,3 +1,4 @@
+import { Review } from "./Review"
 import { User } from "./User"
 
 export type Script = {
@@ -10,4 +11,5 @@ export type Script = {
   author: User,
   cowriters: User[],
   description: string,
+  reviews?: Review[],
 }

@@ -83,12 +83,18 @@
       @include onDesktopBig {
         font-size: 48px;
         margin-bottom: 26px;
-
-
       }
 
       &--pronoun {
         font-size: 16px;
+      }
+
+      &--author {
+        font-family: Insonsolata;
+        font-size: 20px;
+        font-weight: 400;
+        color: $Primary;
+        text-decoration: underline;
       }
 
 
@@ -108,6 +114,14 @@
     &-button {
       display: flex;
       justify-content: center;
+
+      &-public {
+        display: block;
+        margin: 0 auto;
+        width: 252px;
+        height: 51px;
+        padding: 0;
+      }
     }
 
     &-item {
@@ -142,7 +156,10 @@
         width: 389px;
 
         margin-bottom: 40px;
+      }
 
+      &--french-twist {
+        background-image: url('./assets/french-twist.png');
       }
 
     }
@@ -155,6 +172,17 @@
 
     @include onDesktopBig {
       padding: 141px;
+
+    }
+
+    &--not-owner {
+      padding: 40px 50px;
+
+      @include onDesktopBig {
+        padding: 40px 106px;
+
+      }
+
 
     }
 
@@ -280,6 +308,57 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 20px;
+
+      &--not-owner {
+        justify-content: flex-end;
+        // position: absolute;
+      }
+    }
+
+    &-reviews {
+      &-info {
+        letter-spacing: 7%;
+        font-size: 24px;
+        color: $G4;
+        line-height: 200%;
+        font-weight: 300;
+      }
+
+      &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      &-button {
+        height: 26px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        display: block;
+        padding: 0 8% 0;
+        border-radius: 8px;
+
+        font-size: 14px;
+        font-weight: 500;
+
+        &--active {
+          color: #fff;
+          background-color: $Primary;
+        }
+
+        &-container {
+          width: 364px;
+          height: 36px;
+          border-radius: 11px;
+          border: 1px solid $G2;
+          display: flex;
+          padding: 5px;
+          // justify-content: space-between;
+        }
+
+      }
     }
 
   }

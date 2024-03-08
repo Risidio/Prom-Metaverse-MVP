@@ -13,6 +13,7 @@ import {
 } from '../utils/arrays/arrays';
 import Pin from '../Components/Icons/Pin';
 import GeneralChat from '../Layouts/Popup/GeneralChat/GeneralChat';
+import Billboard from '../Layouts/Popup/BillboardPopup/Billboard';
 
 const OnBoarding = () => {
   const [callVisibility, setCallVisibility] = useState(false);
@@ -92,7 +93,7 @@ const OnBoarding = () => {
     <main>
       <div className='onboarding'>
         <div className='logo'></div>
-        <QuestionIcon/>
+        <QuestionIcon />
 
         <GeneralChat></GeneralChat>
 
@@ -101,6 +102,7 @@ const OnBoarding = () => {
           textArray={textArray}
           titleArray={titleArray}
         />
+     
         <Navbar
           userName='userName'
           level={1}
@@ -147,6 +149,7 @@ const OnBoarding = () => {
 
 
       
+      <Billboard />
     </main>
   );
 };

@@ -1,0 +1,195 @@
+* {
+  scrollbar-width: 0;
+}
+
+*::-webkit-scrollbar {
+  background-color: transparent;
+  width: 12px;
+}
+
+*::-webkit-scrollbar-thumb {
+  width: 11px;
+  height: 639px;
+  border-radius: 99px;
+  background-color: #979ea9;
+  border: 4px solid #fff;
+}
+
+.billboard-modal-container {
+  position: fixed;
+  top: 32px;
+  left: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  // padding: 50px;
+  z-index: 3;
+  overflow-y: auto;
+}
+.billboard-modal-container-info {
+  position: fixed;
+  top: 32px;
+  left: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  // padding: 50px;
+  z-index: 3;
+}
+
+.billboard-modal-wrapper {
+  // padding: 50px;
+  max-height: 881px;
+  width: 1669px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 55px;
+  border: 27px solid black;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #030e2e;
+
+  @media (max-width: 600px) {
+    width: 90%;
+  }
+}
+.billboard-image-slider-wrapper {
+  width: 100%;
+  height: 625px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+}
+
+.billboard-modal-container-body {
+  // padding: 24px 32px 51px;
+  overflow-y: hidden;
+  // margin-top: 100px;
+  // color: #fff;
+  border-top: none;
+}
+.billboard-img-back-btn {
+  width: 227px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  flex-direction: column;
+  border-radius: 38px;
+  padding: 16px 50px;
+  font-size: 17px;
+  font-family: 'Jost';
+  font-weight: 600;
+  border: none;
+  white-space: nowrap;
+  margin-left: 15px;
+}
+.billboard-img-cta-add-video {
+  width: 330px;
+  height: 100%;
+  background-color: #dc1720;
+  color: #fff;
+  border-radius: 38px;
+  padding: 16px 50px 16px 50px;
+  font-size: 17px;
+  font-family: 'Jost';
+  font-weight: 600;
+  border: none;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 15px;
+}
+.billboard-img-cta-search {
+  width: 404px;
+  height: 42px;
+  border-radius: 9px;
+  border: 1px solid #e8ebef;
+}
+.billboard-img-cta-search::placeholder {
+  color: #b6bac4;
+  font-family: 'Jost';
+  padding-right: 5px;
+  padding-left: 5px; /* Keep the same padding for placeholder */
+  box-sizing: border-box;
+}
+
+.billboard-img-cta-search {
+  color: #b6bac4;
+  font-family: 'Jost';
+  padding-right: 5px;
+  padding-left: 5px; /* Keep the same padding for placeholder */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+.billboard-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.billboard-image-slider-heading-wrapper {
+  border-bottom: none;
+  border: none;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #030d2e 100%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.billboard-image-slider-heading-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border: none;
+
+  height: 250px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #030d2e 100%);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+.billboard-image-slider-heading-wrapper-btn {
+  position: relative;
+  margin-top: 20px;
+  width: 276px;
+  height: 51px;
+  padding: 16px 50px;
+  border-radius: 38px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  cursor: pointer;
+  z-index: 2;
+}
+.billboard-modal-stars-of-month-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.billboard-star-of-the-month {
+  margin-top: 20px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+.billboard-modal-container-end {
+  width: 184px;
+  height: 500px;
+  background: linear-gradient(to bottom, #000000 0%, #283237 100%);
+}
+.billboard-modal-left-side {
+  width: 50%;
+  height: 100%;
+}
+
+.billboard-modal-right-side {
+  height: 100%;
+  width: 50%;
+}

@@ -2,7 +2,7 @@
   position: absolute;
 
   bottom: 105px;
-  left: 150px;
+  left: 183px;
 
   width: 366px;
   height: 456.5px;
@@ -14,7 +14,7 @@
   padding: 18px 20px 45px 40px;
 
   &-title {
-    color: var(--Black, #030D2E);
+    color: var(--Black, #030d2e);
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
@@ -30,10 +30,9 @@
     padding: 16px 13px 0px 20px;
     transition: all 0.3s;
 
-
     &:hover {
       border-radius: 16px;
-      background: #F7F7F7;
+      background: #f7f7f7;
     }
 
     &-elipse {
@@ -63,18 +62,17 @@
 
     &-title {
       display: block;
-      color: var(--Primary, #DC1720);
+      color: var(--Primary, #dc1720);
       font-size: 16px;
       font-weight: 500;
       line-height: 20px;
     }
 
     &-description {
-      color: var(--G4, #5B6179);
+      color: var(--G4, #5b6179);
       font-size: 16px;
       font-weight: 400;
       line-height: 120%;
     }
   }
-
 }

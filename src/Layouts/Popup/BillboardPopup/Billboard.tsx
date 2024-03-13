@@ -59,8 +59,7 @@ const Billboard: React.FC = () => {
   // show the AD detail
 
   const handleShowBillboardDetails = () => {
-    setShowBillboardInfo((prevState) => !prevState);
-    setShowBillboardPopup(false);
+    setShowBillboardInfo((prev) => !prev);
   };
 
   return (
@@ -183,7 +182,7 @@ const Billboard: React.FC = () => {
               </div>
             </div>
 
-            <section className='billboard-modal-container-body mt-10 border-none'>
+            <section className='billboard-modal-container-body scrollbar-w-2 scrollbar-track-gray-100 scrollbar-thumb-gray-400 scrollbar-thumb-rounded-full mt-10 border-none'>
               <div className='billboard-modal-heading-wrapper ml-24'>
                 <p className='font-jost font-[600] text-[17px] text-[#FFFFFF]'>
                   Monthly Stars
@@ -200,6 +199,9 @@ const Billboard: React.FC = () => {
                     ></div>
                   ))}
                 </div>
+                {/* <h2 className='mt-2 font-jost font-[300] text-[17px] text-[#FFFFFF]'>
+                  The citizens who've done the most for PROM
+                </h2> */}
               </div>
             </section>
           </article>

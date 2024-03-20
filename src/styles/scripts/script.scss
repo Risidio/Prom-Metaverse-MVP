@@ -6,11 +6,10 @@
   margin: 0 auto;
   top: 20px;
 
-
   @include onDesktopBig {
     width: 1525px;
     height: 945px;
-    top: 60px;
+    top: 25px;
   }
 
   &-page {
@@ -20,17 +19,15 @@
     height: 100vh;
   }
 
-
-
   &__top {
     display: flex;
     justify-content: space-between;
     border-radius: 20px 20px 0px 0px;
 
-    background: rgba(255, 255, 255, 0.60);
+    background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(16.149999618530273px);
     padding: 14px 29px 14px 57px;
-    color: #030D2E;
+    color: #030d2e;
     font-family: Jost;
     font-size: 16px;
     font-weight: 500;
@@ -42,31 +39,26 @@
     padding-left: 108px;
     padding-right: 34px;
     display: flex;
-    background: var(--W, #FFF);
+    background: var(--W, #fff);
 
     box-shadow: 0px 4px 55.4px 0px rgba(0, 0, 0, 0.64);
     border-radius: 0px 0px 20px 20px;
 
-
     @include onDesktopBig {
       height: 897px;
     }
-
   }
-
 
   &__left {
     width: 469px;
     flex-shrink: 0;
-    background: linear-gradient(193deg, #F3F8FE 1.28%, #FDF8EB 99.68%);
+    background: linear-gradient(193deg, #f3f8fe 1.28%, #fdf8eb 99.68%);
     padding: 21px 42px 21px;
-
 
     @include onDesktopBig {
       padding: 81px 42px 21px;
       height: 897px;
       padding: 61px 42px 21px;
-
     }
 
     &-title {
@@ -76,7 +68,7 @@
       line-height: 20px;
       letter-spacing: 0em;
       text-align: left;
-      color: #030D2E;
+      color: #030d2e;
 
       margin-bottom: 10px;
 
@@ -96,8 +88,6 @@
         color: $Primary;
         text-decoration: underline;
       }
-
-
     }
 
     &-list {
@@ -107,7 +97,6 @@
 
       @include onDesktopBig {
         margin-bottom: 27px;
-
       }
     }
 
@@ -161,10 +150,8 @@
       &--french-twist {
         background-image: url('./assets/french-twist.png');
       }
-
     }
   }
-
 
   &__right {
     padding: 40px 50px;
@@ -172,7 +159,6 @@
 
     @include onDesktopBig {
       padding: 141px;
-
     }
 
     &--not-owner {
@@ -180,14 +166,10 @@
 
       @include onDesktopBig {
         padding: 40px 106px;
-
       }
-
-
     }
 
     &-button {
-
       width: 127px;
       height: 26px;
       padding: 0;
@@ -204,8 +186,6 @@
         align-items: center;
       }
 
-
-
       &--settings {
         position: relative;
       }
@@ -218,7 +198,7 @@
       line-height: 20px;
       line-height: 200%;
       letter-spacing: 7%;
-      color: #030D2E;
+      color: #030d2e;
       font-weight: 400;
       text-align: left;
       margin-bottom: 31px;
@@ -229,7 +209,6 @@
         line-height: 20px;
         font-size: 24px;
         text-transform: capitalize;
-
       }
 
       &--underline {
@@ -240,7 +219,7 @@
     &-settings {
       width: 208px;
       height: 119px;
-      background-color: #FFF;
+      background-color: #fff;
       border-radius: 11px;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
       padding: 14px 7px 0;
@@ -260,20 +239,17 @@
 
         &:hover {
           background-color: $G1;
-
         }
-
       }
     }
 
     &-summary {
-
       position: relative;
 
       margin-bottom: 70px;
 
       &::after {
-        content: "";
+        content: '';
         height: 1px;
         width: 100%;
         color: $G2;
@@ -293,14 +269,13 @@
 
     &-review {
       font-family: Jost;
-      color: #7C8DB0;
+      color: #7c8db0;
       font-size: 18px;
       font-weight: 300;
 
       &-text {
         margin-top: 20px;
       }
-
     }
 
     &-header {
@@ -357,19 +332,15 @@
           padding: 5px;
           // justify-content: space-between;
         }
-
       }
     }
-
   }
-
 
   &__public {
     width: 350px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
-
 
     &-container {
       display: flex;
@@ -378,7 +349,6 @@
 
       &--right {
         align-items: center;
-
       }
     }
 
@@ -399,7 +369,6 @@
         font-weight: 600;
       }
 
-
       &--votes {
         font-size: 12px;
         font-weight: 300;
@@ -407,7 +376,6 @@
         padding-left: 10px;
       }
     }
-
   }
 
   &__request {
@@ -419,7 +387,6 @@
     font-weight: 300;
 
     margin-bottom: 26px;
-
 
     &-text {
       font-weight: 400;
@@ -447,7 +414,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #FFF;
+        background-color: #fff;
         border-radius: 50%;
         margin-left: -10px;
       }
@@ -459,16 +426,14 @@
     }
   }
 
-
   &__collaborator {
     padding: 31px 16px 31px 36px;
     width: 420px;
     height: 418px;
 
     border-radius: 20px;
-    background-color: #FFF;
+    background-color: #fff;
     box-shadow: 0px 4px 32.7px 0px rgba(0, 0, 0, 0.11);
-
 
     &-search {
       width: 100%;
@@ -505,7 +470,6 @@
           color: $Primary;
           font-weight: 400;
         }
-
       }
 
       &-button {

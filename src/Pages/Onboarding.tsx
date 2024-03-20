@@ -25,7 +25,8 @@ const OnBoarding = () => {
 
   const [searchInput, setSearchInput] = useState('');
   const [searchInputUsers, setSearchInputUsers] = useState('');
-
+  // state for the tutorial bg
+  const [tutorialCompleted, setTutorialCompleted] = useState(false);
   const handleCallVisibility = () => {
     setCallVisibility(!callVisibility);
   };
@@ -91,18 +92,18 @@ const OnBoarding = () => {
 
   return (
     <main>
-      <div className='onboarding'>
+      <div className={`onboarding ${!tutorialCompleted && 'show-tutorial'}`}>
         <div className='logo'></div>
         <QuestionIcon />
 
         <GeneralChat></GeneralChat>
 
-
         <OnBoardingFirst
           textArray={textArray}
           titleArray={titleArray}
+          onTutorialCompletion={() => setTutorialCompleted(true)}
         />
-     
+
         <Navbar
           userName='userName'
           level={1}
@@ -141,14 +142,13 @@ const OnBoarding = () => {
           />
         )}
       </div>
-      <Pin
-        menuBuildingName='Scriptwriter Building'
-        menuBuildingText='Here you can come read, review and share scripts with the other PROM citizens'
-      />
+      {tutorialCompleted && (
+        <Pin
+          menuBuildingName='Scriptwriter Building'
+          menuBuildingText='Here you can come read, review and share scripts with the other PROM citizens'
+        />
+      )}
 
-
-
-      
       <Billboard />
     </main>
   );

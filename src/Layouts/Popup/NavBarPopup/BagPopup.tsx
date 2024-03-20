@@ -41,7 +41,7 @@ const BagPopup = () => {
           <WhiteButton
             text='Buy more'
             type='button'
-            className='button--buy-more'
+            className='button--buy-more flex items-center justify-center'
           />
         </div>
       </section>
@@ -65,8 +65,8 @@ const BagPopup = () => {
                 />
                 <path
                   id='Vector_2'
-                  fill-rule='evenodd'
-                  clip-rule='evenodd'
+                  fillRule='evenodd'
+                  clipRule='evenodd'
                   d='M3.79292 0.258781C6.90538 -0.0862605 10.0465 -0.0862605 13.1589 0.258781C14.9859 0.462781 16.4609 1.90178 16.6749 3.73878C17.0449 6.89578 17.0449 10.0848 16.6749 13.2418C16.4599 15.0788 14.9849 16.5168 13.1589 16.7218C10.0465 17.0668 6.90538 17.0668 3.79292 16.7218C1.96592 16.5168 0.490917 15.0788 0.276917 13.2418C-0.0923055 10.0849 -0.0923055 6.89569 0.276917 3.73878C0.490917 1.90178 1.96692 0.462781 3.79292 0.258781ZM12.9929 1.74878C9.99078 1.41602 6.96106 1.41602 3.95892 1.74878C3.40316 1.81044 2.88442 2.05766 2.48649 2.4505C2.08857 2.84334 1.83471 3.35886 1.76592 3.91378C1.41026 6.95475 1.41026 10.0268 1.76592 13.0678C1.83492 13.6225 2.08887 14.1378 2.48678 14.5305C2.88468 14.9231 3.40331 15.1702 3.95892 15.2318C6.93592 15.5638 10.0159 15.5638 12.9929 15.2318C13.5483 15.17 14.0667 14.9228 14.4644 14.5302C14.8622 14.1375 15.116 13.6224 15.1849 13.0678C15.5406 10.0268 15.5406 6.95475 15.1849 3.91378C15.1158 3.35937 14.8618 2.84443 14.4642 2.452C14.0665 2.05958 13.5482 1.81256 12.9929 1.75078'
                   fill='#30374D'
                 />
@@ -77,29 +77,23 @@ const BagPopup = () => {
 
         <div className='bag__scripts-movies'>
           <NavLink to={'/script'}>
-
-            <MovieCard title="Movie"
-              description="A New Life" />
-
+            <MovieCard title='Movie' description='A New Life' />
           </NavLink>
 
-          <MovieCard title="Movie"
-              description="A New Life" />
+          <MovieCard title='Movie' description='A New Life' />
 
-          <MovieCard title="Movie"
-              description="A New Life" />
+          <MovieCard title='Movie' description='A New Life' />
 
-          <MovieCard title='Movie' description='A new live' />
+          {/* <MovieCard title='Movie' description='A new live' /> */}
         </div>
       </section>
 
-      <section className="bag__bottom">
-        <h1 className="bag__bottom-title">
-          Your bookmarked scripts
-        </h1>
+      <section className='bag__bottom'>
+        <h1 className='bag__bottom-title'>Your Bookmarked scripts</h1>
 
-        <p className="bag__bottom-description">
-          You don’t have any scripts bookmarked yet, go to the board on the Scriptwriter Building to read some.
+        <p className='bag__bottom-description'>
+          You don’t have any scripts bookmarked yet, go to the board on the
+          Scriptwriter Building to read some.
         </p>
       </section>
 

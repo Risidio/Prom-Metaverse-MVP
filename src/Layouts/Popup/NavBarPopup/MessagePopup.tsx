@@ -1,19 +1,56 @@
+import { useState } from 'react';
 import avatar from '../../../assets/avatarSmall.svg';
+// import EmojiPicker from 'emoji-picker-react';
 // using default component caused problems such as duplication errors this why I made my own style for the triangle
 // import TriangleDiv from '../../../Components/TriangleDiv';
+//  user chat
+
+interface UserData {
+  username: string;
+  role: string;
+}
+const userData: UserData[] = [
+  { username: 'Peter', role: 'ScreenWriter' },
+  { username: 'Louai', role: 'ScreenWriter' },
+  { username: 'Celeine', role: 'ScreenWriter' },
+  { username: 'Natalia', role: 'ScreenWriter' },
+  { username: 'David', role: 'ScreenWriter' },
+];
 const MessagePopup = () => {
-  //  user chat
-  interface UserData {
-    username: string;
-    role: string;
-  }
-  const userData: UserData[] = [
-    { username: '{UserName}', role: 'ScreenWriter' },
-    { username: '{UserName}', role: 'ScreenWriter' },
-    { username: '{UserName}', role: 'ScreenWriter' },
-    { username: '{UserName}', role: 'ScreenWriter' },
-    { username: '{UserName}', role: 'ScreenWriter' },
-  ];
+  // states for searching user chats
+  const [searchValue, setSearchValue] = useState('');
+  const [filteredUserData, setFilteredUserData] = useState(userData);
+  // const [showEmojiPicker, setShowEmojiPicker] = useState<boolean>(false);
+  // const [message, setMessage] = useState<string>('');
+  // const [sendMessages, setSendMessages] = useState([]);
+  // emojis for the chats
+
+  // handling the emoji
+  // const handleShowEmoji = () => {
+  //   setShowEmojiPicker(!showEmojiPicker);
+  // };
+  // const handleEmojiClick = (emojiObject: EmojiClickData) => {
+  //   const emoji = emojiObject.emoji;
+  //   setMessage((prevMessage) => prevMessage + emoji);
+  //   setShowEmojiPicker(false);
+  // };
+
+  // handling the searched users
+  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value.trim().toLowerCase();
+    setSearchValue(inputValue);
+
+    // If input value is empty, show all users
+    if (inputValue === '') {
+      setFilteredUserData(userData);
+    } else {
+      // Filter user data based on input value
+      const filteredData = userData.filter((user) =>
+        user.username.toLowerCase().startsWith(inputValue[0])
+      );
+      setFilteredUserData(filteredData);
+    }
+  };
 
   return (
     <section className='message'>
@@ -22,11 +59,14 @@ const MessagePopup = () => {
           <div className='flex flex-col py-8  w-[227px] bg-[#30374D] flex-shrink-0 rounded-tl-[37px] rounded-bl-[37px]'>
             <div className='flex flex-col'>
               <div className='message__search-wrapper pl-3'>
+                {/* <EmojiPicker open={false} /> */}
                 {/* start of search input wrapper*/}
                 <input
                   type='text'
                   placeholder='Search'
                   className='message__search-input'
+                  value={searchValue} // Bind input value to state
+                  onChange={handleSearchInputChange} // Update state on change
                 />
                 <svg
                   className='message__search-icon'
@@ -48,7 +88,7 @@ const MessagePopup = () => {
               {/* start of aside  */}
 
               <div className='flex flex-col  mt-4 -mx-2 h-[400px] overflow-y-auto overflow-x-hidden'>
-                {userData.map((data, index) => (
+                {filteredUserData.map((data, index) => (
                   <button
                     key={index}
                     className='flex flex-row items-center hover:bg-[#5b6179] rounded-xl pt-2 pl-2 pb-2 pr-4 mx-auto'
@@ -81,6 +121,7 @@ const MessagePopup = () => {
                   </button>
                 ))}
               </div>
+
               {/* end of aside  */}
               {/* start of the new btn */}
               <div className='flex  items-center justify-center border-[#fff] bg-[none] rounded-[38px] message-chat-btn-wrapper'>
@@ -205,7 +246,10 @@ const MessagePopup = () => {
                       placeholder='Type Your message here'
                       className='flex w-full border rounded-[23px] focus:outline-none bg-[#E8EBEF] focus:border-[black] pl-7 h-[46px] message-chat-placeholder'
                     />
-                    <button className='absolute flex items-center justify-center h-full w-12 right-14 top-0 text-gray-400 hover:text-gray-600'>
+                    <button
+                      className='absolute flex items-center justify-center h-full w-12 right-14 top-0 text-gray-400 hover:text-gray-600'
+                      // onClick={handleShowEmoji}
+                    >
                       <svg
                         className='w-6 h-6 ml-15'
                         fill='none'
@@ -221,6 +265,7 @@ const MessagePopup = () => {
                         ></path>
                       </svg>
                     </button>
+
                     <button className='absolute flex items-center justify-center h-full w-12 right-0 top-0 text-gray-400 hover:text-gray-600'>
                       <svg
                         width='26'
@@ -247,6 +292,23 @@ const MessagePopup = () => {
       </div>
       {/* refactor using  TriangleDiv Component*/}
       <div className='triangle-up-message'></div>
+      {/* <div
+        style={{
+          position: 'absolute',
+          zIndex: '100',
+          left: '50%',
+          top: '50%',
+        }}
+      >
+        {showEmojiPicker && (
+          <EmojiPicker
+            className='chat__emoji'
+            width={250}
+            height={250}
+            onEmojiClick={handleEmojiClick}
+          />
+        )}
+      </div> */}
     </section>
   );
 };

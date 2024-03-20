@@ -9,18 +9,15 @@
 
   z-index: 2;
 
-
   &--guest {
     left: -140%;
     bottom: 50px;
 
     @include onDesktopBig {
-
       position: fixed;
 
       top: 80px;
     }
-
   }
 
   @include onDesktopBig {
@@ -93,8 +90,6 @@
         align-items: center;
         gap: 5px;
       }
-
-
     }
 
     &-list {
@@ -130,7 +125,7 @@
       width: 110%;
       position: relative;
       left: -40px;
-      background-position: center;
+      background-position: center top -20px;
       background-size: cover;
       margin-bottom: 15px;
 
@@ -154,7 +149,6 @@
         display: flex;
         gap: 16px;
         margin-bottom: 22px;
-
 
         &--contact {
           position: relative;
@@ -232,20 +226,17 @@
       font-size: 16px;
       font-weight: 300;
       line-height: 200%;
-      color: #030D2E;
+      color: #030d2e;
       font-weight: 400;
       text-align: left;
       margin-bottom: 31px;
-
 
       &--title {
         font-weight: 400;
         font-size: 24px;
         margin-bottom: 10px;
       }
-
     }
-
   }
 
   &__form {

@@ -26,28 +26,58 @@
   background: rgba(255, 255, 255, 0.6);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(50px);
-  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
 }
-.pin-heading-container {
+.pin-heading-building-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 40px;
-  margin-bottom: -15px;
+  padding-top: 30px;
 }
-.pin-heading-primary {
+.pin-heading-building-primary {
   font-family: 'Jost';
   font-size: 32px;
+  font-weight: 500;
   line-height: 40px;
   color: #dc1720;
 }
-.pin-info-container {
-  margin: 20px auto;
-  width: 342px;
+.pin-heading-billboard-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+.pin-heading-billboard-primary {
+  font-family: 'Jost';
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 40px;
+  color: #dc1720;
+}
+.pin-info-building-container {
+  width: 396px;
+  height: 98px;
   text-align: center;
+  margin-top: 10px;
+}
+.pin-info-billboard-container {
+  width: 400px;
+  height: 42px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pin-info-billboard-text {
+  font-family: 'Jost';
+  line-height: 32px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #030d2e;
 }
 .pin-info-text {
   font-family: 'Jost';
@@ -60,8 +90,8 @@
 // billboard wrapper
 
 .billboard-wrapper {
-  width: 417px;
-  height: 174px;
+  width: 443px;
+  height: 206px;
   border-radius: 50%;
   position: absolute;
   position: absolute;
@@ -75,4 +105,50 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
   z-index: 2;
+}
+.billboard-btn-container {
+  margin: 0 auto;
+  width: 368px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+.billboard-ad-website-wrapper {
+  width: 190px;
+  height: 47px;
+  padding: 16px 50px 16px 50px;
+  border-radius: 38px;
+  border: 1px solid rgba(151, 158, 169, 1);
+}
+.billboard-ad-website-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.billboard-ad-billboard-wrapper {
+  width: 154px;
+  height: 47px;
+  padding: 16px 50px 16px 50px;
+  border-radius: 38px;
+  border: none;
+  background-color: #dc1720;
+}
+.billboard-ad-billboard-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #fff;
+  cursor: pointer;
 }

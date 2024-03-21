@@ -146,6 +146,8 @@ const OnBoarding = () => {
         <Pin
           menuBuildingName='Scriptwriter Building'
           menuBuildingText='Here you can come read, review and share scripts with the other PROM citizens'
+          billboardName='Billboard'
+          billboardText='Have a look at our news and partners'
         />
       )}
 

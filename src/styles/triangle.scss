@@ -48,6 +48,23 @@
     border-left: 20px solid transparent; /* Измените размеры бордера, чтобы настроить ширину треугольника */
     border-right: 20px solid transparent; /* Измените размеры бордера, чтобы настроить ширину треугольника */
     border-bottom: 40px solid #fff; /* Измените цвет и высоту, чтобы настроить высоту и цвет треугольника */
+    &--0 {
+      top: -10px;
+      left: 130px;
+    }
+    &--1 {
+      top: 110px;
+      left: 95px;
+    }
+    &--2 {
+      top: 40px;
+      left: 300px;
+    }
+    &--3 {
+      top: -165px;
+      left: 600px;
+      transform: rotate(90deg);
+    }
   }
 
   &--profile {

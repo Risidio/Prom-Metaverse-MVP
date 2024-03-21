@@ -82,7 +82,9 @@ const OnBoardingFirst: React.FC<Props> = ({
       </div>
 
       {showTriangle && (
-        <TriangleDiv classNameSecond='triangle-up--travel'></TriangleDiv>
+        <TriangleDiv
+          classNameSecond={`triangle-up--travel--${onboardingIndex}`}
+        ></TriangleDiv>
       )}
     </article>
   );

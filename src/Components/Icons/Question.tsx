@@ -1,12 +1,10 @@
 import { useState } from "react";
-// import { Link } from "react-router-dom";
 
 const QuestionIcon = () => {
   const [onHover, setHover] = useState<boolean>(false);
   return (
     <>
         <div 
-        // onMouseEnter={() => setHover(true)}
 
         className={`question ${onHover ? "hovered" : ""}`}
         onMouseEnter={() => setHover(true)}

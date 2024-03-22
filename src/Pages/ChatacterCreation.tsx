@@ -10,7 +10,7 @@ const CharacterCreation = () => {
       <QuestionIcon></QuestionIcon>
 
       <div className="character-container">
-        <h1 className="character-title">
+        <h1 className="character-title  mt-[27px] ml-[-27px]">
           About
           <br>
           </br>

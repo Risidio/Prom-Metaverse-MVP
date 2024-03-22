@@ -73,7 +73,6 @@ const BillboardUploadAd = () => {
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files!);
-    console.log('Selected Image Files:', files); // Log selected image files
     setSelectedImage(files); // Update selected image state
   };
   const toggleDropdownGener = () => {
@@ -176,17 +175,8 @@ const BillboardUploadAd = () => {
       !uploadScriptForm.synopsis ||
       selectedImage.length === 0
     ) {
-      // If any required field is empty, display an error message
-      console.log('Please fill in all required fields.');
       return; // Exit the function, preventing form submission
     }
-
-    // If all required fields are filled, proceed with form submission
-    // 1. Log the uploadScriptForm object to verify its contents
-    console.log('Upload Script Form:', uploadScriptForm);
-
-    // 2. Log the selectedImage array to verify its contents
-    console.log('Selected Image:', selectedImage);
 
     // Create a FormData object to store form data
     const formData = new FormData();
@@ -203,8 +193,6 @@ const BillboardUploadAd = () => {
       formData.append(`image_${index}`, image);
     });
 
-    // Submit the form data
-    console.log('Submitting form data...');
     setShowThankYou(true);
   };
 
@@ -246,6 +234,7 @@ const BillboardUploadAd = () => {
         roles: role, // Assuming roles is the correct property name for the role array
         status,
       };
+      // console log for build version
       console.log(newUser);
     }
   };

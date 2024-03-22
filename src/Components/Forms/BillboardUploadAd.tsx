@@ -128,15 +128,6 @@ const BillboardUploadAd = () => {
     });
   };
 
-  // const handleAddContributors = () => {
-  //   const newContributor = prompt('Enter the name of the contributor');
-  //   if (newContributor) {
-  //     setUploadScriptForm((prevState) => ({
-  //       ...prevState,
-  //       contributors: [...prevState.contributors, newContributor],
-  //     }));
-  //   }
-  // };
   const handlePdfFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUploadingPdf(true);
     const files = Array.from(e.target.files || []);
@@ -256,11 +247,6 @@ const BillboardUploadAd = () => {
         status,
       };
       console.log(newUser);
-      // Update the collaboratorsArray using the state setter
-      // setFetchedCollaborators((prevCollaborators) => [
-      //   ...prevCollaborators,
-      //   newUser,
-      // ]);
     }
   };
 
@@ -328,10 +314,7 @@ const BillboardUploadAd = () => {
                         Upload your advertisement
                       </h4>
                     </div>
-                    {/* <div className='script-upload-btn-container'>
-                      <a className='script-upload-movie-btn'>Movie</a>
-                      <a className='script-upload-TvShow-btn'>TvShow</a>
-                    </div> */}
+
                     <div className='billboard-upload-movie-container '>
                       <h4 className='billboard-upload-primary mt-10 pb-2'>
                         Title of your ad*
@@ -481,31 +464,10 @@ const BillboardUploadAd = () => {
                         name='synopsis'
                         required
                         value={uploadScriptForm.synopsis}
-                        // onChange={handleScriptChange}
                         className='w-[635px] h-[258.8px] p-4 border border-gray-300 rounded font-jost'
                         placeholder='Write a short description of your script'
                       ></textarea>
                       <div className='billboard-upload-contributors-btn-container'>
-                        {/* <svg
-                          className='ml-5 mr-5'
-                          width='27'
-                          height='27'
-                          viewBox='0 0 27 27'
-                          fill='none'
-                          xmlns='http://www.w3.org/2000/svg'
-                        >
-                          <path
-                            d='M23.625 10.125H16.875V3.375C16.875 2.47989 16.5194 1.62145 15.8865 0.988514C15.2535 0.355579 14.3951 0 13.5 0C12.6049 0 11.7465 0.355579 11.1135 0.988514C10.4806 1.62145 10.125 2.47989 10.125 3.375L10.2448 10.125H3.375C2.47989 10.125 1.62145 10.4806 0.988514 11.1135C0.355579 11.7465 0 12.6049 0 13.5C0 14.3951 0.355579 15.2535 0.988514 15.8865C1.62145 16.5194 2.47989 16.875 3.375 16.875L10.2448 16.7552L10.125 23.625C10.125 24.5201 10.4806 25.3785 11.1135 26.0115C11.7465 26.6444 12.6049 27 13.5 27C14.3951 27 15.2535 26.6444 15.8865 26.0115C16.5194 25.3785 16.875 24.5201 16.875 23.625V16.7552L23.625 16.875C24.5201 16.875 25.3785 16.5194 26.0115 15.8865C26.6444 15.2535 27 14.3951 27 13.5C27 12.6049 26.6444 11.7465 26.0115 11.1135C25.3785 10.4806 24.5201 10.125 23.625 10.125Z'
-                            fill='#30374D'
-                          />
-                        </svg>
-
-                        <button
-                          className='font-jost text-[#30374D] text-[16px]'
-                          onClick={handleAddContributors}
-                        >
-                          Add contributors
-                        </button> */}
                         <div className=' pl-5 w-full flex items-center'>
                           <input
                             type='checkbox'

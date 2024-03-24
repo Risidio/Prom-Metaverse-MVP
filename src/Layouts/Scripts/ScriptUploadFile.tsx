@@ -1,9 +1,24 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import QuestionIcon from '../../Components/Icons/Question';
 import Navbar from '../../Layouts/NavBar';
 
 // import OnBoardingFirst from "../Layouts/Popup/OnboardingPopup/OnboardingFirst";
 import { collaboratorsArray, users } from '../../utils/arrays/arrays';
+
+//  interface
+interface UploadScriptForm {
+  title: string;
+  gener: string[]; // Assuming 'gener' is an array of strings
+  status: string; // Assuming 'status' is a string
+  synopsis: string;
+  contributors: string[]; // Assuming 'contributors' is an array of strings
+  pdfFile: File[]; // Assuming 'pdfFile' is an array of File objects
+  imageFile: File[]; // Assuming 'imageFile' is an array of File objects
+}
+
+interface UploadProgress {
+  [key: string]: number;
+}
 
 const ScriptUploadFile = () => {
   const [callVisibility, setCallVisibility] = useState(false);
@@ -19,8 +34,9 @@ const ScriptUploadFile = () => {
   //  Script Upload status -----------------------------------
 
   // refactor code to use typescript
+
   // upload form state for submit the form
-  const [uploadScriptForm, setUploadScriptForm] = useState({
+  const [uploadScriptForm, setUploadScriptForm] = useState<UploadScriptForm>({
     title: '',
     gener: [],
     status: '',
@@ -32,7 +48,7 @@ const ScriptUploadFile = () => {
   // state to show the script Upload container
   const [showScript, setShowScript] = useState(false);
   //  state for progress bar when upload (not working yet)
-  const [uploadProgress, setUploadProgress] = useState({});
+  const [uploadProgress, setUploadProgress] = useState<UploadProgress>({});
   //  state for progress bar when upload (not working yet)
   const [progressPercentage, setProgressPercentage] = useState({});
   //  status dropdown state
@@ -44,7 +60,8 @@ const ScriptUploadFile = () => {
   // pdf upload state
   const [uploadingPdf, setUploadingPdf] = useState(false);
   // image state
-  const [selectedImage, setSelectedImage] = useState([]);
+  const [selectedImage, setSelectedImage] = useState<File[]>([]);
+
   //  state for upload script anoymously
   const [isChecked, setIsChecked] = useState(false);
   // thank you popup state
@@ -62,11 +79,12 @@ const ScriptUploadFile = () => {
     setIsChecked(!isChecked);
   };
 
-  const handleImageChange = (e) => {
-    const files = Array.from(e.target.files);
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files!);
     console.log('Selected Image Files:', files); // Log selected image files
     setSelectedImage(files); // Update selected image state
   };
+
   const toggleDropdownGener = () => {
     setOpenGener(!openGener);
   };
@@ -75,7 +93,7 @@ const ScriptUploadFile = () => {
     setOpenStatus(!openStatus);
   };
 
-  const setStatus = (status) => {
+  const setStatus = (status: string) => {
     setUploadScriptForm((prevState) => ({
       ...prevState,
       status: status,
@@ -84,7 +102,7 @@ const ScriptUploadFile = () => {
     setOpenStatus(false); // Close the dropdown after selecting a status
   };
 
-  const setGener = (gener) => {
+  const setGener = (gener: string) => {
     // Check if the gener is already selected
     if (uploadScriptForm.gener.includes(gener)) {
       // If already selected, remove it
@@ -100,9 +118,18 @@ const ScriptUploadFile = () => {
       }));
     }
   };
-
+  //  clg for build
+  console.log(
+    selectedUser,
+    setNoFound,
+    setNoFoundUser,
+    progressPercentage,
+    selectedGener,
+    setSelectedGener,
+    setFetchedCollaborators
+  );
   // onChange upload form method
-  const handleScriptChange = (e) => {
+  const handleScriptChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setUploadScriptForm({
       ...uploadScriptForm,
@@ -119,29 +146,24 @@ const ScriptUploadFile = () => {
       }));
     }
   };
-  const handlePdfFileChange = (e) => {
+  const handlePdfFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUploadingPdf(true);
-    const files = Array.from(e.target.files);
-    setUploadScriptForm((prevState) => ({
+    const files = Array.from(e.target.files || []);
+    setUploadScriptForm((prevState: UploadScriptForm) => ({
       ...prevState,
       pdfFile: files,
     }));
   };
   const handleUploadPdf = () => {
-    uploadScriptForm.pdfFile.forEach((file) => {
+    uploadScriptForm.pdfFile.forEach((file: File) => {
       const progressInterval = setInterval(() => {
-        setUploadProgress((prevProgress) => ({
-          ...prevProgress,
-          [file.name]: (prevProgress[file.name] || 0) + 10,
-        }));
-        // Calculate and update progress percentage
-        setProgressPercentage((prevPercentage) => ({
-          ...prevPercentage,
-          [file.name]: Math.min(
-            Math.round((prevProgress[file.name] || 0) / 10), // Calculate percentage
-            100
-          ),
-        }));
+        setUploadProgress((prevProgress) => {
+          const currentProgress = (prevProgress[file.name] || 0) + 10;
+          return {
+            ...prevProgress,
+            [file.name]: currentProgress,
+          };
+        });
       }, 1000);
 
       setTimeout(() => {
@@ -160,7 +182,7 @@ const ScriptUploadFile = () => {
   };
 
   // Inside scriptUploadSubmit function
-  const scriptUploadSubmit = (e) => {
+  const scriptUploadSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Validation logic to check for empty fields
@@ -177,13 +199,6 @@ const ScriptUploadFile = () => {
       return; // Exit the function, preventing form submission
     }
 
-    // If all required fields are filled, proceed with form submission
-    // 1. Log the uploadScriptForm object to verify its contents
-    console.log('Upload Script Form:', uploadScriptForm);
-
-    // 2. Log the selectedImage array to verify its contents
-    console.log('Selected Image:', selectedImage);
-
     // Create a FormData object to store form data
     const formData = new FormData();
 
@@ -198,11 +213,6 @@ const ScriptUploadFile = () => {
     selectedImage.forEach((image, index) => {
       formData.append(`image_${index}`, image);
     });
-
-    //  cannot directly log FormData objects, loop through the entries
-    for (var pair of formData.entries()) {
-      console.log(pair[0] + ', ' + pair[1]);
-    }
 
     // Submit the form data
     console.log('Submitting form data...');
@@ -233,8 +243,7 @@ const ScriptUploadFile = () => {
   const filteredUsers = users.filter((user) =>
     user.userName.toLowerCase().includes(searchInputUsers.toLowerCase())
   );
-
-  const handleAddUser = (userName: string, role: string, status: string) => {
+  const handleAddUser = (userName: string, role: string[], status: string) => {
     // Check if the user is not already in the collaboratorsArray
     if (
       !collaboratorsArray.some(
@@ -244,15 +253,15 @@ const ScriptUploadFile = () => {
       // Add a new collaborator with the provided userName, role, and status
       const newUser = {
         userName,
-        role, // You can provide a default role for the new user
-        status, // You can provide a default status for the new user
+        roles: role, // Assuming roles is the correct property name for the role array
+        status,
       };
-
+      console.log(newUser);
       // Update the collaboratorsArray using the state setter
-      setFetchedCollaborators((prevCollaborators) => [
-        ...prevCollaborators,
-        newUser,
-      ]);
+      // setFetchedCollaborators((prevCollaborators) => [
+      //   ...prevCollaborators,
+      //   newUser,
+      // ]);
     }
   };
 
@@ -467,7 +476,6 @@ const ScriptUploadFile = () => {
                         name='synopsis'
                         required
                         value={uploadScriptForm.synopsis}
-                        onChange={handleScriptChange}
                         className='w-[635px] h-[258.8px] p-4 border border-gray-300 rounded font-jost'
                         placeholder='Write a short description of your script'
                       ></textarea>

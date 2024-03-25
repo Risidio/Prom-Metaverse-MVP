@@ -8,39 +8,31 @@
 
   z-index: 4;
 
-
   &--0 {
     width: 677px;
     height: 312px;
-
   }
 
   &--1 {
     width: 751px;
     height: 430px;
-    top: 23%;
-    left: 7%;
-
-
+    top: 45%;
+    left: 8%;
   }
 
   &--2 {
     width: 677px;
     height: 296px;
-    top: 38%;
+    top: 59%;
 
-    left: 40%;
-
+    left: 48%;
   }
-
 
   &--3 {
     width: 677px;
     height: 317px;
-    top: 8%;
-
-    left: 15%;
-
+    top: 39%;
+    left: 25%;
   }
 
   &--4 {
@@ -50,30 +42,26 @@
   &-title {
     font-family: Jost;
     font-size: 32px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 20px;
     text-align: left;
     margin-bottom: 15px;
 
     color: $Primary;
-
   }
 
   &-message {
     font-family: Jost;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 200%;
     text-align: left;
-
-
   }
 
   &-img {
     width: 177px;
     height: 178px;
     border-radius: 50%;
-
 
     position: absolute;
 
@@ -83,12 +71,10 @@
     background-image: url('./assets/welcomeAvatar.svg');
     background-position: center;
     background-size: cover;
-
   }
 
   &-container {
-    padding: 68px 79px 5px 150px;
-
+    padding: 80px 79px 5px 150px;
   }
 
   &__buttons {
@@ -97,9 +83,8 @@
     align-items: center;
 
     position: absolute;
-    right: 10px;
-    bottom: 20px;
-
+    right: 20px;
+    bottom: 15px;
 
     &-button {
       width: 51px;
@@ -109,7 +94,6 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-
     }
   }
 }

@@ -2,7 +2,7 @@
   position: absolute;
 
   bottom: 105px;
-  left: 50px;
+  left: 53px;
 
   width: 366px;
   height: 540px;
@@ -20,7 +20,6 @@
     padding-left: 20px;
   }
 
-
   &__card {
     width: 325px;
     height: 100px;
@@ -33,7 +32,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #F7F7F7;
+      background-color: #f7f7f7;
     }
 
     &--add {
@@ -50,7 +49,7 @@
     }
 
     &-title {
-      color: var(--Primary, #DC1720);
+      color: var(--Primary, #dc1720);
       font-size: 16px;
       font-weight: 500;
       line-height: 20px;
@@ -68,9 +67,7 @@
     &-container {
       overflow-y: scroll;
       height: 479px;
-
     }
-
 
     &-buttons {
       justify-content: flex-end;

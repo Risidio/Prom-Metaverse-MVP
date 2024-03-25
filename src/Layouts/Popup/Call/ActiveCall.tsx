@@ -1,72 +1,49 @@
-import classNames from "classnames";
-
+import classNames from 'classnames';
+import redDialIcon from '../../../assets/redDialIcon.svg';
+import mute from '../../../assets/mute.svg';
+import hangout from '../../../assets/hangout.svg';
 type Props = {
-  userName: string,
-  handleCallVisibility: () => void,
-  callDuration: string,
-}
+  userName: string;
+  handleCallVisibility: () => void;
+  callDuration: string;
+};
 const ActiveCall: React.FC<Props> = ({
   userName,
   handleCallVisibility,
   callDuration,
 }) => {
   return (
-    <div
-      className={classNames('call call--active', {
-      })}
-    >
-      <div className="call__left">
-        <div className="call-img"></div>
-        <div className="call__text">
-          <h1 className="call__text-title">{userName}</h1>
-          <div className="call__text-duration">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4.11765 0.460938C4.22311 0.460908 4.32664 0.489074 4.41739 0.542485C4.50815 0.595897 4.5828 0.67259 4.63353 0.764536L4.66353 0.828882L5.84 3.75372C5.88738 3.87139 5.89505 4.00118 5.86184 4.12356C5.82864 4.24594 5.75636 4.35428 5.65588 4.43228L5.59706 4.47206L4.61235 5.05937L4.64941 5.11962C5.11809 5.8596 5.74765 6.48566 6.49176 6.95173L6.55176 6.988L7.14294 6.00994C7.20846 5.90118 7.30773 5.81654 7.42581 5.76874C7.54388 5.72095 7.67438 5.7126 7.79765 5.74495L7.86529 5.76776L10.8065 6.9377C10.9044 6.97655 10.99 7.04087 11.0544 7.12392C11.1188 7.20696 11.1595 7.30569 11.1724 7.40976L11.1765 7.48055V9.82041C11.1765 10.7897 10.3865 11.5753 9.37647 11.5741C4.33 11.2694 0.307059 7.26879 2.74144e-09 2.21584C-2.50716e-05 1.76822 0.171956 1.3375 0.480755 1.01182C0.789554 0.686146 1.21183 0.490123 1.66118 0.463862L1.76471 0.460938H4.11765Z" fill="#DC1720" />
-              </svg>
+    <div className={classNames('call call--active', {})}>
+      <div className='call__left'>
+        <div className='call-img'></div>
+        <div className='call__text'>
+          <h1 className='call__text-title'>{userName}</h1>
+          <div className='call__text-duration'>
+            <img src={redDialIcon} alt={redDialIcon} />
 
-            <p className="call__text-active">
-              {callDuration}
-            </p>
-
-            
-
+            <p className='call__text-active'>{callDuration}</p>
           </div>
         </div>
-
       </div>
-      <div className="call__buttons">
-        <button type="button"
-          className="call__button--incoming">
-          <svg width="53" height="52" viewBox="0 0 53 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M26.7362 34.9519C24.987 34.9519 23.3407 34.3796 21.9695 33.443L20.7012 34.7205C22.1752 35.8068 23.9325 36.5352 25.8341 36.7057V38.5402H24.932C24.434 38.5402 24.0299 38.9421 24.0299 39.4373C24.0299 39.9334 24.434 40.3344 24.932 40.3344H28.5403C29.0383 40.3344 29.4424 39.9334 29.4424 39.4373C29.4424 38.9421 29.0383 38.5402 28.5403 38.5402H27.6382V36.7057C32.0928 36.3065 35.8626 32.9774 36.6591 28.6724H34.8549C34.0331 32.267 30.5989 34.9519 26.7362 34.9519ZM33.0508 26.8782V22.1587L22.8888 31.8256C23.9559 32.6482 25.2802 33.1578 26.7362 33.1578C30.2236 33.1578 33.0508 30.3463 33.0508 26.8782ZM18.6598 28.8024L18.6174 28.6724H16.8132C16.9115 29.207 17.0577 29.7264 17.2444 30.227L18.6598 28.8024ZM36.2775 14.3308L15 34.5904L16.2882 35.8535L37.5738 15.6047L36.2775 14.3308ZM26.7362 11.6279C23.2487 11.6279 20.4215 14.4394 20.4215 17.9075L20.4188 27.1554L32.5898 15.576C31.6579 13.2651 29.3937 11.6279 26.7362 11.6279Z" fill="#5B6179" />
-            <rect x="0.5" y="1.18896" width="51.1158" height="49.7167" rx="24.8583" stroke="#B6BAC4" />
-          </svg>
-          <p className="call__buttons-text">
-            Mute
-          </p>
+      <div className='call__buttons'>
+        <button type='button' className='call__button--incoming'>
+          <img src={mute} alt={mute} />
+
+          <p className='call__buttons-text'>Mute</p>
         </button>
 
         <button
-          type="reset"
+          type='reset'
           onClick={handleCallVisibility}
-          className="call__button--hang-out">
-          <svg width="53" height="51" viewBox="0 0 53 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="52.1158" height="51" rx="25.5" fill="#DC1720" />
-            <path d="M38.0894 33.0017C37.9124 33.1811 37.6905 33.3096 37.4469 33.3738C37.2032 33.438 36.9468 33.4355 36.7044 33.3665L36.544 33.309L29.5684 30.3733C29.2876 30.2553 29.0528 30.0492 28.8993 29.7862C28.7458 29.5232 28.6818 29.2175 28.7171 28.915L28.7478 28.7479L29.3962 26.0823L29.231 26.0436C27.1791 25.5917 25.052 25.6056 23.0062 26.0843L22.8435 26.1252L23.5237 28.7811C23.5997 29.076 23.5778 29.3877 23.4614 29.6691C23.3449 29.9505 23.1402 30.1865 22.878 30.3415L22.7255 30.4181L15.7888 33.4448C15.558 33.5458 15.3043 33.5828 15.0543 33.5521C14.8042 33.5214 14.5671 33.4241 14.3675 33.2703L14.2396 33.1578L10.2386 29.2089C8.58123 27.573 8.56375 24.9039 10.2608 23.1884C19.2515 15.1217 32.8438 15.0327 41.9993 23.0383C42.7647 23.7937 43.2126 24.813 43.2512 25.8878C43.2898 26.9625 42.9163 28.0114 42.207 28.8198L42.0383 29.0007L38.0894 33.0017Z" fill="white" />
-          </svg>
+          className='call__button--hang-out'
+        >
+          <img src={hangout} alt={hangout} />
 
-          <p className="call__buttons-text">
-            End
-          </p>
-
-
+          <p className='call__buttons-text'>End</p>
         </button>
-
-
       </div>
-
     </div>
-  )
-}
+  );
+};
 
 export default ActiveCall;

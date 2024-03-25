@@ -30,6 +30,7 @@
     display: block;
     text-align: left;
     padding-bottom: 4px;
+  
 
     &--cinema {
       @include onDesktopBig {
@@ -211,7 +212,6 @@
   &__character {
     display: flex;
 
-    // justify-content: space-between;
 
     position: relative;
     align-items: center;
@@ -220,13 +220,17 @@
 
     top: -230px;
 
+
+
     @include onDesktopBig {
       top: -190px;
     }
+   
   }
 
   &__left-side {
     width: 403px;
+    margin-top: 40px;
     height: 450px;
     background: var(--W, #fff);
     border-radius: 24px;
@@ -236,7 +240,7 @@
     z-index: 1;
 
     top: -60px;
-    left: 50px;
+    left: -34px;
 
     @include onDesktopBig {
       width: 503px;
@@ -286,9 +290,8 @@
 
     top: -150px;
 
-    @include onDesktopBig {
-      position: static;
-    }
+
+
 
     &-colors {
       display: flex;
@@ -342,6 +345,7 @@
       align-items: center;
       justify-content: center;
     }
+
   }
 
   &__center {
@@ -358,8 +362,11 @@
 
       &-button {
         width: 205px;
-        height: 81px;
-        border-color: #30374d;
+
+        margin-top: 25px;
+        height: 45px;
+        border-color: #30374D;
+
         position: relative;
 
         bottom: 320px;
@@ -373,17 +380,13 @@
     }
 
     &-img {
-      background-size: cover;
-      // background-size: 110%;
+      background-size: 976px;
       background-position: center;
       background-repeat: no-repeat;
 
-      // background-color: #111F51;
-
-      // z-index: -4;
       background-image: url('./assets/avatar.svg');
 
-      width: 376px;
+      width: 600px;
       height: 940px;
 
       position: relative;

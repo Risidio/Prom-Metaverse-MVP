@@ -85,11 +85,6 @@ const ProfileForm = () => {
 
   };
 
-
-
-
-
-
   return (
     <form className='form__character'>
       <div className='form__left-side'>
@@ -146,7 +141,7 @@ const ProfileForm = () => {
         <TransparentButton
           type='submit'
           className='form__center-side-button'
-          text={'Random look'}
+          text={'Randomise look'}
         />
       </div>
 
@@ -269,8 +264,6 @@ const ProfileForm = () => {
             />
 
           </NavLink>
-
-          {/* end of the button for Netlify. Remove later */}
 
 
         </div>

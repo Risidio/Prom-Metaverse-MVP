@@ -1,20 +1,14 @@
-
-
 type Props = {
-  className?: string,
-  text: string,
+  className?: string;
+  text: string;
   type?: "button" | "submit";
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;}
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+};
 
-const RedButton: React.FC<Props> = ({
-
-  text,
-   type, 
-   className, 
-  onClick }) => {
+const RedButton: React.FC<Props> = ({ text, type, className, onClick }) => {
   return (
-
-    <button className={`${className}
+    <button
+      className={`${className}
        bg-[#DC1720] 
        rounded-full 
        text-white 
@@ -23,13 +17,11 @@ const RedButton: React.FC<Props> = ({
        font-semibold
        button--red`}
       type={type}
-      onClick={onClick}>
+      onClick={onClick}
+    >
       {text}
-      
     </button>
-
-
   );
-}
+};
 
-export default RedButton
+export default RedButton;

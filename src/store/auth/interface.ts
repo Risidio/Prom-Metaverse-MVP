@@ -1,8 +1,9 @@
 export interface APIResponse<T> {
-  status: boolean;
-  status_code: number;
+  // status: boolean;
+  // status_code: number;
   response: string;
   data: T;
+  code: number;
 }
 
 export interface User {

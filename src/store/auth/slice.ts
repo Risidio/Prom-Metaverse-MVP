@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { reactLocalStorage } from "reactjs-localstorage";
 import { RootState } from "..";
+// import { RootState } from "@reduxjs/toolkit/query";
 import { Auth, User } from "./interface";
 
 const initialState: Auth = { isLoading: true } as Auth;

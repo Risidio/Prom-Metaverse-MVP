@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TextInput from "../Inputs/TextInput";
 import { ToastContainer, toast } from "react-toastify";
 import { useFormik } from "formik";
@@ -8,6 +8,8 @@ import { useRegisterMutation } from "../../store/auth";
 
 const SignupForm = () => {
   const [request, { isLoading }] = useRegisterMutation();
+  const navigate = useNavigate();
+
   const { values, errors, isValid, handleChange, handleSubmit } = useFormik({
     initialValues: {
       email: "",
@@ -23,6 +25,9 @@ const SignupForm = () => {
       .then((res) => {
         console.log(res.data);
         toast.success("Registered Successfully");
+        setTimeout(() => {
+          navigate("/signin");
+        }, 2000);
       })
       .catch((error: any) => {
         console.group(error);

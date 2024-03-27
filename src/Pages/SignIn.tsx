@@ -1,4 +1,4 @@
-import SigninForm from '../Components/Forms/Login';
+import SigninForm from '../Components/Forms/SignInForm';
 import Connect from '../Layouts/Wallet/ConnectToWallet';
 import QuestionIcon from '../Components/Icons/Question';
 

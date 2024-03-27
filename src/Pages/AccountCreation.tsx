@@ -1,6 +1,6 @@
 
 import Connect from "../Layouts/Wallet/ConnectToWallet"
-import SignupForm from "../Components/Forms/SignUp"
+import SignupForm from "../Components/Forms/SignUpForm"
 import QuestionIcon from "../Components/Icons/Question"
 
 

@@ -18,7 +18,7 @@ export const authApi = createApi({
   baseQuery: axiosBaseQuery({ baseUrl: `${baseUrl}/` }),
   endpoints: (builder) => ({
     login: builder.mutation<APIResponse<User>, LoginPayload>({
-      query: (credentials) => ({
+      query: (credentials) => ({ 
         url: "auth/login",
         method: "POST",
         body: credentials,

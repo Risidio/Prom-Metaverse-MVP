@@ -1,7 +1,7 @@
 import ProfileChangeForm from "../../../Components/Forms/ProfileChangeForm";
 
 type Props = {
-  closeModal:  () => void,
+  closeModal: () => void,
 }
 const ProfileSettings: React.FC<Props> = ({
   closeModal,
@@ -13,7 +13,7 @@ const ProfileSettings: React.FC<Props> = ({
         Profile details
       </h1>
 
-<ProfileChangeForm closeModal={closeModal}></ProfileChangeForm>
+      <ProfileChangeForm closeModal={closeModal}></ProfileChangeForm>
     </section>
 
   )

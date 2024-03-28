@@ -2,10 +2,7 @@
   position: fixed;
   bottom: 15px;
   left: 8%;
-  // min-width: 600px;
   width: 85%;
-
-  // max-width: 1244px;
 
   height: 80px;
   border-radius: 20px;
@@ -14,21 +11,50 @@
   z-index: 4;
 
 
+  &--mobile {
+
+    left: 0;
+    bottom: 0;
+
+    border-radius: 20px 20px 0 0;
+
+    width: 100%;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
   &__img {
     &-container {
-      width: 99px;
-      height: 99px;
+      width: 83px;
+      height: 83px;
       flex-shrink: 0;
       border-radius: 50%;
+      margin-right: 20px;
+      position: relative;
+      bottom: 10px;
       background-color: #FFF;
-      position: absolute;
-      bottom: -10%;
-      left: -30px;
       display: flex;
       justify-content: center;
       align-items: center;
 
-      // position: relative;
+      @include onTablet {
+        position: absolute;
+        bottom: -10%;
+        left: -30px;
+        width: 99px;
+        height: 99px;
+      }
+
 
       &--profile {
         position: relative;
@@ -38,10 +64,18 @@
     }
 
     &-content {
-      width: 84px;
-      height: 84px;
+      width: 63px;
+      height: 63px;
       background-image: url('./assets/userIcon.svg');
+      background-position: center;
+      background-size: cover;
       border-radius: 50%;
+
+      @include onTablet {
+        width: 84px;
+        height: 84px;
+
+      }
 
       &--notification {
         width: 61px;
@@ -71,8 +105,8 @@
 
   &__title {
     &-container {
-      position: absolute;
-      left: 7%;
+      position: relative;
+      left: 10%;
       top: 15%;
     }
 
@@ -100,24 +134,45 @@
 
   &__icons {
     &-container {
+      margin: 0 auto;
       display: flex;
-      width: 500px;
-      position: absolute;
-      top: 15%;
-      right: 30px;
+      width: max-content;
+      justify-content: space-between;
+      align-items: center;
+
+      @include onTablet {
+        // width: 400px;
+
+        position: absolute;
+        top: 15%;
+        right: 30px;
+
+      }
+
+      @include onDesktopSmall {
+        width: 500px;
+
+      }
 
 
     }
 
     &-icon {
       display: flex;
-      width: 52px;
-      height: 52px;
+      width: 42px;
+      height: 42px;
       padding: 10px;
       align-items: flex-start;
       margin-right: 20px;
       border-radius: 54px;
       border: 1px solid var(--G2, #B6BAC4);
+
+
+      @include onDesktopSmall {
+        width: 52px;
+        height: 52px;
+
+      }
     }
   }
 

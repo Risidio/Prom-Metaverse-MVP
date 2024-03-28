@@ -1,4 +1,5 @@
 .moviecard {
+  margin-bottom: 10px;
   &-img {
     width: 130px;
     height: 158px;
@@ -13,7 +14,6 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 20px;
-    /* 166.667% */
   }
 
   &-description {
@@ -21,6 +21,5 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 200%;
-    /* 28px */
   }
 }

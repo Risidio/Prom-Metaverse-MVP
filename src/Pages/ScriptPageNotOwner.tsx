@@ -216,8 +216,8 @@ const ScriptPageNotOwner = () => {
         <QuestionIcon></QuestionIcon>
 
         <ScriptNotOwner 
-        script={scriptPublicExample}
-        //  script={scriptPrivateExample}
+        // script={scriptPublicExample}
+         script={scriptPrivateExample}
         ></ScriptNotOwner>
 
 

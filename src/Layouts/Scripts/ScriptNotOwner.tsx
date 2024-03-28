@@ -84,7 +84,8 @@ const ScriptNotOwner: React.FC<Props> = ({
           script__left-img--french-twist"></div>
 
           {script.privacy === 'private script' && (
-            <TransparentButton text="Request to read the script"></TransparentButton>
+            <TransparentButton className="script__left-button-public"
+             text="Request to read the script"></TransparentButton>
           )
           }
 
